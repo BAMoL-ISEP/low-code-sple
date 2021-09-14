@@ -1,12 +1,16 @@
-# Low Code Software Product Lines based on Domain-Specific Languages
+# Towards Supporting SPL Engineering in Low-Code Platforms using a DSL Approach
+
+This repository contains all the resources and artifacts of the paper entitled **Towards Supporting SPL Engineering in Low-Code Platforms using a DSL Approach** submitted in the GPCE 2021 - 20th International Conference on Generative Programming: Concepts & Experiences by the authors Alexandre Bragança, Isabel Azevedo, Nuno Bettencourt, Carlos Morais, Diogo Teixeira, and David Caetano. 
+
+**This corresponds to the case study presented and discussed in the paper.** The implementation is based on Eclipse, Xtext, Maven and ATL. 
 
 The goal of this project is to explore supporting software product lines (SPL) in low code application platforms (LCAP) using domain-specific languages (DSL). 
 
 The proposed solution is based on an integrated developmrnt environment (IDE) - that we call SPL IDE - that supports the development of the SPL in a way that is orthogonal to the LCAP. In fact, the only requirement is that the LCAP has some support for importing and exporting application models (e.g., using JSON files).
-
+ 
 This project is a part/component of the BAMoL research project. *Project BAMoL Low-Code Platform and the consortium BAMoL – LCP, co-financed by Fundo Europeu de Desenvolvimento Regional (FEDER), Programa Operacional Competividade e Internacionalização and Portugal2020 (POCI-01-0247-FEDER-39661).*
-
-Please refer to the paper **Towards Supporting SPL Engineering in Low-Code Platforms using a DSL Approach** for futher details about the approach and solution.
+ 
+Please refer to the paper **Towards Supporting SPL Engineering in Low-Code Platforms using a DSL Approach** for further details about the approach and solution.
 
 *This repository contains only snapshot of the project.*
 
@@ -38,7 +42,7 @@ For further information please contact:
 
 The repository contains several Eclipse/Maven projects. Projects from 1 to 6 are Eclipse plugins. Together they provide the functionality that *transforms* Eclipse into an SPL IDE.
 
-Projects 1 to 6 can be build from a terminal or console using Maven. They also can be openned from Eclipse. 
+Projects 1 to 6 can be build from a terminal or console using Maven. They also can be opened from Eclipse. 
 
 Project 7 is a testing and demonstration project that should be used with an Eclipse instance that has all the plugins from projects 1 to 6 loaded and activated.
 
