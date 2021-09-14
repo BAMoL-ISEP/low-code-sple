@@ -102,7 +102,7 @@ Root
 	}
 	} } , ModelsSelectors SaleOrderStateMachineStatesSelector
 	{
-		inc ("m1.sale1")
+		inc ("m1.sale1") 
 		type Selector label "Sale Order State Machine States" elements { ModelsSelectorsElements Initial
 		{
 			row 1 size 12 type SelectorEntry label Initial column 1 attributes { ModelsSelectorsElementsAttributes

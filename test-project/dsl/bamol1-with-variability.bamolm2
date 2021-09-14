@@ -10,7 +10,7 @@ Root
 				{
 					lower 1 upper 1
 				}
-			}
+			} 
 			, isSystem ModelsDatasourcesAttributes "_name"
 			{
 				type Text aggregationKind None multiplicity ModelsDatasourcesAttributesMultiplicity

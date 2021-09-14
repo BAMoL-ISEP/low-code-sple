@@ -69,6 +69,7 @@ ModelsDatasources returns ModelsDatasources:
 	'ModelsDatasources'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?	
 		('description' description=EString)?
 		('dataBehaviours' '{' dataBehaviours+=EString ( "," dataBehaviours+=EString)* '}' )?
 		('behaviourRuntime' behaviourRuntime=EString)?
@@ -76,7 +77,6 @@ ModelsDatasources returns ModelsDatasources:
 		('dataAccessRuntime' dataAccessRuntime=EString)?
 		('behaviourNamespaces' '{' behaviourNamespaces+=EString ( "," behaviourNamespaces+=EString)* '}' )?
 		('behaviourDependencies' '{' behaviourDependencies+=EString ( "," behaviourDependencies+=EString)* '}' )?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('attributes' '{' attributes+=ModelsDatasourcesAttributes ( "," attributes+=ModelsDatasourcesAttributes)* '}' )?
 	'}';
 
@@ -85,12 +85,12 @@ ModelsSelectors returns ModelsSelectors:
 	'ModelsSelectors'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?	
 		('type' type=EString)?
 		('label' label=EString)?
 		('helpText' helpText=EString)?
 		('behaviours' '{' behaviours+=EString ( "," behaviours+=EString)* '}' )?
 		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('elements' '{' elements+=ModelsSelectorsElements ( "," elements+=ModelsSelectorsElements)* '}' )?
 		('attributes' '{' attributes+=ModelsSelectorsAttributes ( "," attributes+=ModelsSelectorsAttributes)* '}' )?
 	'}';
@@ -100,6 +100,7 @@ ModelsForms returns ModelsForms:
 	'ModelsForms'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?	
 		('type' type=EString)?
 		('label' label=EString)?
 		('entity' entity=EString)?
@@ -108,7 +109,6 @@ ModelsForms returns ModelsForms:
 		('behaviours' '{' behaviours+=EString ( "," behaviours+=EString)* '}' )?
 		('dataSource' dataSource=EString)?
 		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('elements' '{' elements+=ModelsFormsElements ( "," elements+=ModelsFormsElements)* '}' )?
 	'}';
 
@@ -117,9 +117,9 @@ ModelsStatemachines returns ModelsStatemachines:
 	'ModelsStatemachines'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?	
 		('definition' definition=EString)?
 		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('states' '{' states+=ModelsStatemachinesStates ( "," states+=ModelsStatemachinesStates)* '}' )?
 	'}';
 
@@ -128,8 +128,8 @@ ModelsEnumerations returns ModelsEnumerations:
 	'ModelsEnumerations'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?	
 		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('values' '{' values+=ModelsEnumerationsValues ( "," values+=ModelsEnumerationsValues)* '}' )?
 	'}';
 
@@ -138,12 +138,12 @@ ModelsAgents returns ModelsAgents:
 	'ModelsAgents'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('dataSource' dataSource=EString)?
 		('description' description=EString)?
 		('dataBehaviours' '{' dataBehaviours+=EString ( "," dataBehaviours+=EString)* '}' )?
 		('entityBehaviours' '{' entityBehaviours+=EString ( "," entityBehaviours+=EString)* '}' )?
 		('behaviourNamespaces' '{' behaviourNamespaces+=EString ( "," behaviourNamespaces+=EString)* '}' )?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('attributes' '{' attributes+=ModelsAgentsAttributes ( "," attributes+=ModelsAgentsAttributes)* '}' )?
 	'}';
 
@@ -152,11 +152,11 @@ ModelsDocuments returns ModelsDocuments:
 	'ModelsDocuments'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?	
 		('dataSource' dataSource=EString)?
 		('description' description=EString)?
 		('dataBehaviours' '{' dataBehaviours+=EString ( "," dataBehaviours+=EString)* '}' )?
 		('behaviourNamespaces' '{' behaviourNamespaces+=EString ( "," behaviourNamespaces+=EString)* '}' )?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('attributes' '{' attributes+=ModelsDocumentsAttributes ( "," attributes+=ModelsDocumentsAttributes)* '}' )?
 		('entityBehaviours' '{' entityBehaviours+=ModelsDocumentsEntityBehaviours ( "," entityBehaviours+=ModelsDocumentsEntityBehaviours)* '}' )?
 	'}';
@@ -166,11 +166,11 @@ ModelsSeries returns ModelsSeries:
 	'ModelsSeries'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?	
 		('dataSource' dataSource=EString)?
 		('description' description=EString)?
 		('dataBehaviours' '{' dataBehaviours+=EString ( "," dataBehaviours+=EString)* '}' )?
 		('behaviourNamespaces' '{' behaviourNamespaces+=EString ( "," behaviourNamespaces+=EString)* '}' )?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('attributes' '{' attributes+=ModelsSeriesAttributes ( "," attributes+=ModelsSeriesAttributes)* '}' )?
 		('entityBehaviours' '{' entityBehaviours+=ModelsSeriesEntityBehaviours ( "," entityBehaviours+=ModelsSeriesEntityBehaviours)* '}' )?
 	'}';
@@ -180,12 +180,12 @@ ModelsDashboards returns ModelsDashboards:
 	'ModelsDashboards'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?	
 		('type' type=EString)?
 		('label' label=EString)?
 		('helpText' helpText=EString)?
 		('attributes' '{' attributes+=EString ( "," attributes+=EString)* '}' )?
 		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('elements' '{' elements+=ModelsDashboardsElements ( "," elements+=ModelsDashboardsElements)* '}' )?
 		('behaviours' '{' behaviours+=ModelsDashboardsBehaviours ( "," behaviours+=ModelsDashboardsBehaviours)* '}' )?
 	'}';
@@ -195,6 +195,7 @@ ModelsLists returns ModelsLists:
 	'ModelsLists'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?	
 		('type' type=EString)?
 		('label' label=EString)?
 		('query' query=EString)?
@@ -202,7 +203,6 @@ ModelsLists returns ModelsLists:
 		('behaviours' '{' behaviours+=EString ( "," behaviours+=EString)* '}' )?
 		('dataSource' dataSource=EString)?
 		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('elements' '{' elements+=ModelsListsElements ( "," elements+=ModelsListsElements)* '}' )?
 		('attributes' '{' attributes+=ModelsListsAttributes ( "," attributes+=ModelsListsAttributes)* '}' )?
 	'}';
@@ -213,11 +213,11 @@ ModelsGenericentitys returns ModelsGenericentitys:
 	'ModelsGenericentitys'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?	
 		('dataSource' dataSource=EString)?
 		('description' description=EString)?
 		('dataBehaviours' '{' dataBehaviours+=EString ( "," dataBehaviours+=EString)* '}' )?
 		('behaviourNamespaces' '{' behaviourNamespaces+=EString ( "," behaviourNamespaces+=EString)* '}' )?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('attributes' '{' attributes+=ModelsGenericentitysAttributes ( "," attributes+=ModelsGenericentitysAttributes)* '}' )?
 		('entityBehaviours' '{' entityBehaviours+=ModelsGenericentitysEntityBehaviours ( "," entityBehaviours+=ModelsGenericentitysEntityBehaviours)* '}' )?
 	'}';
@@ -227,12 +227,12 @@ ModelsResources returns ModelsResources:
 	'ModelsResources'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?	
 		('dataSource' dataSource=EString)?
 		('description' description=EString)?
 		('dataBehaviours' '{' dataBehaviours+=EString ( "," dataBehaviours+=EString)* '}' )?
 		('entityBehaviours' '{' entityBehaviours+=EString ( "," entityBehaviours+=EString)* '}' )?
 		('behaviourNamespaces' '{' behaviourNamespaces+=EString ( "," behaviourNamespaces+=EString)* '}' )?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('attributes' '{' attributes+=ModelsResourcesAttributes ( "," attributes+=ModelsResourcesAttributes)* '}' )?
 	'}';
 
@@ -241,11 +241,11 @@ ModelsQuerys returns ModelsQuerys:
 	'ModelsQuerys'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?	
 		('joins' '{' joins+=EString ( "," joins+=EString)* '}' )?
 		('dataSource' dataSource=EString)?
 		('expression' expression=EString)?
 		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('table' table=ModelsQuerysTable)?
 	'}';
 
@@ -254,12 +254,12 @@ ModelsApplicationbehaviours returns ModelsApplicationbehaviours:
 	'ModelsApplicationbehaviours'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('dataSource' dataSource=EString)?
 		('expression' expression=EString)?
 		('description' description=EString)?
 		('executionLocation' executionLocation=EString)?
 		('behaviourNamespaces' '{' behaviourNamespaces+=EString ( "," behaviourNamespaces+=EString)* '}' )?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsDatasourcesAttributes returns ModelsDatasourcesAttributes:
@@ -269,10 +269,10 @@ ModelsDatasourcesAttributes returns ModelsDatasourcesAttributes:
 	'ModelsDatasourcesAttributes'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?	
 		('type' type=EString)?
 		('description' description=EString)?
 		('aggregationKind' aggregationKind=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('multiplicity' multiplicity=ModelsDatasourcesAttributesMultiplicity)?
 	'}';
 
@@ -283,13 +283,15 @@ ModelsDatasourcesAttributesMultiplicity returns ModelsDatasourcesAttributesMulti
 	{ModelsDatasourcesAttributesMultiplicity}
 	'ModelsDatasourcesAttributesMultiplicity'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('lower' lower=EBigDecimal)?
 		('upper' upper=EBigDecimal)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 EBigDecimal returns ecore::EBigDecimal:
-	INT? '.' INT;
+//	INT? '.' INT;
+// Customization of bigdecimal rule
+	'-'? (INT? '.')? INT (('E'|'e') '-'? INT)?;
 
 ModelsSelectorsElements returns ModelsSelectorsElements:
 	{ModelsSelectorsElements}
@@ -297,6 +299,7 @@ ModelsSelectorsElements returns ModelsSelectorsElements:
 	'ModelsSelectorsElements'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('row' row=EBigDecimal)?
 		('size' size=EBigDecimal)?
 		('type' type=EString)?
@@ -307,7 +310,6 @@ ModelsSelectorsElements returns ModelsSelectorsElements:
 		('behaviours' '{' behaviours+=EString ( "," behaviours+=EString)* '}' )?
 		('description' description=EString)?
 		('visibleFrom' visibleFrom=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('attributes' '{' attributes+=ModelsSelectorsElementsAttributes ( "," attributes+=ModelsSelectorsElementsAttributes)* '}' )?
 	'}';
 
@@ -315,18 +317,18 @@ ModelsSelectorsAttributes returns ModelsSelectorsAttributes:
 	{ModelsSelectorsAttributes}
 	'ModelsSelectorsAttributes'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('key' key=EString)?
 		('value' value=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsSelectorsElementsAttributes returns ModelsSelectorsElementsAttributes:
 	{ModelsSelectorsElementsAttributes}
 	'ModelsSelectorsElementsAttributes'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('key' key=EString)?
 		('value' value=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsFormsElements returns ModelsFormsElements:
@@ -335,6 +337,7 @@ ModelsFormsElements returns ModelsFormsElements:
 	'ModelsFormsElements'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('row' row=EBigDecimal)?
 		('size' size=EBigDecimal)?
 		('type' type=EString)?
@@ -344,7 +347,6 @@ ModelsFormsElements returns ModelsFormsElements:
 		('behaviours' '{' behaviours+=EString ( "," behaviours+=EString)* '}' )?
 		('description' description=EString)?
 		('visibleFrom' visibleFrom=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('elements' '{' elements+=ModelsFormsElementsElements ( "," elements+=ModelsFormsElementsElements)* '}' )?
 		('attributes' '{' attributes+=ModelsFormsElementsAttributes ( "," attributes+=ModelsFormsElementsAttributes)* '}' )?
 	'}';
@@ -355,6 +357,7 @@ ModelsFormsElementsElements returns ModelsFormsElementsElements:
 	'ModelsFormsElementsElements'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('row' row=EBigDecimal)?
 		('size' size=EBigDecimal)?
 		('type' type=EString)?
@@ -365,7 +368,6 @@ ModelsFormsElementsElements returns ModelsFormsElementsElements:
 		('behaviours' '{' behaviours+=EString ( "," behaviours+=EString)* '}' )?
 		('description' description=EString)?
 		('visibleFrom' visibleFrom=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('attributes' '{' attributes+=ModelsFormsElementsElementsAttributes ( "," attributes+=ModelsFormsElementsElementsAttributes)* '}' )?
 	'}';
 
@@ -373,18 +375,18 @@ ModelsFormsElementsAttributes returns ModelsFormsElementsAttributes:
 	{ModelsFormsElementsAttributes}
 	'ModelsFormsElementsAttributes'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('key' key=EString)?
 		('value' value=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsFormsElementsElementsAttributes returns ModelsFormsElementsElementsAttributes:
 	{ModelsFormsElementsElementsAttributes}
 	'ModelsFormsElementsElementsAttributes'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('key' key=EString)?
 		('value' value=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsStatemachinesStates returns ModelsStatemachinesStates:
@@ -395,12 +397,12 @@ ModelsStatemachinesStates returns ModelsStatemachinesStates:
 	'ModelsStatemachinesStates'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('behaviours' '{' behaviours+=EString ( "," behaviours+=EString)* '}' )?
 		('description' description=EString)?
 		('enabledAttributes' '{' enabledAttributes+=EString ( "," enabledAttributes+=EString)* '}' )?
 		('enabledOperations' '{' enabledOperations+=EString ( "," enabledOperations+=EString)* '}' )?
 		('assignToExpression' assignToExpression=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('decisions' '{' decisions+=ModelsStatemachinesStatesDecisions ( "," decisions+=ModelsStatemachinesStatesDecisions)* '}' )?
 		('transitions' '{' transitions+=ModelsStatemachinesStatesTransitions ( "," transitions+=ModelsStatemachinesStatesTransitions)* '}' )?
 	'}';
@@ -410,10 +412,10 @@ ModelsStatemachinesStatesDecisions returns ModelsStatemachinesStatesDecisions:
 	'ModelsStatemachinesStatesDecisions'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('order' order=EBigDecimal)?
 		('commentType' commentType=EString)?
 		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsStatemachinesStatesTransitions returns ModelsStatemachinesStatesTransitions:
@@ -421,13 +423,13 @@ ModelsStatemachinesStatesTransitions returns ModelsStatemachinesStatesTransition
 	'ModelsStatemachinesStatesTransitions'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('to' to=EString)?
 		('type' type=EString)?
 		('order' order=EBigDecimal)?
 		('decision' decision=EString)?
 		('expression' expression=EString)?
 		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsEnumerationsValues returns ModelsEnumerationsValues:
@@ -435,9 +437,9 @@ ModelsEnumerationsValues returns ModelsEnumerationsValues:
 	'ModelsEnumerationsValues'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('order' order=EBigDecimal)?
 		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsAgentsAttributes returns ModelsAgentsAttributes:
@@ -448,11 +450,11 @@ ModelsAgentsAttributes returns ModelsAgentsAttributes:
 	'ModelsAgentsAttributes'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('type' type=EString)?
 		('description' description=EString)?
 		('aggregationKind' aggregationKind=EString)?
 		('dependsOnAttribute' dependsOnAttribute=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('multiplicity' multiplicity=ModelsAgentsAttributesMultiplicity)?
 	'}';
 
@@ -460,9 +462,9 @@ ModelsAgentsAttributesMultiplicity returns ModelsAgentsAttributesMultiplicity:
 	{ModelsAgentsAttributesMultiplicity}
 	'ModelsAgentsAttributesMultiplicity'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('lower' lower=EBigDecimal)?
 		('upper' upper=EBigDecimal)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsDocumentsAttributes returns ModelsDocumentsAttributes:
@@ -473,11 +475,11 @@ ModelsDocumentsAttributes returns ModelsDocumentsAttributes:
 	'ModelsDocumentsAttributes'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('type' type=EString)?
 		('description' description=EString)?
 		('aggregationKind' aggregationKind=EString)?
 		('dependsOnAttribute' dependsOnAttribute=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('multiplicity' multiplicity=ModelsDocumentsAttributesMultiplicity)?
 	'}';
 
@@ -486,20 +488,20 @@ ModelsDocumentsEntityBehaviours returns ModelsDocumentsEntityBehaviours:
 	'ModelsDocumentsEntityBehaviours'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('type' type=EString)?
 		('attribute' attribute=EString)?
 		('expression' expression=EString)?
 		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsDocumentsAttributesMultiplicity returns ModelsDocumentsAttributesMultiplicity:
 	{ModelsDocumentsAttributesMultiplicity}
 	'ModelsDocumentsAttributesMultiplicity'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('lower' lower=EBigDecimal)?
 		('upper' upper=EBigDecimal)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsSeriesAttributes returns ModelsSeriesAttributes:
@@ -510,11 +512,11 @@ ModelsSeriesAttributes returns ModelsSeriesAttributes:
 	'ModelsSeriesAttributes'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('type' type=EString)?
 		('description' description=EString)?
 		('aggregationKind' aggregationKind=EString)?
 		('dependsOnAttribute' dependsOnAttribute=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('multiplicity' multiplicity=ModelsSeriesAttributesMultiplicity)?
 	'}';
 
@@ -523,20 +525,20 @@ ModelsSeriesEntityBehaviours returns ModelsSeriesEntityBehaviours:
 	'ModelsSeriesEntityBehaviours'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('type' type=EString)?
 		('attribute' attribute=EString)?
 		('expression' expression=EString)?
 		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsSeriesAttributesMultiplicity returns ModelsSeriesAttributesMultiplicity:
 	{ModelsSeriesAttributesMultiplicity}
 	'ModelsSeriesAttributesMultiplicity'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('lower' lower=EBigDecimal)?
 		('upper' upper=EBigDecimal)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsDashboardsElements returns ModelsDashboardsElements:
@@ -545,6 +547,7 @@ ModelsDashboardsElements returns ModelsDashboardsElements:
 	'ModelsDashboardsElements'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('row' row=EBigDecimal)?
 		('size' size=EBigDecimal)?
 		('type' type=EString)?
@@ -555,7 +558,6 @@ ModelsDashboardsElements returns ModelsDashboardsElements:
 		('behaviours' '{' behaviours+=EString ( "," behaviours+=EString)* '}' )?
 		('description' description=EString)?
 		('visibleFrom' visibleFrom=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('attributes' '{' attributes+=ModelsDashboardsElementsAttributes ( "," attributes+=ModelsDashboardsElementsAttributes)* '}' )?
 	'}';
 
@@ -564,19 +566,19 @@ ModelsDashboardsBehaviours returns ModelsDashboardsBehaviours:
 	'ModelsDashboardsBehaviours'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('type' type=EString)?
 		('expression' expression=EString)?
 		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsDashboardsElementsAttributes returns ModelsDashboardsElementsAttributes:
 	{ModelsDashboardsElementsAttributes}
 	'ModelsDashboardsElementsAttributes'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('key' key=EString)?
 		('value' value=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsListsElements returns ModelsListsElements:
@@ -585,6 +587,7 @@ ModelsListsElements returns ModelsListsElements:
 	'ModelsListsElements'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('row' row=EBigDecimal)?
 		('size' size=EBigDecimal)?
 		('type' type=EString)?
@@ -595,7 +598,6 @@ ModelsListsElements returns ModelsListsElements:
 		('behaviours' '{' behaviours+=EString ( "," behaviours+=EString)* '}' )?
 		('description' description=EString)?
 		('visibleFrom' visibleFrom=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('attributes' '{' attributes+=ModelsListsElementsAttributes ( "," attributes+=ModelsListsElementsAttributes)* '}' )?
 	'}';
 
@@ -603,18 +605,18 @@ ModelsListsAttributes returns ModelsListsAttributes:
 	{ModelsListsAttributes}
 	'ModelsListsAttributes'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('key' key=EString)?
 		('value' value=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsListsElementsAttributes returns ModelsListsElementsAttributes:
 	{ModelsListsElementsAttributes}
 	'ModelsListsElementsAttributes'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('key' key=EString)?
 		('value' value=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsGenericentitysAttributes returns ModelsGenericentitysAttributes:
@@ -625,11 +627,11 @@ ModelsGenericentitysAttributes returns ModelsGenericentitysAttributes:
 	'ModelsGenericentitysAttributes'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('type' type=EString)?
 		('description' description=EString)?
 		('aggregationKind' aggregationKind=EString)?
 		('dependsOnAttribute' dependsOnAttribute=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('multiplicity' multiplicity=ModelsGenericentitysAttributesMultiplicity)?
 	'}';
 
@@ -638,20 +640,20 @@ ModelsGenericentitysEntityBehaviours returns ModelsGenericentitysEntityBehaviour
 	'ModelsGenericentitysEntityBehaviours'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('type' type=EString)?
 		('attribute' attribute=EString)?
 		('expression' expression=EString)?
 		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsGenericentitysAttributesMultiplicity returns ModelsGenericentitysAttributesMultiplicity:
 	{ModelsGenericentitysAttributesMultiplicity}
 	'ModelsGenericentitysAttributesMultiplicity'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('lower' lower=EBigDecimal)?
 		('upper' upper=EBigDecimal)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsResourcesAttributes returns ModelsResourcesAttributes:
@@ -662,11 +664,11 @@ ModelsResourcesAttributes returns ModelsResourcesAttributes:
 	'ModelsResourcesAttributes'
 	name=EString
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('type' type=EString)?
 		('description' description=EString)?
 		('aggregationKind' aggregationKind=EString)?
 		('dependsOnAttribute' dependsOnAttribute=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('multiplicity' multiplicity=ModelsResourcesAttributesMultiplicity)?
 	'}';
 
@@ -674,20 +676,20 @@ ModelsResourcesAttributesMultiplicity returns ModelsResourcesAttributesMultiplic
 	{ModelsResourcesAttributesMultiplicity}
 	'ModelsResourcesAttributesMultiplicity'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('lower' lower=EBigDecimal)?
 		('upper' upper=EBigDecimal)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsQuerysTable returns ModelsQuerysTable:
 	{ModelsQuerysTable}
 	'ModelsQuerysTable'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('alias' alias=EString)?
 		('filter' filter=EString)?
 		('definition' definition=EString)?
 		('orderedProperties' '{' orderedProperties+=EString ( "," orderedProperties+=EString)* '}' )?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('properties' '{' properties+=ModelsQuerysTableProperties ( "," properties+=ModelsQuerysTableProperties)* '}' )?
 	'}';
 
@@ -695,8 +697,8 @@ ModelsQuerysTableProperties returns ModelsQuerysTableProperties:
 	{ModelsQuerysTableProperties}
 	'ModelsQuerysTableProperties'
 	'{'
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('path' path=EString)?
 		('alias' alias=EString)?
 		('function' function=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
