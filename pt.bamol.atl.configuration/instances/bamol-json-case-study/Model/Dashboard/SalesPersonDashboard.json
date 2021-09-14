@@ -1,0 +1,31 @@
+{
+  "name": "SalesPersonDashboard",
+  "type": "Dashboard",
+  "label": "Sales Person",
+  "elements": [
+    {
+      "row": 1,
+      "name": "SalesPersonList",
+      "size": 12,
+      "type": "List",
+      "label": "Sales Person",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "listCode",
+          "value": "SalesPersonList"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [],
+  "behaviours": [],
+  "description": null
+}

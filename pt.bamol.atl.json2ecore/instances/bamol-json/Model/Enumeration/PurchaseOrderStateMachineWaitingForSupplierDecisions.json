@@ -1,0 +1,11 @@
+{
+  "name": "PurchaseOrderStateMachineWaitingForSupplierDecisions",
+  "values": [
+    {
+      "name": "Fechar",
+      "order": 1,
+      "description": null
+    }
+  ],
+  "description": null
+}

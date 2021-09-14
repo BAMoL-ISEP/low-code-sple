@@ -1,0 +1,31 @@
+{
+  "name": "PurchaseOrderDashboard",
+  "type": "Dashboard",
+  "label": "PurchaseOrder",
+  "elements": [
+    {
+      "row": 1,
+      "name": "PurchaseOrderList",
+      "size": 12,
+      "type": "List",
+      "label": "PurchaseOrder",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "listCode",
+          "value": "PurchaseOrderList"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [],
+  "behaviours": [],
+  "description": null
+}

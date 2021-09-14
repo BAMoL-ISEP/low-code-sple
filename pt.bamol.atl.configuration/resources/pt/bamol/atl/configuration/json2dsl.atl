@@ -1,0 +1,47 @@
+-- @atlcompiler emftvm
+-- @path BAMOL=/pt.bamol.atl.json2ecore/instances/bamol-ecore-customization.ecore
+-- @path JSON=/pt.bamol.json/model/generated/Json.ecore
+
+module json2dsl;
+create OUT : BAMOL from IN : JSON;
+
+-- entrupoint rule
+--entrypoint rule initTransformation() {
+--	to 
+--		root : BAMOL!Root (
+--			
+--		)
+--	do {
+--		'Init Transformations Rule'.debug();
+--	}
+--}
+
+rule Object2Root {
+	from 
+		o1 : JSON!Object ( not JSON!Member.allInstances()->exists(e | e.value.oclIsTypeOf(JSON!Object) and e.value=o1)
+		)
+	to
+		r1: BAMOL!Root (
+				models <- o1.members->select(m | m.key='models')
+			)
+	do {
+		'Object2Root'.debug();
+	}
+}
+
+rule MemberArray2Models {
+	from 
+		a1 : JSON!Member ( a1.key='models' 
+				and not a1.value->oclIsUndefined() 
+				and a1.value.oclIsTypeOf(JSON!Array)
+				and not a1.value.values->oclIsUndefined() 
+				and not a1.value.values->isEmpty() 
+				and a1.value.values->first().oclIsTypeOf(JSON!Object) 
+		)
+	to
+		o1: BAMOL!Models (						
+			)
+	do {
+		'MemberArray2Models'.debug();
+	}
+}

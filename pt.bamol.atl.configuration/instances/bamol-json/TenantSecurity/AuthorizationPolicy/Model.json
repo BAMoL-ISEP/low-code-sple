@@ -1,0 +1,14 @@
+{
+  "name": "Model",
+  "policies": [],
+  "description": "Modeling authorization policy.",
+  "permissions": [
+    {
+      "name": "ALL",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Modeling access"
+    }
+  ]
+}

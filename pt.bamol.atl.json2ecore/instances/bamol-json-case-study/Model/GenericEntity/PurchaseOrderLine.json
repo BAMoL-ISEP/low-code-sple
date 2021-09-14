@@ -1,0 +1,201 @@
+{
+  "name": "PurchaseOrderLine",
+  "isRoot": false,
+  "attributes": [
+    {
+      "name": "_code",
+      "type": "Text",
+      "isSystem": true,
+      "isReadOnly": false,
+      "description": null,
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    },
+    {
+      "name": "_name",
+      "type": "Text",
+      "isSystem": true,
+      "isReadOnly": false,
+      "description": null,
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    },
+    {
+      "name": "_description",
+      "type": "Text",
+      "isSystem": true,
+      "isReadOnly": false,
+      "description": null,
+      "multiplicity": {
+        "lower": 0,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    },
+    {
+      "name": "_inactive",
+      "type": "Boolean",
+      "isSystem": true,
+      "isReadOnly": false,
+      "description": null,
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    },
+    {
+      "name": "Product",
+      "type": "Product",
+      "isSystem": false,
+      "isReadOnly": false,
+      "description": "",
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "Shared",
+      "isSensitiveData": false,
+      "dependsOnAttribute": ""
+    },
+    {
+      "name": "UnitPrice",
+      "type": "Decimal",
+      "isSystem": false,
+      "isReadOnly": false,
+      "description": "",
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": false,
+      "dependsOnAttribute": ""
+    },
+    {
+      "name": "Quantity",
+      "type": "Integer",
+      "isSystem": false,
+      "isReadOnly": false,
+      "description": "",
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": false,
+      "dependsOnAttribute": ""
+    },
+    {
+      "name": "Value",
+      "type": "Decimal",
+      "isSystem": false,
+      "isReadOnly": true,
+      "description": "",
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": false,
+      "dependsOnAttribute": ""
+    },
+    {
+      "name": "VatTax",
+      "type": "VatTax",
+      "isSystem": false,
+      "isReadOnly": false,
+      "description": "",
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "Shared",
+      "isSensitiveData": false,
+      "dependsOnAttribute": ""
+    },
+    {
+      "name": "VatValue",
+      "type": "Decimal",
+      "isSystem": false,
+      "isReadOnly": true,
+      "description": "The tax multiplier",
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": false,
+      "dependsOnAttribute": ""
+    },
+    {
+      "name": "TotalWithVat",
+      "type": "Decimal",
+      "isSystem": false,
+      "isReadOnly": true,
+      "description": "",
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": false,
+      "dependsOnAttribute": ""
+    }
+  ],
+  "dataSource": "System",
+  "description": "",
+  "dataBehaviours": [],
+  "entityBehaviours": [
+    {
+      "name": "Defaults",
+      "type": "Initialize",
+      "attribute": null,
+      "expression": "if(this._code != null && this._code != String.Empty) return; \nthis._code = Guid.NewGuid().ToString(\"N\");\n\nthis._name = this._code;",
+      "description": null
+    },
+    {
+      "name": "ValueFormula",
+      "type": "Formula",
+      "attribute": "Value",
+      "expression": "return this.UnitPrice * this.Quantity;",
+      "description": ""
+    },
+    {
+      "name": "OnChange_Product",
+      "type": "Action",
+      "attribute": "Product",
+      "expression": "\nvar httpClient = _Context.CreateApplicationHttpClient();\nvar productRequest = httpClient.PostAsJsonAsync($\"Queries/ProductQuery/Default?PageSize=1\",\n        new { Filter = new { Property = \"_code\", Value = newValue } })\n    .GetAwaiter().GetResult();\n\nif (productRequest.IsSuccessStatusCode)\n{\n    var requestData = productRequest.Content.ReadAsAsync<List<Dictionary<string, object>>>()\n                            .GetAwaiter().GetResult();\n\n    if(requestData.Any()){\n        this.VatTax = requestData.First()[\"defaultvattax\"]?.ToString();\n        \n        var d = requestData.First()[\"purchaseprice\"];\n        if (d is null)return;\n        double doubleVal = (double)d;\n        string doubleAsString = doubleVal.ToString(\"R\");\n        this.UnitPrice = decimal.Parse(doubleAsString);\n    }\n}\n",
+      "description": ""
+    },
+    {
+      "name": "OnChange_VatTax",
+      "type": "Action",
+      "attribute": "VatTax",
+      "expression": "\nvar httpClient = _Context.CreateApplicationHttpClient();\nvar productRequest = httpClient.PostAsJsonAsync($\"Queries/VatTaxQuery/Default?PageSize=1\",\n        new { Filter = new { Property = \"_code\", Value = newValue } })\n    .GetAwaiter().GetResult();\n\nif (productRequest.IsSuccessStatusCode)\n{\n    var requestData = productRequest.Content.ReadAsAsync<List<Dictionary<string, object>>>()\n                            .GetAwaiter().GetResult();\n\n    if(requestData.Any()){\n        \n        var d = requestData.First()[\"multiplier\"];\n        if (d is null)return;\n        double doubleVal = (double)d;\n        string doubleAsString = doubleVal.ToString(\"R\");\n        this.VatValue = decimal.Parse(doubleAsString);\n        \n    }\n}\n",
+      "description": ""
+    },
+    {
+      "name": "TotalWithVat_Formula",
+      "type": "Formula",
+      "attribute": "TotalWithVat",
+      "expression": "return this.Value + this.Value * this.VatValue;",
+      "description": ""
+    }
+  ],
+  "behaviourNamespaces": []
+}

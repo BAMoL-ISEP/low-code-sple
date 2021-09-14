@@ -1,0 +1,308 @@
+{
+  "name": "Application",
+  "policies": [],
+  "description": "Application authorization policy.",
+  "permissions": [
+    {
+      "name": "PurchaseOrderDashboard_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for PurchaseOrderDashboard."
+    },
+    {
+      "name": "PurchaseOrderQuery_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for PurchaseOrderQuery."
+    },
+    {
+      "name": "PurchaseOrderForm_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for PurchaseOrderForm."
+    },
+    {
+      "name": "PurchaseOrder_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for PurchaseOrder."
+    },
+    {
+      "name": "PurchaseOrder_write",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Write permission for PurchaseOrder."
+    },
+    {
+      "name": "PurchaseOrder_delete",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Delete permission for PurchaseOrder."
+    },
+    {
+      "name": "PurchaseOrder_destroy",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Destroy Sensitive Data permission for PurchaseOrder."
+    },
+    {
+      "name": "PurchaseOrderSerieDashboard_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for PurchaseOrderSerieDashboard."
+    },
+    {
+      "name": "PurchaseOrderSerieQuery_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for PurchaseOrderSerieQuery."
+    },
+    {
+      "name": "PurchaseOrderSerieForm_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for PurchaseOrderSerieForm."
+    },
+    {
+      "name": "PurchaseOrderSerie_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for PurchaseOrderSerie."
+    },
+    {
+      "name": "PurchaseOrderSerie_write",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Write permission for PurchaseOrderSerie."
+    },
+    {
+      "name": "PurchaseOrderSerie_delete",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Delete permission for PurchaseOrderSerie."
+    },
+    {
+      "name": "PurchaseOrderSerie_destroy",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Destroy Sensitive Data permission for PurchaseOrderSerie."
+    },
+    {
+      "name": "GoodsPurchaseRequest_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for GoodsPurchaseRequest."
+    },
+    {
+      "name": "GoodsPurchaseRequest_write",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Write permission for GoodsPurchaseRequest."
+    },
+    {
+      "name": "GoodsPurchaseRequest_delete",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Delete permission for GoodsPurchaseRequest."
+    },
+    {
+      "name": "GoodsPurchaseRequest_destroy",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Destroy Sensitive Data permission for GoodsPurchaseRequest."
+    },
+    {
+      "name": "ProductDashboard_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for ProductDashboard."
+    },
+    {
+      "name": "ProductQuery_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for ProductQuery."
+    },
+    {
+      "name": "ProductForm_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for ProductForm."
+    },
+    {
+      "name": "Product_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for Product."
+    },
+    {
+      "name": "Product_write",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Write permission for Product."
+    },
+    {
+      "name": "Product_delete",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Delete permission for Product."
+    },
+    {
+      "name": "Product_destroy",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Destroy Sensitive Data permission for Product."
+    },
+    {
+      "name": "CompanyDashboard_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for CompanyDashboard."
+    },
+    {
+      "name": "CompanyQuery_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for CompanyQuery."
+    },
+    {
+      "name": "CompanyForm_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for CompanyForm."
+    },
+    {
+      "name": "Company_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for Company."
+    },
+    {
+      "name": "Company_write",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Write permission for Company."
+    },
+    {
+      "name": "Company_delete",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Delete permission for Company."
+    },
+    {
+      "name": "Company_destroy",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Destroy Sensitive Data permission for Company."
+    },
+    {
+      "name": "SupplierDashboard_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for SupplierDashboard."
+    },
+    {
+      "name": "SupplierQuery_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for SupplierQuery."
+    },
+    {
+      "name": "SupplierForm_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for SupplierForm."
+    },
+    {
+      "name": "Supplier_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for Supplier."
+    },
+    {
+      "name": "Supplier_write",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Write permission for Supplier."
+    },
+    {
+      "name": "Supplier_delete",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Delete permission for Supplier."
+    },
+    {
+      "name": "Supplier_destroy",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Destroy Sensitive Data permission for Supplier."
+    },
+    {
+      "name": "System_read",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Read permission for System."
+    },
+    {
+      "name": "System_write",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Write permission for System."
+    },
+    {
+      "name": "System_delete",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Delete permission for System."
+    },
+    {
+      "name": "System_destroy",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Destroy Sensitive Data permission for System."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "ClientDashboard",
+  "type": "Dashboard",
+  "label": "Client",
+  "elements": [
+    {
+      "row": 1,
+      "name": "ClientList",
+      "size": 12,
+      "type": "List",
+      "label": "Client",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "listCode",
+          "value": "ClientList"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [],
+  "behaviours": [],
+  "description": null
+}

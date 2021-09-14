@@ -1,0 +1,478 @@
+{
+  "name": "PurchaseOrderForm",
+  "type": "Form",
+  "label": "Purchase Order",
+  "entity": "PurchaseOrder",
+  "elements": [
+    {
+      "row": 1,
+      "name": "_code",
+      "size": 6,
+      "type": "Input",
+      "label": "Code",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "aggregationKind",
+          "value": "None"
+        },
+        {
+          "key": "isReadOnly",
+          "value": "false"
+        },
+        {
+          "key": "max",
+          "value": "1"
+        },
+        {
+          "key": "min",
+          "value": "1"
+        },
+        {
+          "key": "isSensitiveData",
+          "value": "false"
+        },
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 1,
+      "name": "_serie",
+      "size": 6,
+      "type": "ReferenceSelector",
+      "label": "Serie",
+      "column": 7,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "aggregationKind",
+          "value": "Shared"
+        },
+        {
+          "key": "isReadOnly",
+          "value": "false"
+        },
+        {
+          "key": "max",
+          "value": "1"
+        },
+        {
+          "key": "min",
+          "value": "1"
+        },
+        {
+          "key": "definition",
+          "value": "PurchaseOrderSerie"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 2,
+      "name": "_number",
+      "size": 6,
+      "type": "Input",
+      "label": "Number",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "aggregationKind",
+          "value": "None"
+        },
+        {
+          "key": "isReadOnly",
+          "value": "true"
+        },
+        {
+          "key": "max",
+          "value": "1"
+        },
+        {
+          "key": "min",
+          "value": "0"
+        },
+        {
+          "key": "isSensitiveData",
+          "value": "false"
+        },
+        {
+          "key": "formattingType",
+          "value": "Integer"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 2,
+      "name": "_date",
+      "size": 6,
+      "type": "Input",
+      "label": "Date",
+      "column": 7,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "aggregationKind",
+          "value": "None"
+        },
+        {
+          "key": "isReadOnly",
+          "value": "false"
+        },
+        {
+          "key": "max",
+          "value": "1"
+        },
+        {
+          "key": "min",
+          "value": "1"
+        },
+        {
+          "key": "isSensitiveData",
+          "value": "false"
+        },
+        {
+          "key": "formattingType",
+          "value": "Date"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 4,
+      "name": "Lines",
+      "size": 12,
+      "type": "List",
+      "label": "Lines",
+      "column": 1,
+      "elements": [
+        {
+          "row": 1,
+          "name": "_resource",
+          "size": 1,
+          "type": "ReferenceSelector",
+          "label": "Resource",
+          "column": 1,
+          "elements": [],
+          "helpText": null,
+          "isHidden": false,
+          "attributes": [
+            {
+              "key": "aggregationKind",
+              "value": "Shared"
+            },
+            {
+              "key": "isReadOnly",
+              "value": "false"
+            },
+            {
+              "key": "max",
+              "value": "1"
+            },
+            {
+              "key": "min",
+              "value": "1"
+            },
+            {
+              "key": "definition",
+              "value": "Product"
+            }
+          ],
+          "behaviours": [],
+          "description": null,
+          "visibleFrom": null
+        },
+        {
+          "row": 1,
+          "name": "_provider",
+          "size": 1,
+          "type": "ReferenceSelector",
+          "label": "Provider",
+          "column": 2,
+          "elements": [],
+          "helpText": null,
+          "isHidden": false,
+          "attributes": [
+            {
+              "key": "aggregationKind",
+              "value": "Shared"
+            },
+            {
+              "key": "isReadOnly",
+              "value": "false"
+            },
+            {
+              "key": "max",
+              "value": "1"
+            },
+            {
+              "key": "min",
+              "value": "1"
+            },
+            {
+              "key": "definition",
+              "value": "Supplier"
+            }
+          ],
+          "behaviours": [],
+          "description": null,
+          "visibleFrom": null
+        },
+        {
+          "row": 1,
+          "name": "_receiver",
+          "size": 1,
+          "type": "ReferenceSelector",
+          "label": "Receiver",
+          "column": 3,
+          "elements": [],
+          "helpText": null,
+          "isHidden": false,
+          "attributes": [
+            {
+              "key": "aggregationKind",
+              "value": "Shared"
+            },
+            {
+              "key": "isReadOnly",
+              "value": "false"
+            },
+            {
+              "key": "max",
+              "value": "1"
+            },
+            {
+              "key": "min",
+              "value": "1"
+            },
+            {
+              "key": "definition",
+              "value": "Company"
+            }
+          ],
+          "behaviours": [],
+          "description": null,
+          "visibleFrom": null
+        },
+        {
+          "row": 1,
+          "name": "_code",
+          "size": 1,
+          "type": "Input",
+          "label": "Code",
+          "column": 4,
+          "elements": [],
+          "helpText": null,
+          "isHidden": false,
+          "attributes": [
+            {
+              "key": "aggregationKind",
+              "value": "None"
+            },
+            {
+              "key": "isReadOnly",
+              "value": "false"
+            },
+            {
+              "key": "max",
+              "value": "1"
+            },
+            {
+              "key": "min",
+              "value": "1"
+            },
+            {
+              "key": "isSensitiveData",
+              "value": "false"
+            },
+            {
+              "key": "formattingType",
+              "value": "Text"
+            }
+          ],
+          "behaviours": [],
+          "description": null,
+          "visibleFrom": null
+        },
+        {
+          "row": 1,
+          "name": "_quantity",
+          "size": 1,
+          "type": "Input",
+          "label": "Quantity",
+          "column": 5,
+          "elements": [],
+          "helpText": null,
+          "isHidden": false,
+          "attributes": [
+            {
+              "key": "aggregationKind",
+              "value": "None"
+            },
+            {
+              "key": "isReadOnly",
+              "value": "false"
+            },
+            {
+              "key": "max",
+              "value": "1"
+            },
+            {
+              "key": "min",
+              "value": "1"
+            },
+            {
+              "key": "isSensitiveData",
+              "value": "false"
+            },
+            {
+              "key": "formattingType",
+              "value": "Decimal"
+            }
+          ],
+          "behaviours": [],
+          "description": null,
+          "visibleFrom": null
+        },
+        {
+          "row": 1,
+          "name": "_amount",
+          "size": 1,
+          "type": "Input",
+          "label": "Amount",
+          "column": 6,
+          "elements": [],
+          "helpText": null,
+          "isHidden": false,
+          "attributes": [
+            {
+              "key": "aggregationKind",
+              "value": "None"
+            },
+            {
+              "key": "isReadOnly",
+              "value": "false"
+            },
+            {
+              "key": "max",
+              "value": "1"
+            },
+            {
+              "key": "min",
+              "value": "1"
+            },
+            {
+              "key": "isSensitiveData",
+              "value": "false"
+            },
+            {
+              "key": "formattingType",
+              "value": "Decimal"
+            }
+          ],
+          "behaviours": [],
+          "description": null,
+          "visibleFrom": null
+        },
+        {
+          "row": 1,
+          "name": "UnitPrice",
+          "size": 1,
+          "type": "Input",
+          "label": "Unit Price",
+          "column": 7,
+          "elements": [],
+          "helpText": null,
+          "isHidden": false,
+          "attributes": [
+            {
+              "key": "aggregationKind",
+              "value": "None"
+            },
+            {
+              "key": "isReadOnly",
+              "value": "false"
+            },
+            {
+              "key": "max",
+              "value": "1"
+            },
+            {
+              "key": "min",
+              "value": "0"
+            },
+            {
+              "key": "isSensitiveData",
+              "value": "false"
+            },
+            {
+              "key": "formattingType",
+              "value": "Decimal"
+            }
+          ],
+          "behaviours": [],
+          "description": null,
+          "visibleFrom": null
+        }
+      ],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "aggregationKind",
+          "value": "Composite"
+        },
+        {
+          "key": "isReadOnly",
+          "value": "false"
+        },
+        {
+          "key": "max",
+          "value": "100"
+        },
+        {
+          "key": "min",
+          "value": "0"
+        },
+        {
+          "key": "definition",
+          "value": "GoodsPurchaseRequest"
+        },
+        {
+          "key": "isEditable",
+          "value": "true"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [],
+  "behaviours": [],
+  "dataSource": "System",
+  "description": null
+}

@@ -1,0 +1,14 @@
+{
+  "name": "SalesPerProductQueryAdv",
+  "joins": [],
+  "table": {
+    "alias": null,
+    "filter": null,
+    "definition": "SaleOrder",
+    "properties": [],
+    "orderedProperties": []
+  },
+  "dataSource": "System",
+  "expression": "SELECT SUM(ol.totalWithVat) AS ammount, ol.product, p._name\nFROM vw_SaleOrder_Lines ol\nINNER JOIN vw_Product p ON p._code=ol.product\nGROUP BY ol.product, p._name\nORDER BY ammount DESC",
+  "description": ""
+}

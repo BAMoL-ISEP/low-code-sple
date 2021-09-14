@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: pt.bamol.json
+Bundle-ManifestVersion: 2
+Bundle-Name: pt.bamol.json
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: pt.bamol.json; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ com.google.gson
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: pt.bamol.json.serializer,
+ pt.bamol.json.scoping,
+ pt.bamol.json.json.util,
+ pt.bamol.json.generator,
+ pt.bamol.json.json,
+ pt.bamol.json.parser.antlr.internal,
+ pt.bamol.json.json.impl,
+ pt.bamol.json.validation,
+ pt.bamol.json,
+ pt.bamol.json.parser.antlr,
+ pt.bamol.json.services
+Import-Package: org.apache.log4j

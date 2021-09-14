@@ -1,0 +1,138 @@
+{
+  "name": "PurchaseOrderList",
+  "type": "List",
+  "label": "PurchaseOrder",
+  "query": "PurchaseOrderQuery",
+  "elements": [
+    {
+      "row": 0,
+      "name": "_code",
+      "size": 1,
+      "type": "ListColumn",
+      "label": "Code",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 0,
+      "name": "_serie",
+      "size": 1,
+      "type": "ListColumn",
+      "label": "Serie",
+      "column": 4,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 0,
+      "name": "_number",
+      "size": 1,
+      "type": "ListColumn",
+      "label": "Number",
+      "column": 7,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Integer"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 0,
+      "name": "_date",
+      "size": 1,
+      "type": "ListColumn",
+      "label": "Date",
+      "column": 10,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Date"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 0,
+      "name": "totalWithVat",
+      "size": 1,
+      "type": "ListColumn",
+      "label": "Total",
+      "column": 10,
+      "elements": [],
+      "helpText": "",
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Decimal"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": "Mobile"
+    },
+    {
+      "row": 0,
+      "name": "_state",
+      "size": 2,
+      "type": "ListColumn",
+      "label": "State",
+      "column": 11,
+      "elements": [],
+      "helpText": "",
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": "Mobile"
+    }
+  ],
+  "helpText": null,
+  "attributes": [
+    {
+      "key": "queryTableDefinition",
+      "value": "PurchaseOrder"
+    }
+  ],
+  "behaviours": [],
+  "dataSource": "System",
+  "description": null
+}

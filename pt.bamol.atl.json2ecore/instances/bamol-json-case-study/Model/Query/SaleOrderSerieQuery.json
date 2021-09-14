@@ -1,0 +1,40 @@
+{
+  "name": "SaleOrderSerieQuery",
+  "joins": [],
+  "table": {
+    "alias": null,
+    "filter": null,
+    "definition": "SaleOrderSerie",
+    "properties": [
+      {
+        "path": "_code",
+        "alias": "_code",
+        "function": "None"
+      },
+      {
+        "path": "_name",
+        "alias": "_name",
+        "function": "None"
+      },
+      {
+        "path": "_description",
+        "alias": "_description",
+        "function": "None"
+      },
+      {
+        "path": "_inactive",
+        "alias": "_inactive",
+        "function": "None"
+      },
+      {
+        "path": "_startingNumber",
+        "alias": "_startingNumber",
+        "function": "None"
+      }
+    ],
+    "orderedProperties": []
+  },
+  "dataSource": "System",
+  "expression": null,
+  "description": null
+}

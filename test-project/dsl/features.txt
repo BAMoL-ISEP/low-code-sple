@@ -1,0 +1,14 @@
+Model/Document/SaleOrder.json - ok
+Model/Dashboard/SaleOrderDashboard.json - ok
+Model/Form/SaleOrderForm.json - ok
+Model/List/SaleOrderList.json - ok
+Model/Query/SaleOrderQuery.json - ok
+Model/Serie/SaleOrderSerie.json - ok
+Model/Dashboard/SaleOrderSerieDashboard.json - ok
+Model/Form/SaleOrderSerieForm.json - ok
+Model/List/SaleOrderSerieList.json - ok
+Model/Query/SaleOrderSerieQuery.json - ok
+Model/Enumeration/SaleOrder*.json - ok
+Model/Selector/SaleOrder*.json - ok
+Model/StateMachine/SaleOrderStateMachine.json - ok
+Model/GenericEntity/SaleOrderLine.json - ok

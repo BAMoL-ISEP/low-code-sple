@@ -1,0 +1,80 @@
+{
+  "name": "PurchaseOrderStateMachine",
+  "states": [
+    {
+      "name": "Initial",
+      "decisions": [
+        {
+          "name": "Submit",
+          "order": 1,
+          "commentType": "None",
+          "description": ""
+        }
+      ],
+      "isInitial": true,
+      "behaviours": [],
+      "description": null,
+      "transitions": [
+        {
+          "to": "WaitingForSupplier",
+          "name": "MoveToSupplier",
+          "type": "Decision",
+          "order": 1,
+          "decision": "Submit",
+          "expression": "",
+          "description": ""
+        }
+      ],
+      "disableAttributes": false,
+      "disableOperations": false,
+      "enabledAttributes": [],
+      "enabledOperations": [],
+      "assignToExpression": null
+    },
+    {
+      "name": "Completed",
+      "decisions": [],
+      "isInitial": false,
+      "behaviours": [],
+      "description": null,
+      "transitions": [],
+      "disableAttributes": true,
+      "disableOperations": true,
+      "enabledAttributes": [],
+      "enabledOperations": [],
+      "assignToExpression": null
+    },
+    {
+      "name": "WaitingForSupplier",
+      "decisions": [
+        {
+          "name": "Fechar",
+          "order": 1,
+          "commentType": "None",
+          "description": ""
+        }
+      ],
+      "isInitial": false,
+      "behaviours": [],
+      "description": "",
+      "transitions": [
+        {
+          "to": "Completed",
+          "name": "Close",
+          "type": "Decision",
+          "order": 1,
+          "decision": "Fechar",
+          "expression": "",
+          "description": ""
+        }
+      ],
+      "disableAttributes": false,
+      "disableOperations": false,
+      "enabledAttributes": [],
+      "enabledOperations": [],
+      "assignToExpression": ""
+    }
+  ],
+  "definition": "PurchaseOrder",
+  "description": ""
+}

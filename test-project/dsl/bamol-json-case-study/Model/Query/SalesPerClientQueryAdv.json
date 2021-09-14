@@ -1,0 +1,14 @@
+{
+  "name": "SalesPerClientQueryAdv",
+  "joins": [],
+  "table": {
+    "alias": null,
+    "filter": null,
+    "definition": "SaleOrder",
+    "properties": [],
+    "orderedProperties": []
+  },
+  "dataSource": "System",
+  "expression": "SELECT SUM(om.totalWithVat) AS ammount, om.client, c._name\nFROM vw_SaleOrder om\nINNER JOIN vw_Client c ON c._code=om.client\nGROUP BY om.client, c._name\nORDER BY ammount DESC",
+  "description": ""
+}

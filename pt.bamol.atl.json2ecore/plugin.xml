@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated bamol-ecore-customization -->
+      <package
+            uri="http://bamol.pt/bamolM2"
+            class="pt.bamol.bamolm2.BamolM2Package"
+            genModel="instances/bamol-ecore-customization.genmodel"/>
+   </extension>
+
+</plugin>

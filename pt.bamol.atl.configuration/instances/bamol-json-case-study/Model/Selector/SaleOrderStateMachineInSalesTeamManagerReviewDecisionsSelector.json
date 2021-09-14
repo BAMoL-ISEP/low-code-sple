@@ -1,0 +1,56 @@
+{
+  "name": "SaleOrderStateMachineInSalesTeamManagerReviewDecisionsSelector",
+  "type": "Selector",
+  "label": "Sale Order State Machine In Sales Team Manager Review Decisions",
+  "elements": [
+    {
+      "row": 1,
+      "name": "Approve",
+      "size": 12,
+      "type": "SelectorEntry",
+      "label": "Approve",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "EnumerationValue",
+          "value": "Approve"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 2,
+      "name": "Reject",
+      "size": 12,
+      "type": "SelectorEntry",
+      "label": "Reject",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "EnumerationValue",
+          "value": "Reject"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [
+    {
+      "key": "Enumeration",
+      "value": "SaleOrderStateMachineInSalesTeamManagerReviewDecisions"
+    }
+  ],
+  "behaviours": [],
+  "description": null
+}

@@ -1,0 +1,11 @@
+{
+  "name": "PurchaseOrderStateMachineInitialDecisions",
+  "values": [
+    {
+      "name": "Submit",
+      "order": 1,
+      "description": null
+    }
+  ],
+  "description": null
+}

@@ -1,0 +1,36 @@
+{
+  "name": "PurchaseOrderStateMachineWaitingForSupplierDecisionsSelector",
+  "type": "Selector",
+  "label": "Purchase Order State Machine Waiting For Supplier Decisions",
+  "elements": [
+    {
+      "row": 1,
+      "name": "Fechar",
+      "size": 12,
+      "type": "SelectorEntry",
+      "label": "Fechar",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "EnumerationValue",
+          "value": "Fechar"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [
+    {
+      "key": "Enumeration",
+      "value": "PurchaseOrderStateMachineWaitingForSupplierDecisions"
+    }
+  ],
+  "behaviours": [],
+  "description": null
+}

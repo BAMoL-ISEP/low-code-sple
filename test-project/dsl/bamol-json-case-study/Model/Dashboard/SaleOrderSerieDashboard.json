@@ -1,0 +1,31 @@
+{
+  "name": "SaleOrderSerieDashboard",
+  "type": "Dashboard",
+  "label": "SaleOrder Serie",
+  "elements": [
+    {
+      "row": 1,
+      "name": "SaleOrderSerieList",
+      "size": 12,
+      "type": "List",
+      "label": "SaleOrder Serie",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "listCode",
+          "value": "SaleOrderSerieList"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [],
+  "behaviours": [],
+  "description": null
+}

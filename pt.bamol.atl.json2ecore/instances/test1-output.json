@@ -1,0 +1,66 @@
+			{
+			  "NAME": "Company",
+			  "ATTRIBUTES": [
+			    {
+			      "NAME": "_code",
+			      "TYPE": "Text",
+			      "ISSYSTEM": true,
+			      "ISREADONLY": false,
+			      "DESCRIPTION": null,
+			      "MULTIPLICITY": {
+			        "LOWER": 1.1,
+			        "UPPER": 1.0
+			      },
+			      "AGGREGATIONKIND": "None",
+			      "ISSENSITIVEDATA": null,
+			      "DEPENDSONATTRIBUTE": null
+			    },
+			    {
+			      "NAME": "_name",
+			      "TYPE": "Text",
+			      "ISSYSTEM": true,
+			      "ISREADONLY": false,
+			      "DESCRIPTION": null,
+			      "MULTIPLICITY": {
+			        "LOWER": 1.0,
+			        "UPPER": 1.0
+			      },
+			      "AGGREGATIONKIND": "None",
+			      "ISSENSITIVEDATA": null,
+			      "DEPENDSONATTRIBUTE": null
+			    },
+			    {
+			      "NAME": "_description",
+			      "TYPE": "Text",
+			      "ISSYSTEM": true,
+			      "ISREADONLY": false,
+			      "DESCRIPTION": null,
+			      "MULTIPLICITY": {
+			        "LOWER": 0.0,
+			        "UPPER": 1.0
+			      },
+			      "AGGREGATIONKIND": "None",
+			      "ISSENSITIVEDATA": null,
+			      "DEPENDSONATTRIBUTE": null
+			    },
+			    {
+			      "NAME": "_inactive",
+			      "TYPE": "Boolean",
+			      "ISSYSTEM": true,
+			      "ISREADONLY": false,
+			      "DESCRIPTION": null,
+			      "MULTIPLICITY": {
+			        "LOWER": 1.0,
+			        "UPPER": 1.0
+			      },
+			      "AGGREGATIONKIND": "None",
+			      "ISSENSITIVEDATA": null,
+			      "DEPENDSONATTRIBUTE": null
+			    }
+			  ],
+			  "DATASOURCE": "System",
+			  "DESCRIPTION": "",
+			  "DATABEHAVIOURS": [],
+			  "ENTITYBEHAVIOURS": [],
+			  "BEHAVIOURNAMESPACES": []
+			}

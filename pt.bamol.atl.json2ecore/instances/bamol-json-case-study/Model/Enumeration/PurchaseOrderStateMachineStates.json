@@ -1,0 +1,31 @@
+{
+  "name": "PurchaseOrderStateMachineStates",
+  "values": [
+    {
+      "name": "Initial",
+      "order": 1,
+      "description": null
+    },
+    {
+      "name": "Completed",
+      "order": 2,
+      "description": null
+    },
+    {
+      "name": "InPurchTeamManagerReview",
+      "order": 3,
+      "description": null
+    },
+    {
+      "name": "InPurchasesManagerReview",
+      "order": 4,
+      "description": null
+    },
+    {
+      "name": "InFinancialManagerReview",
+      "order": 5,
+      "description": null
+    }
+  ],
+  "description": null
+}

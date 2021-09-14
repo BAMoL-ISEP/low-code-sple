@@ -1,0 +1,193 @@
+{
+  "name": "PurchaseOrder",
+  "attributes": [
+    {
+      "name": "_code",
+      "type": "Text",
+      "isSystem": true,
+      "isReadOnly": false,
+      "description": null,
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    },
+    {
+      "name": "_serie",
+      "type": "PurchaseOrderSerie",
+      "isSystem": true,
+      "isReadOnly": false,
+      "description": null,
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "Shared",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    },
+    {
+      "name": "_number",
+      "type": "Integer",
+      "isSystem": true,
+      "isReadOnly": true,
+      "description": null,
+      "multiplicity": {
+        "lower": 0,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    },
+    {
+      "name": "_date",
+      "type": "Date",
+      "isSystem": true,
+      "isReadOnly": false,
+      "description": null,
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    },
+    {
+      "name": "Supplier",
+      "type": "Supplier",
+      "isSystem": false,
+      "isReadOnly": false,
+      "description": "",
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "Shared",
+      "isSensitiveData": false,
+      "dependsOnAttribute": ""
+    },
+    {
+      "name": "Lines",
+      "type": "PurchaseOrderLine",
+      "isSystem": false,
+      "isReadOnly": false,
+      "description": "",
+      "multiplicity": {
+        "lower": 0,
+        "upper": 100
+      },
+      "aggregationKind": "Composite",
+      "isSensitiveData": false,
+      "dependsOnAttribute": ""
+    },
+    {
+      "name": "TotalWithVat",
+      "type": "Decimal",
+      "isSystem": false,
+      "isReadOnly": true,
+      "description": "",
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": false,
+      "dependsOnAttribute": ""
+    },
+    {
+      "name": "TotalWithoutVat",
+      "type": "Decimal",
+      "isSystem": false,
+      "isReadOnly": true,
+      "description": "",
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": false,
+      "dependsOnAttribute": ""
+    },
+    {
+      "name": "VatTotal",
+      "type": "Decimal",
+      "isSystem": false,
+      "isReadOnly": true,
+      "description": "",
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": false,
+      "dependsOnAttribute": ""
+    },
+    {
+      "name": "_state",
+      "type": "PurchaseOrderStateMachineStates",
+      "isSystem": true,
+      "isReadOnly": false,
+      "description": null,
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    },
+    {
+      "name": "_assigned",
+      "type": "Text",
+      "isSystem": true,
+      "isReadOnly": false,
+      "description": null,
+      "multiplicity": {
+        "lower": 0,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    }
+  ],
+  "dataSource": "System",
+  "description": "",
+  "dataBehaviours": [],
+  "entityBehaviours": [
+    {
+      "name": "Defaults",
+      "type": "Initialize",
+      "attribute": null,
+      "expression": "if(!_Context.Operation.IsNew) return; \nthis._code = Guid.NewGuid().ToString(\"N\");\nthis._date = DateTime.Today;\n\nvar httpClient = _Context.CreateApplicationHttpClient();\nvar serieRequest = httpClient.PostAsJsonAsync($\"Queries/{this.GetType().Name}SerieQuery/Default?PageSize=1\",\n        new { Filter = new { Property = \"_inactive\", Value = false } })\n    .GetAwaiter().GetResult();\n\nif (serieRequest.IsSuccessStatusCode)\n{\n    var serieRequestData = serieRequest.Content.ReadAsAsync<List<Dictionary<string, object>>>()\n                            .GetAwaiter().GetResult();\n\n    if(serieRequestData.Any())\n        this._serie = serieRequestData.First()[\"_code\"].ToString();\n}\n",
+      "description": null
+    },
+    {
+      "name": "VatTotal_Formula",
+      "type": "Formula",
+      "attribute": "VatTotal",
+      "expression": "return this.TotalWithVat - this.TotalWithoutVat;",
+      "description": ""
+    },
+    {
+      "name": "TotalWithVat_Formula",
+      "type": "Formula",
+      "attribute": "TotalWithVat",
+      "expression": "double tot = 0.0;\nforeach (var line in this.Lines)\n{\n    tot += (double)line.TotalWithVat;\n}\nreturn (decimal)tot;",
+      "description": ""
+    },
+    {
+      "name": "TotalWithoutVat_Formula",
+      "type": "Formula",
+      "attribute": "TotalWithoutVat",
+      "expression": "double tot = 0.0;\nforeach (var line in this.Lines)\n{\n    tot += (double)line.Value;\n}\nreturn (decimal)tot;",
+      "description": ""
+    }
+  ],
+  "behaviourNamespaces": []
+}

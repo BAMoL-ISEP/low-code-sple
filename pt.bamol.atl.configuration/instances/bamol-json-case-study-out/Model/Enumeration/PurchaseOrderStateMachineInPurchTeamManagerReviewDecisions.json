@@ -1,0 +1,1 @@
+{ "name" : "PurchaseOrderStateMachineInPurchTeamManagerReviewDecisions" , "values" : [ { "name" : "Approve" , "order" : 1 , "description" : null } , { "name" : "Reject" , "order" : 2 , "description" : null } ] , "description" : null }

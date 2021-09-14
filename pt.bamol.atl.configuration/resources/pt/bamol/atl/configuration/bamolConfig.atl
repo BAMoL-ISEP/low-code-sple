@@ -1,0 +1,37 @@
+-- @atlcompiler emftvm
+-- @path BAMOL=/pt.bamol.atl.json2ecore/instances/bamol-ecore-customization.ecore
+
+module bamolConfig;
+create OUT : BAMOL refining IN : BAMOL;
+
+--- Invoke a static method to verify if the element is to be included
+ helper def : verify(feat : BAMOL!Feature) : Boolean = 
+ 	"#native"!"pt::bamol::atl::configuration::BamolConfig".refInvokeStaticOperation('verify', Sequence{ feat });
+
+rule ElementRemoved {
+	from 
+		t1 : BAMOL!Element ( 
+			not t1.inc->oclIsUndefined() 
+			and not t1.inc->isEmpty() 
+			and not thisModule->verify( t1.inc->first())
+			)
+	do {
+		'Removed!'.debug();
+	}
+}
+
+rule Element2Element {
+	from 
+		t1 : BAMOL!Element ( 
+			not t1.inc->oclIsUndefined()
+			and not t1.inc->isEmpty() 
+			and thisModule->verify( t1.inc->first())
+			)
+	to 
+		t2 : BAMOL!Element (
+			inc <- Set{}
+		)
+	do {
+		'Included!'.debug();
+	}
+}

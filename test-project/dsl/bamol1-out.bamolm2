@@ -1,0 +1,2566 @@
+Root
+{
+	models { Models
+	{
+		datasources { ModelsDatasources System
+		{
+			description "Default DataSource" behaviourRuntime Internal dataAccessRuntime Internal attributes { isSystem ModelsDatasourcesAttributes "_code"
+			{
+				type Text aggregationKind None multiplicity ModelsDatasourcesAttributesMultiplicity
+				{
+					lower 1 upper 1
+				}
+			}
+			, isSystem ModelsDatasourcesAttributes "_name"
+			{
+				type Text aggregationKind None multiplicity ModelsDatasourcesAttributesMultiplicity
+				{
+					lower 1 upper 1
+				}
+			}
+			, isSystem ModelsDatasourcesAttributes "_description"
+			{
+				type Text aggregationKind None multiplicity ModelsDatasourcesAttributesMultiplicity
+				{
+					lower 0 upper 1
+				}
+			}
+			, isSystem ModelsDatasourcesAttributes "_inactive"
+			{
+				type Boolean aggregationKind None multiplicity ModelsDatasourcesAttributesMultiplicity
+				{
+					lower 1 upper 1
+				}
+			}
+		}
+		}
+	}
+	selectors { ModelsSelectors PurchaseOrderStateMachineStatesSelector
+	{
+		type Selector label "Purchase Order State Machine States" elements { ModelsSelectorsElements Initial
+		{
+			row 1 size 12 type SelectorEntry label Initial column 1 attributes { ModelsSelectorsElementsAttributes
+			{
+				key EnumerationValue value Initial
+			}
+		}
+		} , ModelsSelectorsElements Completed
+		{
+			row 2 size 12 type SelectorEntry label Completed column 1 attributes { ModelsSelectorsElementsAttributes
+			{
+				key EnumerationValue value Completed
+			}
+		}
+		} , ModelsSelectorsElements InPurchTeamManagerReview
+		{
+			row 3 size 12 type SelectorEntry label "In Purchases Team Manager Review" column 1 attributes { ModelsSelectorsElementsAttributes
+			{
+				key EnumerationValue value InPurchTeamManagerReview
+			}
+		}
+		} , ModelsSelectorsElements InPurchasesManagerReview
+		{
+			row 4 size 12 type SelectorEntry label "In Purchases Manager Review" column 1 attributes { ModelsSelectorsElementsAttributes
+			{
+				key EnumerationValue value InPurchasesManagerReview
+			}
+		}
+		} , ModelsSelectorsElements InFinancialManagerReview
+		{
+			row 5 size 12 type SelectorEntry label "In Financial Manager Review" column 1 attributes { ModelsSelectorsElementsAttributes
+			{
+				key EnumerationValue value InFinancialManagerReview
+			}
+		}
+		}
+	}
+	attributes { ModelsSelectorsAttributes
+	{
+		key Enumeration value PurchaseOrderStateMachineStates
+	}
+	} } , ModelsSelectors PurchaseOrderStateMachineInPurchTeamManagerReviewDecisionsSelector
+	{
+		type Selector label "Purchase Order State Machine In Purchases Team Manager Review Decisions" elements { ModelsSelectorsElements Approve
+		{
+			row 1 size 12 type SelectorEntry label Approve column 1 attributes { ModelsSelectorsElementsAttributes
+			{
+				key EnumerationValue value Approve
+			}
+		}
+		} , ModelsSelectorsElements Reject
+		{
+			row 2 size 12 type SelectorEntry label Reject column 1 attributes { ModelsSelectorsElementsAttributes
+			{
+				key EnumerationValue value Reject
+			}
+		}
+		}
+	}
+	attributes { ModelsSelectorsAttributes
+	{
+		key Enumeration value PurchaseOrderStateMachineInPurchTeamManagerReviewDecisions
+	}
+	} } ,  ModelsSelectors PurchaseOrderStateMachineInFinancialManagerReviewDecisionsSelector
+	{
+		type Selector label "Purchase Order State Machine In Financial Manager Review Decisions" elements { ModelsSelectorsElements Approve
+		{
+			row 1 size 12 type SelectorEntry label Approve column 1 attributes { ModelsSelectorsElementsAttributes
+			{
+				key EnumerationValue value Approve
+			}
+		}
+		} , ModelsSelectorsElements Reject
+		{
+			row 2 size 12 type SelectorEntry label Reject column 1 attributes { ModelsSelectorsElementsAttributes
+			{
+				key EnumerationValue value Reject
+			}
+		}
+		}
+	}
+	attributes { ModelsSelectorsAttributes
+	{
+		key Enumeration value PurchaseOrderStateMachineInFinancialManagerReviewDecisions
+	}
+	} } ,  ModelsSelectors PurchaseOrderStateMachineInPurchasesManagerReviewDecisionsSelector
+	{
+		type Selector label "Purchase Order State Machine In Purchases Manager Review Decisions" elements { ModelsSelectorsElements Approve
+		{
+			row 1 size 12 type SelectorEntry label Approve column 1 attributes { ModelsSelectorsElementsAttributes
+			{
+				key EnumerationValue value Approve
+			}
+		}
+		} , ModelsSelectorsElements Reject
+		{
+			row 2 size 12 type SelectorEntry label Reject column 1 attributes { ModelsSelectorsElementsAttributes
+			{
+				key EnumerationValue value Reject
+			}
+		}
+		}
+	}
+	attributes { ModelsSelectorsAttributes
+	{
+		key Enumeration value PurchaseOrderStateMachineInPurchasesManagerReviewDecisions
+	}
+	} } } forms { ModelsForms ClientForm
+	{
+		type Form label Client entity Client dataSource System elements { ModelsFormsElements "_code"
+		{
+			row 1 size 6 type Input label Code column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_name"
+		{
+			row 1 size 6 type Input label Name column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_description"
+		{
+			row 2 size 6 type Input label Description column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "0"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_inactive"
+		{
+			row 2 size 6 type Input label Inactive column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Boolean
+			}
+		}
+		}
+	}
+	} , ModelsForms VatTaxForm
+	{
+		type Form label "Vat Tax" entity VatTax dataSource System elements { ModelsFormsElements "_code"
+		{
+			row 1 size 6 type Input label Code column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_name"
+		{
+			row 1 size 6 type Input label Name column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_description"
+		{
+			row 2 size 6 type Input label Description column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "0"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_inactive"
+		{
+			row 2 size 6 type Input label Inactive column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Boolean
+			}
+		}
+		} , ModelsFormsElements Multiplier
+		{
+			row 4 size 6 type Input label Multiplier column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Decimal
+			}
+		}
+		}
+	}
+	} , ModelsForms PurchaseOrderForm
+	{
+		type Form label PurchaseOrder entity PurchaseOrder dataSource System elements { isHidden ModelsFormsElements "_code"
+		{
+			row 1 size 6 type Input label Code column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , isHidden ModelsFormsElements "_serie"
+		{
+			row 1 size 6 type ReferenceSelector label Serie column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value Shared
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^definition value PurchaseOrderSerie
+			}
+		}
+		} , isHidden ModelsFormsElements "_number"
+		{
+			row 2 size 6 type Input label Number column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^true
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "0"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Integer
+			}
+		}
+		} , ModelsFormsElements "_date"
+		{
+			row 1 size 6 type Input label Date column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Date
+			}
+		}
+		} , ModelsFormsElements Supplier
+		{
+			row 4 size 6 type ReferenceSelector label Supplier column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value Shared
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^definition value Supplier
+			}
+		}
+		} , ModelsFormsElements Lines
+		{
+			row 5 size 12 type List label Lines column 1 elements { isHidden ModelsFormsElementsElements "_code"
+			{
+				row 1 size 1 type Input label Code column 1 attributes { ModelsFormsElementsElementsAttributes
+				{
+					key ^aggregationKind value None
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isReadOnly value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key max value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key min value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isSensitiveData value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key formattingType value Text
+				}
+			}
+			} , isHidden ModelsFormsElementsElements "_name"
+			{
+				row 1 size 1 type Input label Name column 2 attributes { ModelsFormsElementsElementsAttributes
+				{
+					key ^aggregationKind value None
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isReadOnly value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key max value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key min value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isSensitiveData value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key formattingType value Text
+				}
+			}
+			} , isHidden ModelsFormsElementsElements "_description"
+			{
+				row 1 size 1 type Input label Description column 3 attributes { ModelsFormsElementsElementsAttributes
+				{
+					key ^aggregationKind value None
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isReadOnly value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key max value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key min value "0"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isSensitiveData value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key formattingType value Text
+				}
+			}
+			} , isHidden ModelsFormsElementsElements "_inactive"
+			{
+				row 1 size 1 type Input label Inactive column 4 attributes { ModelsFormsElementsElementsAttributes
+				{
+					key ^aggregationKind value None
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isReadOnly value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key max value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key min value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isSensitiveData value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key formattingType value Boolean
+				}
+			}
+			} , ModelsFormsElementsElements Product
+			{
+				row 1 size 1 type ReferenceSelector label Product column 5 attributes { ModelsFormsElementsElementsAttributes
+				{
+					key ^aggregationKind value Shared
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isReadOnly value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key max value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key min value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^definition value Product
+				}
+			}
+			} , ModelsFormsElementsElements UnitPrice
+			{
+				row 1 size 1 type Input label "Unit Price" column 6 attributes { ModelsFormsElementsElementsAttributes
+				{
+					key ^aggregationKind value None
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isReadOnly value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key max value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key min value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isSensitiveData value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key formattingType value Decimal
+				}
+			}
+			} , ModelsFormsElementsElements Quantity
+			{
+				row 1 size 1 type Input label Quantity column 7 attributes { ModelsFormsElementsElementsAttributes
+				{
+					key ^aggregationKind value None
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isReadOnly value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key max value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key min value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isSensitiveData value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key formattingType value Integer
+				}
+			}
+			} , ModelsFormsElementsElements Value
+			{
+				row 1 size 1 type Input label Value column 8 attributes { ModelsFormsElementsElementsAttributes
+				{
+					key ^aggregationKind value None
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isReadOnly value ^true
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key max value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key min value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isSensitiveData value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key formattingType value Decimal
+				}
+			}
+			} , ModelsFormsElementsElements VatTax
+			{
+				row 1 size 1 type ReferenceSelector label "Vat Tax" column 5 attributes { ModelsFormsElementsElementsAttributes
+				{
+					key ^aggregationKind value Shared
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isReadOnly value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key max value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key min value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^definition value VatTax
+				}
+			}
+			} , isHidden ModelsFormsElementsElements TotalWithVat
+			{
+				row 0 size 1 type Input label TotalWithVat column 10 helpText "" visibleFrom Mobile attributes { ModelsFormsElementsElementsAttributes
+				{
+					key ^aggregationKind value None
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isReadOnly value ^true
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key max value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key min value "1"
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key ^isSensitiveData value ^false
+				}
+				, ModelsFormsElementsElementsAttributes
+				{
+					key formattingType value Decimal
+				}
+			}
+			}
+		}
+		attributes { ModelsFormsElementsAttributes
+		{
+			key ^aggregationKind value Composite
+		}
+		, ModelsFormsElementsAttributes
+		{
+			key ^isReadOnly value ^false
+		}
+		, ModelsFormsElementsAttributes
+		{
+			key max value "100"
+		}
+		, ModelsFormsElementsAttributes
+		{
+			key min value "0"
+		}
+		, ModelsFormsElementsAttributes
+		{
+			key ^definition value PurchaseOrderLine
+		}
+		, ModelsFormsElementsAttributes
+		{
+			key isEditable value ^true
+		}
+		} } , ModelsFormsElements TotalWithVat
+		{
+			row 8 size 6 type Input label "Total With Vat" column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^true
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Decimal
+			}
+		}
+		} , ModelsFormsElements TotalWithoutVat
+		{
+			row 6 size 6 type Input label "Total Without Vat" column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^true
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Decimal
+			}
+		}
+		} , ModelsFormsElements VatTotal
+		{
+			row 7 size 6 type Input label "Vat Total" column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^true
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Decimal
+			}
+		}
+		}
+	}
+	} , ModelsForms ProductForm
+	{
+		type Form label Product entity Product dataSource System elements { ModelsFormsElements "_code"
+		{
+			row 1 size 6 type Input label Code column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_name"
+		{
+			row 1 size 6 type Input label Name column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_description"
+		{
+			row 2 size 6 type Input label Description column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "0"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_inactive"
+		{
+			row 2 size 6 type Input label Inactive column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Boolean
+			}
+		}
+		} , ModelsFormsElements DefaultVatTax
+		{
+			row 4 size 6 type ReferenceSelector label "Default Vat Tax" column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value Shared
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "0"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^definition value VatTax
+			}
+		}
+		} , ModelsFormsElements PurchasePrice
+		{
+			row 5 size 6 type Input label "Purchase Price" column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "0"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Decimal
+			}
+		}
+		} , ModelsFormsElements SalePrice
+		{
+			row 6 size 6 type Input label "Sale Price" column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "0"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Decimal
+			}
+		}
+		}
+	}
+	} ,  ModelsForms PurchaseOrderSerieForm
+	{
+		type Form label "PurchaseOrder Serie" entity PurchaseOrderSerie dataSource System elements { ModelsFormsElements "_code"
+		{
+			row 1 size 6 type Input label Code column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_name"
+		{
+			row 1 size 6 type Input label Name column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_description"
+		{
+			row 2 size 6 type Input label Description column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "0"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_inactive"
+		{
+			row 2 size 6 type Input label Inactive column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Boolean
+			}
+		}
+		} , ModelsFormsElements "_startingNumber"
+		{
+			row 3 size 6 type Input label "Starting Number" column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Integer
+			}
+		}
+		}
+	}
+	} , ModelsForms SupplierForm
+	{
+		type Form label Supplier entity Supplier dataSource System elements { ModelsFormsElements "_code"
+		{
+			row 1 size 6 type Input label Code column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_name"
+		{
+			row 1 size 6 type Input label Name column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_description"
+		{
+			row 2 size 6 type Input label Description column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "0"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_inactive"
+		{
+			row 2 size 6 type Input label Inactive column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Boolean
+			}
+		}
+		}
+	}
+	} , ModelsForms SalesPersonForm
+	{
+		type Form label "Sales Person" entity SalesPerson dataSource System elements { ModelsFormsElements "_code"
+		{
+			row 1 size 6 type Input label Code column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_name"
+		{
+			row 1 size 6 type Input label Name column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_description"
+		{
+			row 2 size 6 type Input label Description column 1 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "0"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsFormsElements "_inactive"
+		{
+			row 2 size 6 type Input label Inactive column 7 attributes { ModelsFormsElementsAttributes
+			{
+				key ^aggregationKind value None
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isReadOnly value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key max value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key min value "1"
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key ^isSensitiveData value ^false
+			}
+			, ModelsFormsElementsAttributes
+			{
+				key formattingType value Boolean
+			}
+		}
+		}
+	}
+	} } statemachines { ModelsStatemachines PurchaseOrderStateMachine
+	{
+		definition PurchaseOrder description "" states { isInitial ModelsStatemachinesStates Initial
+		{
+			transitions { ModelsStatemachinesStatesTransitions toPurchasesTeamManagerReview
+			{
+				to InPurchTeamManagerReview type Auto order 1 decision "" expression "return true;" description ""
+			}
+		}
+		} , disableAttributes disableOperations ModelsStatemachinesStates Completed
+		{
+		}
+		, ModelsStatemachinesStates InPurchTeamManagerReview
+		{
+			description "" assignToExpression "return \"PurchasesTeamManager\";" decisions { ModelsStatemachinesStatesDecisions Approve
+			{
+				order 1 commentType None description ""
+			}
+			, ModelsStatemachinesStatesDecisions Reject
+			{
+				order 2 commentType Required description ""
+			}
+		}
+		transitions { ModelsStatemachinesStatesTransitions ToInitial
+		{
+			to Initial type Decision order 1 decision Reject expression "" description ""
+		}
+		, ModelsStatemachinesStatesTransitions ToPurchasesManagerReview
+		{
+			to InPurchasesManagerReview type Decision order 2 decision Approve expression "return this.TotalWithVat >= 1000;" description ""
+		}
+		, ModelsStatemachinesStatesTransitions ToFinancialManagerReview
+		{
+			to InFinancialManagerReview type Decision order 3 decision Approve expression "return this.TotalWithVat < 1000;" description ""
+		}
+		} } , disableAttributes ModelsStatemachinesStates InPurchasesManagerReview
+		{
+			description "" assignToExpression "return \"PurchasesManager\";" decisions { ModelsStatemachinesStatesDecisions Reject
+			{
+				order 2 commentType Required description ""
+			}
+			, ModelsStatemachinesStatesDecisions Approve
+			{
+				order 1 commentType None description ""
+			}
+		}
+		transitions { ModelsStatemachinesStatesTransitions ToInitial
+		{
+			to Initial type Decision order 1 decision Reject expression "" description ""
+		}
+		, ModelsStatemachinesStatesTransitions ToFinancialManagerReview
+		{
+			to InFinancialManagerReview type Decision order 2 decision Approve expression "" description ""
+		}
+		} } , disableAttributes ModelsStatemachinesStates InFinancialManagerReview
+		{
+			description "" assignToExpression "return \"FinancialManager\";" decisions { ModelsStatemachinesStatesDecisions Approve
+			{
+				order 1 commentType None description ""
+			}
+			, ModelsStatemachinesStatesDecisions Reject
+			{
+				order 2 commentType Required description ""
+			}
+		}
+		transitions { ModelsStatemachinesStatesTransitions ToInitial
+		{
+			to Initial type Decision order 1 decision Reject expression "" description ""
+		}
+		, ModelsStatemachinesStatesTransitions ToCompleted
+		{
+			to Completed type Decision order 2 decision Approve expression "" description ""
+		}
+		} }
+	}
+	} } enumerations { ModelsEnumerations PurchaseOrderStateMachineInPurchTeamManagerReviewDecisions
+	{
+		values { ModelsEnumerationsValues Approve
+		{
+			order 1
+		}
+		, ModelsEnumerationsValues Reject
+		{
+			order 2
+		}
+	}
+	} ,  ModelsEnumerations PurchaseOrderStateMachineInPurchasesManagerReviewDecisions
+	{
+		values { ModelsEnumerationsValues Approve
+		{
+			order 1
+		}
+		, ModelsEnumerationsValues Reject
+		{
+			order 2
+		}
+	}
+	} ,  ModelsEnumerations PurchaseOrderStateMachineInFinancialManagerReviewDecisions
+	{
+		values { ModelsEnumerationsValues Approve
+		{
+			order 1
+		}
+		, ModelsEnumerationsValues Reject
+		{
+			order 2
+		}
+	}
+	} , ModelsEnumerations PurchaseOrderStateMachineStates
+	{
+		values { ModelsEnumerationsValues Initial
+		{
+			order 1
+		}
+		, ModelsEnumerationsValues Completed
+		{
+			order 2
+		}
+		, ModelsEnumerationsValues InPurchTeamManagerReview
+		{
+			order 3
+		}
+		, ModelsEnumerationsValues InPurchasesManagerReview
+		{
+			order 4
+		}
+		, ModelsEnumerationsValues InFinancialManagerReview
+		{
+			order 5
+		}
+	}
+	} } agents { ModelsAgents SalesPerson
+	{
+		dataSource System description "" attributes { isSystem ModelsAgentsAttributes "_code"
+		{
+			type Text aggregationKind None multiplicity ModelsAgentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsAgentsAttributes "_name"
+		{
+			type Text aggregationKind None multiplicity ModelsAgentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsAgentsAttributes "_description"
+		{
+			type Text aggregationKind None multiplicity ModelsAgentsAttributesMultiplicity
+			{
+				lower 0 upper 1
+			}
+		}
+		, isSystem ModelsAgentsAttributes "_inactive"
+		{
+			type Boolean aggregationKind None multiplicity ModelsAgentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+	}
+	} , ModelsAgents Supplier
+	{
+		dataSource System description "" attributes { isSystem ModelsAgentsAttributes "_code"
+		{
+			type Text aggregationKind None multiplicity ModelsAgentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsAgentsAttributes "_name"
+		{
+			type Text aggregationKind None multiplicity ModelsAgentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsAgentsAttributes "_description"
+		{
+			type Text aggregationKind None multiplicity ModelsAgentsAttributesMultiplicity
+			{
+				lower 0 upper 1
+			}
+		}
+		, isSystem ModelsAgentsAttributes "_inactive"
+		{
+			type Boolean aggregationKind None multiplicity ModelsAgentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+	}
+	} , ModelsAgents Client
+	{
+		dataSource System description "" attributes { isSystem ModelsAgentsAttributes "_code"
+		{
+			type Text aggregationKind None multiplicity ModelsAgentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsAgentsAttributes "_name"
+		{
+			type Text aggregationKind None multiplicity ModelsAgentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsAgentsAttributes "_description"
+		{
+			type Text aggregationKind None multiplicity ModelsAgentsAttributesMultiplicity
+			{
+				lower 0 upper 1
+			}
+		}
+		, isSystem ModelsAgentsAttributes "_inactive"
+		{
+			type Boolean aggregationKind None multiplicity ModelsAgentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+	}
+	} } documents {  ModelsDocuments PurchaseOrder
+	{
+		dataSource System description "" attributes { isSystem ModelsDocumentsAttributes "_code"
+		{
+			type Text aggregationKind None multiplicity ModelsDocumentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsDocumentsAttributes "_serie"
+		{
+			type PurchaseOrderSerie aggregationKind Shared multiplicity ModelsDocumentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem isReadOnly ModelsDocumentsAttributes "_number"
+		{
+			type Integer aggregationKind None multiplicity ModelsDocumentsAttributesMultiplicity
+			{
+				lower 0 upper 1
+			}
+		}
+		, isSystem ModelsDocumentsAttributes "_date"
+		{
+			type Date aggregationKind None multiplicity ModelsDocumentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, ModelsDocumentsAttributes Supplier
+		{
+			type Supplier description "" aggregationKind Shared dependsOnAttribute "" multiplicity ModelsDocumentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, ModelsDocumentsAttributes Lines
+		{
+			type PurchaseOrderLine description "" aggregationKind Composite dependsOnAttribute "" multiplicity ModelsDocumentsAttributesMultiplicity
+			{
+				lower 0 upper 100
+			}
+		}
+		, isReadOnly ModelsDocumentsAttributes TotalWithVat
+		{
+			type Decimal description "" aggregationKind None dependsOnAttribute "" multiplicity ModelsDocumentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isReadOnly ModelsDocumentsAttributes TotalWithoutVat
+		{
+			type Decimal description "" aggregationKind None dependsOnAttribute "" multiplicity ModelsDocumentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isReadOnly ModelsDocumentsAttributes VatTotal
+		{
+			type Decimal description "" aggregationKind None dependsOnAttribute "" multiplicity ModelsDocumentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsDocumentsAttributes "_state"
+		{
+			type PurchaseOrderStateMachineStates aggregationKind None multiplicity ModelsDocumentsAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsDocumentsAttributes "_assigned"
+		{
+			type Text aggregationKind None multiplicity ModelsDocumentsAttributesMultiplicity
+			{
+				lower 0 upper 1
+			}
+		}
+	}
+	entityBehaviours { ModelsDocumentsEntityBehaviours Defaults
+	{
+		type Initialize expression "if(!_Context.Operation.IsNew) return; \nthis._code = Guid.NewGuid().ToString(\"N\");\nthis._date = DateTime.Today;\n\nvar httpClient = _Context.CreateApplicationHttpClient();\nvar serieRequest = httpClient.PostAsJsonAsync($\"Queries/{this.GetType().Name}SerieQuery/Default?PageSize=1\",\n        new { Filter = new { Property = \"_inactive\", Value = false } })\n    .GetAwaiter().GetResult();\n\nif (serieRequest.IsSuccessStatusCode)\n{\n    var serieRequestData = serieRequest.Content.ReadAsAsync<List<Dictionary<string, object>>>()\n                            .GetAwaiter().GetResult();\n\n    if(serieRequestData.Any())\n        this._serie = serieRequestData.First()[\"_code\"].ToString();\n}\n"
+	}
+	, ModelsDocumentsEntityBehaviours VatTotal_Formula
+	{
+		type Formula attribute VatTotal expression "return this.TotalWithVat - this.TotalWithoutVat;" description ""
+	}
+	, ModelsDocumentsEntityBehaviours TotalWithVat_Formula
+	{
+		type Formula attribute TotalWithVat expression "double tot = 0.0;\nforeach (var line in this.Lines)\n{\n    tot += (double)line.TotalWithVat;\n}\nreturn (decimal)tot;" description ""
+	}
+	, ModelsDocumentsEntityBehaviours TotalWithoutVat_Formula
+	{
+		type Formula attribute TotalWithoutVat expression "double tot = 0.0;\nforeach (var line in this.Lines)\n{\n    tot += (double)line.Value;\n}\nreturn (decimal)tot;" description ""
+	}
+	} } } series {  ModelsSeries PurchaseOrderSerie
+	{
+		dataSource System attributes { isSystem ModelsSeriesAttributes "_code"
+		{
+			type Text aggregationKind None multiplicity ModelsSeriesAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsSeriesAttributes "_name"
+		{
+			type Text aggregationKind None multiplicity ModelsSeriesAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsSeriesAttributes "_description"
+		{
+			type Text aggregationKind None multiplicity ModelsSeriesAttributesMultiplicity
+			{
+				lower 0 upper 1
+			}
+		}
+		, isSystem ModelsSeriesAttributes "_inactive"
+		{
+			type Boolean aggregationKind None multiplicity ModelsSeriesAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsSeriesAttributes "_startingNumber"
+		{
+			type Integer aggregationKind None multiplicity ModelsSeriesAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+	}
+	entityBehaviours { ModelsSeriesEntityBehaviours Defaults
+	{
+		type Initialize expression "if(!_Context.Operation.IsNew) return; \nthis._startingNumber = 1;"
+	}
+	} } } dashboards { ModelsDashboards ProductDashboard
+	{
+		type Dashboard label Product elements { ModelsDashboardsElements ProductList
+		{
+			row 1 size 12 type List label Product column 1 attributes { ModelsDashboardsElementsAttributes
+			{
+				key listCode value ProductList
+			}
+		}
+		}
+	}
+	} , ModelsDashboards VatTaxDashboard
+	{
+		type Dashboard label "Vat Tax" elements { ModelsDashboardsElements VatTaxList
+		{
+			row 1 size 12 type List label "Vat Tax" column 1 attributes { ModelsDashboardsElementsAttributes
+			{
+				key listCode value VatTaxList
+			}
+		}
+		}
+	}
+	} , ModelsDashboards SupplierDashboard
+	{
+		type Dashboard label Supplier elements { ModelsDashboardsElements SupplierList
+		{
+			row 1 size 12 type List label Supplier column 1 attributes { ModelsDashboardsElementsAttributes
+			{
+				key listCode value SupplierList
+			}
+		}
+		}
+	}
+	} , ModelsDashboards PurchaseOrderDashboard
+	{
+		type Dashboard label PurchaseOrder elements { ModelsDashboardsElements PurchaseOrderList
+		{
+			row 1 size 12 type List label PurchaseOrder column 1 attributes { ModelsDashboardsElementsAttributes
+			{
+				key listCode value PurchaseOrderList
+			}
+		}
+		}
+	}
+	} ,  ModelsDashboards ResetTenantDashboard
+	{
+		type Dashboard label "RESET TENANT" helpText "" description "" behaviours { ModelsDashboardsBehaviours Initialize
+		{
+			type Initialize expression "if (confirm(\"This operation will erase ALL Tenant MODEL entities. Are you sure you want to continue?\") == true) {\n\n// Code generated by an accelerator (you can change it if you need)\n// The following code calls an Application Behaviour\n\nconst apiClient = this._context.createApiHttpClient();\nconst dataSource = \"Default\";\n\nvar args = {};\n// Example of how to add an argument\n// args.myArgumentName = \"myArgumentValue\";\n\napiClient.doPost(`/api/v1/${this._context.tenant.code}/${this._context.tenant.environmentCode}/application/behaviours/${dataSource}/ResetTenant`, args)\n    .then(response => {\n        alert(\"Reset Tenant process started. This might take a couple minutes.\");\n    });\n}" description ""
+		}
+	}
+	} ,  ModelsDashboards ClientDashboard
+	{
+		type Dashboard label Client elements { ModelsDashboardsElements ClientList
+		{
+			row 1 size 12 type List label Client column 1 attributes { ModelsDashboardsElementsAttributes
+			{
+				key listCode value ClientList
+			}
+		}
+		}
+	}
+	} , ModelsDashboards PurchaseOrderSerieDashboard
+	{
+		type Dashboard label "PurchaseOrder Serie" elements { ModelsDashboardsElements PurchaseOrderSerieList
+		{
+			row 1 size 12 type List label "PurchaseOrder Serie" column 1 attributes { ModelsDashboardsElementsAttributes
+			{
+				key listCode value PurchaseOrderSerieList
+			}
+		}
+		}
+	}
+	} , ModelsDashboards SalesPersonDashboard
+	{
+		type Dashboard label "Sales Person" elements { ModelsDashboardsElements SalesPersonList
+		{
+			row 1 size 12 type List label "Sales Person" column 1 attributes { ModelsDashboardsElementsAttributes
+			{
+				key listCode value SalesPersonList
+			}
+		}
+		}
+	}
+	} } lists { ModelsLists PurchaseOrderList
+	{
+		type List label PurchaseOrder query PurchaseOrderQuery dataSource System elements { ModelsListsElements "_code"
+		{
+			row 0 size 1 type ListColumn label Code column 1 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_serie"
+		{
+			row 0 size 1 type ListColumn label Serie column 4 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_number"
+		{
+			row 0 size 1 type ListColumn label Number column 7 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Integer
+			}
+		}
+		} , ModelsListsElements "_date"
+		{
+			row 0 size 1 type ListColumn label Date column 10 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Date
+			}
+		}
+		} , ModelsListsElements totalWithVat
+		{
+			row 0 size 1 type ListColumn label Total column 10 helpText "" visibleFrom Mobile attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Decimal
+			}
+		}
+		} , ModelsListsElements "_state"
+		{
+			row 0 size 2 type ListColumn label State column 11 helpText "" visibleFrom Mobile attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		}
+	}
+	attributes { ModelsListsAttributes
+	{
+		key queryTableDefinition value PurchaseOrder
+	}
+	} } , ModelsLists ProductList
+	{
+		type List label Product query ProductQuery dataSource System elements { ModelsListsElements "_code"
+		{
+			row 0 size 3 type ListColumn label Code column 1 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_name"
+		{
+			row 0 size 3 type ListColumn label Name column 4 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_description"
+		{
+			row 0 size 3 type ListColumn label Description column 7 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_inactive"
+		{
+			row 0 size 3 type ListColumn label Inactive column 10 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Boolean
+			}
+		}
+		} , ModelsListsElements DefaultVatTax
+		{
+			row 0 size 1 type ListColumn label DefaultVatTax column 1 helpText "" visibleFrom Mobile attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		}
+	}
+	attributes { ModelsListsAttributes
+	{
+		key queryTableDefinition value Product
+	}
+	} } ,  ModelsLists SupplierList
+	{
+		type List label Supplier query SupplierQuery dataSource System elements { ModelsListsElements "_code"
+		{
+			row 0 size 3 type ListColumn label Code column 1 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_name"
+		{
+			row 0 size 3 type ListColumn label Name column 4 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_description"
+		{
+			row 0 size 3 type ListColumn label Description column 7 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_inactive"
+		{
+			row 0 size 3 type ListColumn label Inactive column 10 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Boolean
+			}
+		}
+		}
+	}
+	attributes { ModelsListsAttributes
+	{
+		key queryTableDefinition value Supplier
+	}
+	} } , ModelsLists PurchaseOrderSerieList
+	{
+		type List label "PurchaseOrder Serie" query PurchaseOrderSerieQuery dataSource System elements { ModelsListsElements "_code"
+		{
+			row 0 size 2 type ListColumn label Code column 1 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_name"
+		{
+			row 0 size 2 type ListColumn label Name column 3 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_description"
+		{
+			row 0 size 2 type ListColumn label Description column 5 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_inactive"
+		{
+			row 0 size 2 type ListColumn label Inactive column 7 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Boolean
+			}
+		}
+		} , ModelsListsElements "_startingNumber"
+		{
+			row 0 size 2 type ListColumn label "Starting Number" column 9 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Integer
+			}
+		}
+		}
+	}
+	attributes { ModelsListsAttributes
+	{
+		key queryTableDefinition value PurchaseOrderSerie
+	}
+	} } , ModelsLists VatTaxList
+	{
+		type List label "Vat Tax" query VatTaxQuery dataSource System elements { ModelsListsElements "_code"
+		{
+			row 0 size 3 type ListColumn label Code column 1 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_name"
+		{
+			row 0 size 3 type ListColumn label Name column 4 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_description"
+		{
+			row 0 size 3 type ListColumn label Description column 7 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_inactive"
+		{
+			row 0 size 3 type ListColumn label Inactive column 10 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Boolean
+			}
+		}
+		}
+	}
+	attributes { ModelsListsAttributes
+	{
+		key queryTableDefinition value VatTax
+	}
+	} } , ModelsLists ClientList
+	{
+		type List label Client query ClientQuery dataSource System elements { ModelsListsElements "_code"
+		{
+			row 0 size 3 type ListColumn label Code column 1 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_name"
+		{
+			row 0 size 3 type ListColumn label Name column 4 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_description"
+		{
+			row 0 size 3 type ListColumn label Description column 7 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_inactive"
+		{
+			row 0 size 3 type ListColumn label Inactive column 10 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Boolean
+			}
+		}
+		}
+	}
+	attributes { ModelsListsAttributes
+	{
+		key queryTableDefinition value Client
+	}
+	} } ,  ModelsLists SalesPersonList
+	{
+		type List label "Sales Person" query SalesPersonQuery dataSource System elements { ModelsListsElements "_code"
+		{
+			row 0 size 3 type ListColumn label Code column 1 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_name"
+		{
+			row 0 size 3 type ListColumn label Name column 4 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_description"
+		{
+			row 0 size 3 type ListColumn label Description column 7 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Text
+			}
+		}
+		} , ModelsListsElements "_inactive"
+		{
+			row 0 size 3 type ListColumn label Inactive column 10 attributes { ModelsListsElementsAttributes
+			{
+				key formattingType value Boolean
+			}
+		}
+		}
+	}
+	attributes { ModelsListsAttributes
+	{
+		key queryTableDefinition value SalesPerson
+	}
+	} } } genericentitys {  ModelsGenericentitys PurchaseOrderLine
+	{
+		dataSource System description "" attributes { isSystem ModelsGenericentitysAttributes "_code"
+		{
+			type Text aggregationKind None multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsGenericentitysAttributes "_name"
+		{
+			type Text aggregationKind None multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsGenericentitysAttributes "_description"
+		{
+			type Text aggregationKind None multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 0 upper 1
+			}
+		}
+		, isSystem ModelsGenericentitysAttributes "_inactive"
+		{
+			type Boolean aggregationKind None multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, ModelsGenericentitysAttributes Product
+		{
+			type Product description "" aggregationKind Shared dependsOnAttribute "" multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, ModelsGenericentitysAttributes UnitPrice
+		{
+			type Decimal description "" aggregationKind None dependsOnAttribute "" multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, ModelsGenericentitysAttributes Quantity
+		{
+			type Integer description "" aggregationKind None dependsOnAttribute "" multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isReadOnly ModelsGenericentitysAttributes Value
+		{
+			type Decimal description "" aggregationKind None dependsOnAttribute "" multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, ModelsGenericentitysAttributes VatTax
+		{
+			type VatTax description "" aggregationKind Shared dependsOnAttribute "" multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isReadOnly ModelsGenericentitysAttributes VatValue
+		{
+			type Decimal description "The tax multiplier" aggregationKind None dependsOnAttribute "" multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isReadOnly ModelsGenericentitysAttributes TotalWithVat
+		{
+			type Decimal description "" aggregationKind None dependsOnAttribute "" multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+	}
+	entityBehaviours { ModelsGenericentitysEntityBehaviours Defaults
+	{
+		type Initialize expression "if(this._code != null && this._code != String.Empty) return; \nthis._code = Guid.NewGuid().ToString(\"N\");\n\nthis._name = this._code;"
+	}
+	, ModelsGenericentitysEntityBehaviours ValueFormula
+	{
+		type Formula attribute Value expression "return this.UnitPrice * this.Quantity;" description ""
+	}
+	, ModelsGenericentitysEntityBehaviours OnChange_Product
+	{
+		type Action attribute Product expression "\nvar httpClient = _Context.CreateApplicationHttpClient();\nvar productRequest = httpClient.PostAsJsonAsync($\"Queries/ProductQuery/Default?PageSize=1\",\n        new { Filter = new { Property = \"_code\", Value = newValue } })\n    .GetAwaiter().GetResult();\n\nif (productRequest.IsSuccessStatusCode)\n{\n    var requestData = productRequest.Content.ReadAsAsync<List<Dictionary<string, object>>>()\n                            .GetAwaiter().GetResult();\n\n    if(requestData.Any()){\n        this.VatTax = requestData.First()[\"defaultvattax\"]?.ToString();\n        \n        var d = requestData.First()[\"purchaseprice\"];\n        if (d is null)return;\n        double doubleVal = (double)d;\n        string doubleAsString = doubleVal.ToString(\"R\");\n        this.UnitPrice = decimal.Parse(doubleAsString);\n    }\n}\n" description ""
+	}
+	, ModelsGenericentitysEntityBehaviours OnChange_VatTax
+	{
+		type Action attribute VatTax expression "\nvar httpClient = _Context.CreateApplicationHttpClient();\nvar productRequest = httpClient.PostAsJsonAsync($\"Queries/VatTaxQuery/Default?PageSize=1\",\n        new { Filter = new { Property = \"_code\", Value = newValue } })\n    .GetAwaiter().GetResult();\n\nif (productRequest.IsSuccessStatusCode)\n{\n    var requestData = productRequest.Content.ReadAsAsync<List<Dictionary<string, object>>>()\n                            .GetAwaiter().GetResult();\n\n    if(requestData.Any()){\n        \n        var d = requestData.First()[\"multiplier\"];\n        if (d is null)return;\n        double doubleVal = (double)d;\n        string doubleAsString = doubleVal.ToString(\"R\");\n        this.VatValue = decimal.Parse(doubleAsString);\n        \n    }\n}\n" description ""
+	}
+	, ModelsGenericentitysEntityBehaviours TotalWithVat_Formula
+	{
+		type Formula attribute TotalWithVat expression "return this.Value + this.Value * this.VatValue;" description ""
+	}
+	} } , isRoot ModelsGenericentitys VatTax
+	{
+		dataSource System description "" attributes { isSystem ModelsGenericentitysAttributes "_code"
+		{
+			type Text aggregationKind None multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsGenericentitysAttributes "_name"
+		{
+			type Text aggregationKind None multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsGenericentitysAttributes "_description"
+		{
+			type Text aggregationKind None multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 0 upper 1
+			}
+		}
+		, isSystem ModelsGenericentitysAttributes "_inactive"
+		{
+			type Boolean aggregationKind None multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, ModelsGenericentitysAttributes Multiplier
+		{
+			type Decimal description "" aggregationKind None dependsOnAttribute "" multiplicity ModelsGenericentitysAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+	}
+	} } resources { ModelsResources Product
+	{
+		dataSource System description "" attributes { isSystem ModelsResourcesAttributes "_code"
+		{
+			type Text aggregationKind None multiplicity ModelsResourcesAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsResourcesAttributes "_name"
+		{
+			type Text aggregationKind None multiplicity ModelsResourcesAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, isSystem ModelsResourcesAttributes "_description"
+		{
+			type Text aggregationKind None multiplicity ModelsResourcesAttributesMultiplicity
+			{
+				lower 0 upper 1
+			}
+		}
+		, isSystem ModelsResourcesAttributes "_inactive"
+		{
+			type Boolean aggregationKind None multiplicity ModelsResourcesAttributesMultiplicity
+			{
+				lower 1 upper 1
+			}
+		}
+		, ModelsResourcesAttributes DefaultVatTax
+		{
+			type VatTax description "" aggregationKind Shared dependsOnAttribute "" multiplicity ModelsResourcesAttributesMultiplicity
+			{
+				lower 0 upper 1
+			}
+		}
+		, ModelsResourcesAttributes PurchasePrice
+		{
+			type Decimal description "" aggregationKind None dependsOnAttribute "" multiplicity ModelsResourcesAttributesMultiplicity
+			{
+				lower 0 upper 1
+			}
+		}
+		, ModelsResourcesAttributes SalePrice
+		{
+			type Decimal description "" aggregationKind None dependsOnAttribute "" multiplicity ModelsResourcesAttributesMultiplicity
+			{
+				lower 0 upper 1
+			}
+		}
+	}
+	} } querys { ModelsQuerys ProductQuery
+	{
+		dataSource System table ModelsQuerysTable
+		{
+			definition Product properties { ModelsQuerysTableProperties
+			{
+				path "_code" alias "_code" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_name" alias "_name" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_description" alias "_description" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_inactive" alias "_inactive" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path defaultVatTax alias DefaultVatTax function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path salePrice alias SalePrice function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path purchasePrice alias PurchasePrice function None
+			}
+		}
+		}
+	}
+	, ModelsQuerys ClientQuery
+	{
+		dataSource System table ModelsQuerysTable
+		{
+			definition Client properties { ModelsQuerysTableProperties
+			{
+				path "_code" alias "_code" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_name" alias "_name" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_description" alias "_description" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_inactive" alias "_inactive" function None
+			}
+		}
+		}
+	}
+	, 
+	ModelsQuerys SalesPersonQuery
+	{
+		dataSource System table ModelsQuerysTable
+		{
+			definition SalesPerson properties { ModelsQuerysTableProperties
+			{
+				path "_code" alias "_code" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_name" alias "_name" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_description" alias "_description" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_inactive" alias "_inactive" function None
+			}
+		}
+		}
+	}
+	, 
+	ModelsQuerys PurchaseOrderQuery
+	{
+		dataSource System table ModelsQuerysTable
+		{
+			definition PurchaseOrder properties { ModelsQuerysTableProperties
+			{
+				path "_code" alias "_code" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_serie" alias "_serie" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_number" alias "_number" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_date" alias "_date" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path totalWithVat alias totalWithVat function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_state" alias "_state" function None
+			}
+		}
+		}
+	}
+	, ModelsQuerys VatTaxQuery
+	{
+		dataSource System table ModelsQuerysTable
+		{
+			definition VatTax properties { ModelsQuerysTableProperties
+			{
+				path "_code" alias "_code" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_name" alias "_name" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_description" alias "_description" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_inactive" alias "_inactive" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path multiplier alias multiplier function None
+			}
+		}
+		}
+	}
+	, ModelsQuerys PurchaseOrderSerieQuery
+	{
+		dataSource System table ModelsQuerysTable
+		{
+			definition PurchaseOrderSerie properties { ModelsQuerysTableProperties
+			{
+				path "_code" alias "_code" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_name" alias "_name" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_description" alias "_description" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_inactive" alias "_inactive" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_startingNumber" alias "_startingNumber" function None
+			}
+		}
+		}
+	}
+	, 
+	ModelsQuerys SupplierQuery
+	{
+		dataSource System table ModelsQuerysTable
+		{
+			definition Supplier properties { ModelsQuerysTableProperties
+			{
+				path "_code" alias "_code" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_name" alias "_name" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_description" alias "_description" function None
+			}
+			, ModelsQuerysTableProperties
+			{
+				path "_inactive" alias "_inactive" function None
+			}
+		}
+		}
+	}
+	} applicationbehaviours { ModelsApplicationbehaviours ResetTenant
+	{
+		dataSource System expression "\nTask.Run(async () => {\n    \n    \n    var httpclient = context.CreateModelHttpClient();\n\n    await httpclient.DeleteAsync(\"Agent/Client\");\n    await httpclient.DeleteAsync(\"Agent/SalesPerson\");\n    await httpclient.DeleteAsync(\"Agent/Supplier\");\n    \n    await httpclient.DeleteAsync(\"Document/PurchaseOrder\");\n    await httpclient.DeleteAsync(\"Document/SaleOrder\");\n    \n    await httpclient.DeleteAsync(\"GenericEntity/PurchaseOrderLine\");\n    await httpclient.DeleteAsync(\"GenericEntity/SaleOrderLine\");\n    await httpclient.DeleteAsync(\"GenericEntity/VatTax\");\n    \n    await httpclient.DeleteAsync(\"Resource/Product\");\n    \n    await httpclient.DeleteAsync(\"Query/SalesPerClientQueryAdv\");\n    await httpclient.DeleteAsync(\"Query/SalesPerSalesPersonQueryAdv\");\n    await httpclient.DeleteAsync(\"Query/QuarterSalesQueryAdv\");\n    await httpclient.DeleteAsync(\"Query/SalesPerProductQueryAdv\");\n    await httpclient.DeleteAsync(\"Query/MonthlySalesQueryAdv\");\n    \n} );\n\n\n\nreturn new Dictionary < string, object > ();" description "" executionLocation Internal
+	}
+	} }
+}
+}

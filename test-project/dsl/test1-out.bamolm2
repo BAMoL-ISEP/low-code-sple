@@ -1,0 +1,21 @@
+Root
+{
+	models {
+		Models
+	{
+		agents {
+				ModelsAgents Provider
+		{
+		}
+	}
+//	commitments {
+//				ModelsCommitments Sell {
+//					attributes {
+//						ModelsCommitmentsAttributes provider {
+//							type ( Provider )
+//}
+//} }
+//			}
+		}
+	}
+}

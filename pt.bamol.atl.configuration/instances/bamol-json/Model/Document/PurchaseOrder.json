@@ -1,0 +1,116 @@
+{
+  "name": "PurchaseOrder",
+  "attributes": [
+    {
+      "name": "_code",
+      "type": "Text",
+      "isSystem": true,
+      "isReadOnly": false,
+      "description": null,
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    },
+    {
+      "name": "_serie",
+      "type": "PurchaseOrderSerie",
+      "isSystem": true,
+      "isReadOnly": false,
+      "description": null,
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "Shared",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    },
+    {
+      "name": "_number",
+      "type": "Integer",
+      "isSystem": true,
+      "isReadOnly": true,
+      "description": null,
+      "multiplicity": {
+        "lower": 0,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    },
+    {
+      "name": "_date",
+      "type": "Date",
+      "isSystem": true,
+      "isReadOnly": false,
+      "description": null,
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    },
+    {
+      "name": "Lines",
+      "type": "GoodsPurchaseRequest",
+      "isSystem": false,
+      "isReadOnly": false,
+      "description": "",
+      "multiplicity": {
+        "lower": 0,
+        "upper": 100
+      },
+      "aggregationKind": "Composite",
+      "isSensitiveData": false,
+      "dependsOnAttribute": ""
+    },
+    {
+      "name": "_state",
+      "type": "PurchaseOrderStateMachineStates",
+      "isSystem": true,
+      "isReadOnly": false,
+      "description": null,
+      "multiplicity": {
+        "lower": 1,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    },
+    {
+      "name": "_assigned",
+      "type": "Text",
+      "isSystem": true,
+      "isReadOnly": false,
+      "description": null,
+      "multiplicity": {
+        "lower": 0,
+        "upper": 1
+      },
+      "aggregationKind": "None",
+      "isSensitiveData": null,
+      "dependsOnAttribute": null
+    }
+  ],
+  "dataSource": "System",
+  "description": "",
+  "dataBehaviours": [],
+  "entityBehaviours": [
+    {
+      "name": "Defaults",
+      "type": "Initialize",
+      "attribute": null,
+      "expression": "if(!_Context.Operation.IsNew) return; \r\nthis._code = Guid.NewGuid().ToString(\"N\"); \r\nthis._date = DateTime.Today;\r\n\r\nvar httpClient = _Context.CreateApplicationHttpClient();\r\nvar serieRequest = httpClient.PostAsJsonAsync($\"Queries/{this.GetType().Name}SerieQuery/Default?PageSize=1\",\r\n        new { Filter = new { Property = \"_inactive\", Value = false } })\r\n    .GetAwaiter().GetResult();\r\n\r\nif (serieRequest.IsSuccessStatusCode)\r\n{\r\n    var serieRequestData = serieRequest.Content.ReadAsAsync<List<Dictionary<string, object>>>()\r\n                            .GetAwaiter().GetResult();\r\n\r\n    if(serieRequestData.Any())\r\n        this._serie = serieRequestData.First()[\"_code\"].ToString();\r\n}\r\n",
+      "description": null
+    }
+  ],
+  "behaviourNamespaces": []
+}

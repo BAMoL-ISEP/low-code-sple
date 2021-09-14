@@ -1,0 +1,14 @@
+{
+  "name": "Administration",
+  "subjects": [
+    {
+      "id": "fd46676c-a13f-4c1e-8acc-454ed0aec56b",
+      "username": "support@numbersbelieve.com"
+    },
+    {
+      "id": "d42fc57e-0649-44eb-895b-c04568f9462e",
+      "username": "atb@isep.ipp.pt"
+    }
+  ],
+  "description": "Administrators"
+}

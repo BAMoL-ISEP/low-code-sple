@@ -1,0 +1,438 @@
+-- @atlcompiler emftvm
+-- @path JSON=/pt.bamol.json/model/generated/Json.ecore
+-- @nsURI ECORE=http://www.eclipse.org/emf/2002/Ecore
+
+module json2ecore;
+create OUT : ECORE from IN : JSON;
+
+helper def : getParentObjectOfMember(m: JSON!Member) : JSON!Object = JSON!Object.allInstances()->select(o| o.members->includes(m))->first();
+-- After this (the previous helper), the parent of an object is either another object or an array (that should be a member of an object)
+-- The helper should be: we receive an object 
+--   the object is either a member of another object: we get the name of the member and recursevely execute the same function for the parent object
+--   or a value in an array: we get the name of member of an object that contains the array and recursevely execute the same function for the parent object 
+
+helper def : getParentMember(m: JSON!Member) : Set( JSON!Member ) = JSON!Member.allInstances()->select(m1| m1.value.oclIsTypeOf(JSON!Object) and m1.value.members->includes(m) ).union(
+--                                            JSON!Member.allInstances()->select(m2| m2.value.oclIsTypeOf(JSON!Array) and not m2.value.values->isEmpty() and m2.value.values->first().oclIsTypeOf(JSON!Object) and m2.value.values->first().members->includes(m)));
+                                             JSON!Member.allInstances()->select(m2| m2.value.oclIsTypeOf(JSON!Array) and not m2.value.values->isEmpty() and m2.value.values->first().oclIsTypeOf(JSON!Object) and m2.value.values->exists(val | val.members->includes(m))));
+  
+helper def : getCompleteParentsName(m: JSON!Member) : String = if (thisModule.getParentMember(m)->isEmpty()) then '' 
+                            else thisModule.getParentMember(m)->first().key + '.' + thisModule.getCompleteParentsName(thisModule.getParentMember(m)->first()) endif;
+
+helper def : getParents(m: JSON!Member) : Sequence( JSON!Member ) = if (thisModule.getParentMember(m)->isEmpty()) then Sequence{} 
+                            else thisModule.getParentMember(m)->asSequence()->prepend( thisModule.getParents(thisModule.getParentMember(m)->first()))->flatten() endif;
+
+helper def : getCompleteParentsName2(m: JSON!Member) : String = let parents : Sequence( JSON!Member ) = thisModule.getParents(m) in 
+									parents->iterate(m ; fname : String ='' | 
+										if fname='' then 
+											-- m.key
+											thisModule.newName(m.key)
+										else 
+											-- fname+'.'+m.key
+											fname + thisModule.newName(m.key)
+										endif
+									);
+
+helper def : newName(name: String) : String =  (name.substring(1,1).toUpper()+name.substring(2, name.size()));                                       
+                                             
+helper def : getCompleteMemberName2(m: JSON!Member) : String = let fname : String = thisModule.getCompleteParentsName2(m) in
+		if fname = '' then
+			thisModule.newName(m.key)
+--			(m.key.substring(1,1).toUpper()+m.key.substring(2,m.key.size()))
+		else
+-- 			fname + '.' + (m.key.substring(1,1).toUpper()+m.key.substring(2,m.key.size()))
+			fname + thisModule.newName(m.key)
+		endif;
+	
+helper def : getCompleteMemberName(m: JSON!Member) : String = thisModule.getCompleteParentsName(m) + (m.key.substring(1,1).toUpper()+m.key.substring(2,m.key.size()));
+
+helper def : getRootObject() : JSON!Object = 
+		JSON!Object.allInstances()->select(o | 
+			not (JSON!Member.allInstances()->exists(m| m.value.oclIsTypeOf(JSON!Object) and m.value=o))
+			and not (JSON!Member.allInstances()->exists(m| m.value.oclIsTypeOf(JSON!Array) and not m.value.values->isEmpty() and m.value.values->first().oclIsTypeOf(JSON!Object) and m.value.values->includes(o)))
+		)->first();
+		-- or (JSON!Member.allInstances()->exists(m| m.value.oclIsTypeOf(JSON!Array) and not m.value.values->isEmpty() and m.value.values->first().oclIsTypeOf(JSON!Object) and m.value.values->includes(o))
+
+-- helper def : memberTypes : Set( ECORE!EClass ) = Set{};	
+
+helper def : getFirstMember(m: JSON!Member) : 
+	JSON!Member = JSON!Member.allInstances()->select(m2| m2.key=m.key and ((m2.value.oclIsTypeOf(JSON!Array) and m2.value.values.size()>=1 and m2.value.values->first().oclIsTypeOf(JSON!Object)) or m2.value.oclIsTypeOf(JSON!Object)))->first();
+	
+helper def: package : ECORE!EPackage = OclUndefined;
+
+helper def: orderedMembers : Sequence( JSON!Member ) = OclUndefined;
+
+helper def: completeNames : Map( String, JSON!Member ) = Map {};
+
+helper def : isFirstMember(m: JSON!Member) : 
+	Boolean = let res : Sequence(JSON!Member) = thisModule.orderedMembers->select(m2| m2.key=m.key and ((m2.value.oclIsTypeOf(JSON!Array) and m2.value.values.size()>=1 and m2.value.values->first().oclIsTypeOf(JSON!Object)) or m2.value.oclIsTypeOf(JSON!Object))) 
+				in if (res.oclIsUndefined() or res.isEmpty()) then 
+						false 
+					else 
+						res.first()=m 
+					endif;
+
+helper def : getFirstMemberByName(name: String) :
+    Sequence( JSON!Member ) =  thisModule.orderedMembers->select(m2| m2.key=name and ((m2.value.oclIsTypeOf(JSON!Array) and m2.value.values.size()>=1 and m2.value.values->first().oclIsTypeOf(JSON!Object)) or m2.value.oclIsTypeOf(JSON!Object)));
+
+helper def : isType(m: JSON!Member) : Boolean =
+	((m.value.oclIsTypeOf(JSON!Array) and m.value.values.size()>=1 and m.value.values->first().oclIsTypeOf(JSON!Object)) 
+	or 
+	(m.value.oclIsTypeOf(JSON!Object) and not JSON!Member.allInstances()->exists(a| m.value.oclIsTypeOf(JSON!Array) and a.value.values.includes(m))))
+	;
+
+helper def : isMember2EClass(m: JSON!Member) : Boolean = thisModule.isType(m)
+	and
+		(let memb : JSON!Member = thisModule.completeNames->get(thisModule.getCompleteMemberName2(m)) in
+			not memb.oclIsUndefined() and memb=m
+		)
+	;
+
+helper def : existsType(m: JSON!Member) : Boolean = 
+	let memb : JSON!Member = thisModule.completeNames->get(thisModule.getCompleteMemberName2(m)) in
+		( not memb.oclIsUndefined() and  thisModule.isType(memb) )
+		;
+
+rule MemberArray2EClass {
+	from 
+		a1 : JSON!Member ( 							
+							thisModule.isMember2EClass(a1) 
+                           )
+	to
+		p1: ECORE!EClass (
+            name <- thisModule.getCompleteMemberName2(a1)
+            , eStructuralFeatures <- if (a1.value.oclIsTypeOf(JSON!Object)) then 
+										a1.value.members->collect(m | 
+											if ( thisModule.existsType(m)	-- thisModule.isType(m) 
+												)
+											then 
+												-- thisModule.member2Containment(m)
+												thisModule.member2Containment(
+															thisModule.completeNames->get(thisModule.getCompleteMemberName2(m))
+														)
+											else
+												-- thisModule.member2UnknownArrayObject(m)
+                                                -- See if we have a reference!
+												-- This is impossible to determine here...
+                                                -- if (not m.value.oclIsUndefined()) then 
+                                                --    let res : Sequence (JSON!Member) = thisModule.getFirstMemberByName(m.key) in 
+                                                --    if (res.isEmpty()) then 
+                                                --        thisModule.member2Attribute(m)
+                                                --    else
+                                                --       thisModule.member2Reference(m, res->first())
+												--	   -- thisModule.member2UnknownArrayObject(m)
+                                                --    endif
+                                                -- else
+                                                    thisModule.member2Attribute(m)
+                                                -- endif
+											endif
+											)
+									else 
+										-- JSON!Array
+										a1.value.values->first().members->collect(m| 
+											if ( thisModule.existsType(m) -- thisModule.isType(m) 
+												)
+											then 
+												-- thisModule.member2Containment(m)
+												thisModule.member2Containment(
+															thisModule.completeNames->get(thisModule.getCompleteMemberName2(m))
+														)												
+											else
+												-- thisModule.member2UnknownArrayObject(m)
+                                                -- See if we have a reference!
+												-- This is impossible to determine here...
+                                                -- if (not m.value.oclIsUndefined()) then 
+                                                --    let res : Sequence (JSON!Member) = thisModule.getFirstMemberByName(m.key) in 
+                                                --    if (res.isEmpty()) then 
+                                                --        thisModule.member2Attribute(m)
+                                                --    else
+                                                --      thisModule.member2Reference(m, res->first())
+												--	  -- thisModule.member2UnknownArrayObject(m)
+                                                --    endif
+                                                -- else
+                                                    thisModule.member2Attribute(m)
+                                                -- endif
+											endif
+											)											
+									endif
+		)
+	do {
+        ('INFO: MemberArray2EClass='+thisModule.getCompleteMemberName2(a1)).debug();
+        if (a1.value.oclIsTypeOf(JSON!Object)) {
+        	('    -> Object').debug();
+        }
+        else {
+        	('    -> Array').debug();
+        }	
+        --('member toString='+a1.toString()).debug();
+	}
+}
+
+rule newAttribute(pName: String) {
+	to
+		at : ECORE!EAttribute (
+            name <- pName
+        )
+	do {
+		at;
+	}
+}
+
+lazy rule member2Attribute {
+    from 
+		m : JSON!Member 
+	to
+		a: ECORE!EAttribute (
+			name <- m.key,
+            eType <- if m.value.oclIsTypeOf(JSON!"BooleanVal") then 
+                    	ECORE!EBoolean
+                	else
+                		if m.value.oclIsTypeOf(JSON!"NumberVal") then 
+                    		ECORE!EBigDecimal
+						else 
+                			if m.value.oclIsTypeOf(JSON!"StringVal") then 
+                    			ECORE!EString
+							else
+								if m.value.oclIsTypeOf(JSON!"Array") and not m.value.values.oclIsUndefined() and not m.value.values->isEmpty() then
+									if m.value.values->first().oclIsTypeOf(JSON!"BooleanVal") then 
+                    					ECORE!EBoolean
+									else
+										if m.value.values->first().oclIsTypeOf(JSON!"NumberVal") then 
+                    						ECORE!EBigDecimal
+										else
+											if m.value.values->first().oclIsTypeOf(JSON!"StringVal") then 
+                    							ECORE!EString
+											else
+												-- Default type????
+                        						ECORE!EString
+											endif
+										endif
+									endif
+								else
+									-- Default type????
+                        			ECORE!EString
+								endif
+							endif
+						endif
+                	endif,
+				upperBound <- if m.value.oclIsTypeOf(JSON!"Array") then
+								-1 
+							else
+								1
+							endif
+		)
+	do {
+--		('member2Attribute').debug();
+		
+		if ((m.value.oclIsTypeOf(JSON!"Array") and (m.value.values.oclIsUndefined() or (not m.value.values.oclIsUndefined() and m.value.values->isEmpty())))) {
+		-- if ( m.value.oclIsTypeOf(JSON!"Array") and m.value.values.oclIsUndefined() ) {
+			-- or (not m.value.values.oclIsUndefined() and m.value.values->isEmpty())) {
+			('WARNING: Undetermined type for Array '+ m.key +' at ' + thisModule.getCompleteMemberName2(m).toString()+ '. Setting type to String.').debug();
+		}
+		else {}
+		
+		if ( m.value.oclIsTypeOf(JSON!"Null")) {
+			('WARNING: Undetermined type for '+ m.key +' at ' + thisModule.getCompleteMemberName2(m).toString()+ '. Setting type to String.').debug();
+		}
+		else {
+--			('INFO: Determined type for '+ m.key +' at ' + thisModule.getCompleteMemberName2(m).toString()).debug();			
+--	--		('member2Attribute '+m.key).debug();
+--	--		('  -> EClass Type:'+thisModule.getCompleteMemberName2(m).toString()).debug();
+		}
+		a;
+	}
+}
+
+lazy rule member2Containment {
+    from 
+		m : JSON!Member 
+	to
+		a: ECORE!EReference (
+			name <- m.key
+            , eType <- if m.value.oclIsTypeOf(JSON!"Object") then 
+                    	-- ECORE!EString
+						-- thisModule.getFirstMember(m)
+						m 
+                	else
+                		-- if m.value.oclIsTypeOf(JSON!"Array") then
+						if (not m.value.values->isEmpty()) then
+							-- thisModule.getFirstMember(m)
+							m
+						else
+							thisModule.member2Unknown(m)
+						endif
+					endif
+            , containment <- true
+            , lowerBound <- 0
+            , upperBound <- if (m.value.oclIsTypeOf(JSON!Array)) then -1 else 1 endif
+		)
+	do {
+--	--	('member2Containment '+m.key+' firstMember='+thisModule.getFirstMember(m).key).debug();
+--   --     ('member2Containment toString='+m.toString()).debug();
+--    --    ('  -> Class reference:'+thisModule.getFirstMember(m).toString()).debug();
+
+-- INFO		('member2Containment').debug();
+        
+-- INFO		('member2Containment '+m.key).debug();
+-- INFO        ('member2Containment toString='+m.toString()).debug();
+-- INFO        ('  -> EClass Type:'+thisModule.getCompleteMemberName2(m).toString()).debug();
+        
+		a;
+	}
+}
+
+lazy rule member2Reference {
+    from 
+		m : JSON!Member
+		, ref : JSON!Member 
+--         , cname : JSON!Member 
+	to
+		a: ECORE!EReference (
+			name <- m.key
+--            ,eType <- m2, 
+			-- Aqui tem de se procurar o type "mais proximo"...
+			-- , eType <- thisModule.completeNames->get(thisModule.getCompleteMemberName2(m))
+			, eType <- ref
+            , containment <- false
+            , lowerBound <- 0
+            , upperBound <- -1 
+		)
+	do {
+-- iNFO		
+	('member2Reference '+m.key).debug();
+		
+-- INFO        ('member2Containment toString='+m.toString()).debug();
+-- INFO        ('  -> EClass Type:'+thisModule.getCompleteMemberName2(m)).debug();
+		a;
+	}
+}
+
+unique lazy rule member2Unknown{
+    from 
+		m : JSON!Member 
+	to
+		r: ECORE!EClass (
+			name <- 'Unknown'
+			)
+	do {
+		('member2Unknown '+m.key).debug();
+		r;
+	}
+}
+
+unique lazy rule member2UnknownArrayObject{
+    from 
+		m : JSON!Member 
+	to
+		r: ECORE!EClass (
+			name <- 'UnknownArrayObject'
+			)
+	do {
+		('member2UnknownArrayObject '+m.key).debug();
+		r;
+	}
+}
+
+-- entrupoint rule
+entrypoint rule initTransformation() {
+	to 
+		pack : ECORE!EPackage (
+			name <- 'bamolM',
+            nsURI <- 'http://bamol.pt/bamolM',
+            nsPrefix <- 'bamolM'
+		)
+	do {
+		'Init Transformations Rule'.debug();
+		thisModule.package <- pack;
+		thisModule.orderedMembers <- JSON!Member.allInstances()->asSequence();
+		
+		'Compute Complete Member Names (this may take 1 or 2 minutes)...'.debug();
+		
+		
+		-- thisModule.completeNames <- thisModule.orderedMembers->iterate(m; map : Map(String, JSON!Member) = Map{} | 
+		thisModule.completeNames <- thisModule.orderedMembers->select(m | 
+			not m.value.oclIsUndefined() and ((m.value.oclIsTypeOf(JSON!"Array") and not m.value.values->isEmpty()) or (not m.value.oclIsTypeOf(JSON!"Array"))))
+				->iterate(m; map : Map(String, JSON!Member) = Map{} | 	
+					let cname : String = thisModule.getCompleteMemberName2(m) in
+						let val : JSON!Member = map->get(cname) in
+							if val.oclIsUndefined() then 
+								map->including(cname, m) 
+							else 
+								map
+							endif
+					);
+		
+		'Map:'.debug();
+		for (key in thisModule.completeNames->getKeys()) {
+			('  complete name: '+key).debug();
+		}		
+	}
+}
+
+-- endpoint rule
+endpoint rule resultingRoot() {
+	to
+		model : ECORE!EClass (
+			name <- 'Root' 
+			, eStructuralFeatures <- thisModule.getRootObject().members->collect(m|  
+											if (m.value.oclIsTypeOf(JSON!"Object") or 
+												(m.value.oclIsTypeOf(JSON!"Array") and 
+												 m.value.values.size()>=1 and
+												 m.value.values->first().oclIsTypeOf(JSON!Object))
+											)
+											then 
+												thisModule.member2Containment(m)
+											else
+												thisModule.member2Attribute(m)
+											endif
+                                            )->flatten()->asSet()
+		)
+	do {
+		'Root Rule members:'.debug();
+
+        for (m in thisModule.getRootObject().members) {
+            m.key.debug();
+        }
+		
+        -- Tests how to set the classes inside the package: OK
+        -- thisModule.package.eClassifiers <- Set { model };	
+        --thisModule.package.eClassifiers <- Sequence{ model }->union(JSON!Member.allInstances()->select (a1 |
+		--					(a1.value.oclIsTypeOf(JSON!Array) 
+        --                  and a1.value.values.size()>=1 
+        --                    and a1.value.values->first().oclIsTypeOf(JSON!Object)
+        --                    and JSON!Member.allInstances()->select(m| m.key=a1.key)->first()=a1 ) 
+        --                     or ((a1.value.oclIsTypeOf(JSON!Object) and JSON!Member.allInstances()->select(m| m.key=a1.key)->first()=a1))));
+							 	
+        thisModule.package.eClassifiers <- Sequence{ model }->union(JSON!Member.allInstances()->select (a1 |
+        					--thisModule.isFirstMember(a1) ));
+        					thisModule.isMember2EClass(a1) ));
+							 	       
+--		for (m in thisModule.memberTypes) {
+--			m.key.debug();
+--		}
+			
+--		'Root Objects:'.debug();
+--		for (o in thisModule.getRootObjects()) {
+--			'>> members'.debug();
+--			for (m in o.members) {
+--				('  '+m.key).debug();
+--			}
+--			
+--			'<< members'.debug();
+--		}
+		
+--		for (o in IN.members) {
+--			'abc'.debug();
+--		}
+	}
+}
+
+-- Experiment with referenced metamodel
+--rule newVModelReference(pName: String) {
+--	to
+--		ag : VMODEL!Agent (
+--            name <- pName
+--        )
+--	do {
+--		ag;
+--	}
+--}

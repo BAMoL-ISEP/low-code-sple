@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated vmodel -->
+      <package
+            uri="http://www.bamol.pt/vmodel"
+            class="pt.bamol.vmodel.VmodelPackage"
+            genModel="model/vmodel.genmodel"/>
+   </extension>
+
+</plugin>

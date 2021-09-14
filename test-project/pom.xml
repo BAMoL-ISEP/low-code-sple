@@ -1,0 +1,215 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+
+	<!-- See: https://denniswagelaar.wordpress.com/2018/05/20/compiling-and-running-atl-emftvm-from-ant-and-maven/ 
+		To execute run: mvn validate -->
+
+	<groupId>pt.bamol</groupId>
+	<artifactId>test-project</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<!-- <packaging>jar</packaging> -->
+	<packaging>eclipse-plugin</packaging>
+
+	<name>test-project</name>
+	<!-- <url>https://github.com/dwagelaar/emftvm.maven.example</url> -->
+
+	<licenses>
+		<license>
+			<name>Eclipse Public License - v 1.0</name>
+			<url>http://www.eclipse.org/org/documents/epl-v10.html</url>
+		</license>
+	</licenses>
+
+	<!-- <scm> <url>https://github.com/dwagelaar/emftvm.maven.example</url> 
+		<connection>scm:git:https://github.com/dwagelaar/emftvm.maven.example.git</connection> 
+		<developerConnection>scm:git:ssh://github.com/dwagelaar/emftvm.maven.example.git</developerConnection> 
+		</scm> -->
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<atl.version>4.2.0</atl.version>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
+		<tycho-version>1.0.0</tycho-version>
+	</properties>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>repo.eclipse.org</id>
+			<name>ATL Repository</name>
+			<url>https://repo.eclipse.org/content/groups/atl/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.4.0</version>
+				<executions>
+					<execution>
+						<id>config</id>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<executable>java</executable>
+							<mainClass>pt.bamol.atl.configuration.BamolConfig</mainClass>
+							<arguments>
+								<argument>${project.basedir}/dsl/bamol1.bamolm2</argument>
+								<argument>${project.basedir}/dsl/bamol1-out.bamolm2</argument>
+								<argument>${project.basedir}/dsl/vmodeldsl1.vmodeldsl</argument>
+								<argument>${project.basedir}/dsl/configuration1.vmodeldsl</argument>
+							</arguments>
+							<classpathScope>compile</classpathScope>
+							<includeProjectDependencies>true</includeProjectDependencies>
+							<includePluginDependencies>true</includePluginDependencies>
+							<cleanupDaemonThreads>false</cleanupDaemonThreads><!-- see https://bugs.eclipse.org/bugs/show_bug.cgi?id=475098#c3 -->
+						</configuration>
+					</execution>
+					<execution>
+						<id>dsl2json</id>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<executable>java</executable>
+							<mainClass>pt.bamol.atl.configuration.Dsl2Json</mainClass>
+							<arguments>
+								<argument>${project.basedir}/dsl/bamol1-out.bamolm2</argument>
+								<argument>${project.basedir}/dsl/bamol-json-out.json</argument>
+								<argument>${project.basedir}/dsl/bamol-json-case-study-out</argument>
+							</arguments>
+							<classpathScope>compile</classpathScope>
+							<includeProjectDependencies>true</includeProjectDependencies>
+							<includePluginDependencies>true</includePluginDependencies>
+							<cleanupDaemonThreads>false</cleanupDaemonThreads><!-- see https://bugs.eclipse.org/bugs/show_bug.cgi?id=475098#c3 -->
+						</configuration>
+					</execution>
+					<execution>
+						<id>json2dsl</id>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<executable>java</executable>
+							<mainClass>pt.bamol.atl.configuration.Json2Dsl</mainClass>
+							<arguments>
+								<argument>${project.basedir}/dsl/bamol-json-case-study</argument>
+								<argument>${project.basedir}/dsl/bamol-json.json</argument>
+								<argument>${project.basedir}/dsl/bamol1.bamolm2</argument>
+							</arguments>
+							<classpathScope>compile</classpathScope>
+							<includeProjectDependencies>true</includeProjectDependencies>
+							<includePluginDependencies>true</includePluginDependencies>
+							<cleanupDaemonThreads>false</cleanupDaemonThreads><!-- see https://bugs.eclipse.org/bugs/show_bug.cgi?id=475098#c3 -->
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-antrun-plugin
+										</artifactId>
+										<versionRange>
+											[1.3,)
+										</versionRange>
+										<goals>
+											<goal>run</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<!-- configure p2 repository to resolve against -->
+		<repository>
+			<id>eclipse-2020-06</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/releases/2020-06</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>eclipse-mmt-atl</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/mmt/atl/updates/releases/4.0</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>mwe</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/modeling/emft/mwe/updates/releases/2.11.3/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>xtext</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.22.0/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>eclipse-orbit</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/tools/orbit/downloads/2020-06</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+
+</project>

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: pt.bamol.vmodel.vmodeldsl.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: pt.bamol.vmodel.vmodeldsl.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: pt.bamol.vmodel.vmodeldsl.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: pt.bamol.vmodel.vmodeldsl,
+ pt.bamol.vmodel,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: pt.bamol.vmodel.vmodeldsl.ide.contentassist.antlr,
+ pt.bamol.vmodel.vmodeldsl.ide.contentassist.antlr.internal

@@ -1,0 +1,28 @@
+Root {
+	 models {
+		Models {
+			agents {
+				ModelsAgents Provider {
+				},
+				ModelsAgents Customer {
+					// If we have a feature reference (@) the inclusion element is only included 
+					// if the feature is also available in the configuration model
+					inc( "m1.sale1" )  
+				}				
+			}
+//			commitments {
+//				ModelsCommitments Sell {
+//					attributes {
+//						ModelsCommitmentsAttributes provider {
+//							type ( Provider )
+//						},
+//						ModelsCommitmentsAttributes customer {
+//							inc ( "m1.sale1" )  
+//							type ( Customer )
+//						}						
+//					}
+//				}
+//			}
+		}
+	}
+}

@@ -1,0 +1,98 @@
+{
+  "name": "PurchaseOrderList",
+  "type": "List",
+  "label": "Purchase Order",
+  "query": "PurchaseOrderQuery",
+  "elements": [
+    {
+      "row": 0,
+      "name": "_code",
+      "size": 3,
+      "type": "ListColumn",
+      "label": "Code",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 0,
+      "name": "_serie",
+      "size": 3,
+      "type": "ListColumn",
+      "label": "Serie",
+      "column": 4,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 0,
+      "name": "_number",
+      "size": 3,
+      "type": "ListColumn",
+      "label": "Number",
+      "column": 7,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Integer"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 0,
+      "name": "_date",
+      "size": 3,
+      "type": "ListColumn",
+      "label": "Date",
+      "column": 10,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Date"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [
+    {
+      "key": "queryTableDefinition",
+      "value": "PurchaseOrder"
+    }
+  ],
+  "behaviours": [],
+  "dataSource": "System",
+  "description": null
+}

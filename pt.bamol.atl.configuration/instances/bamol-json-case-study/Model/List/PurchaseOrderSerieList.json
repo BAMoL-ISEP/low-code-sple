@@ -1,0 +1,118 @@
+{
+  "name": "PurchaseOrderSerieList",
+  "type": "List",
+  "label": "PurchaseOrder Serie",
+  "query": "PurchaseOrderSerieQuery",
+  "elements": [
+    {
+      "row": 0,
+      "name": "_code",
+      "size": 2,
+      "type": "ListColumn",
+      "label": "Code",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 0,
+      "name": "_name",
+      "size": 2,
+      "type": "ListColumn",
+      "label": "Name",
+      "column": 3,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 0,
+      "name": "_description",
+      "size": 2,
+      "type": "ListColumn",
+      "label": "Description",
+      "column": 5,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Text"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 0,
+      "name": "_inactive",
+      "size": 2,
+      "type": "ListColumn",
+      "label": "Inactive",
+      "column": 7,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Boolean"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 0,
+      "name": "_startingNumber",
+      "size": 2,
+      "type": "ListColumn",
+      "label": "Starting Number",
+      "column": 9,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "formattingType",
+          "value": "Integer"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [
+    {
+      "key": "queryTableDefinition",
+      "value": "PurchaseOrderSerie"
+    }
+  ],
+  "behaviours": [],
+  "dataSource": "System",
+  "description": null
+}

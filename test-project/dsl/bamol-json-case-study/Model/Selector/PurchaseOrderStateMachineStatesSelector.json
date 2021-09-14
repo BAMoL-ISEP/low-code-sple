@@ -1,0 +1,116 @@
+{
+  "name": "PurchaseOrderStateMachineStatesSelector",
+  "type": "Selector",
+  "label": "Purchase Order State Machine States",
+  "elements": [
+    {
+      "row": 1,
+      "name": "Initial",
+      "size": 12,
+      "type": "SelectorEntry",
+      "label": "Initial",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "EnumerationValue",
+          "value": "Initial"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 2,
+      "name": "Completed",
+      "size": 12,
+      "type": "SelectorEntry",
+      "label": "Completed",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "EnumerationValue",
+          "value": "Completed"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 3,
+      "name": "InPurchTeamManagerReview",
+      "size": 12,
+      "type": "SelectorEntry",
+      "label": "In Purchases Team Manager Review",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "EnumerationValue",
+          "value": "InPurchTeamManagerReview"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 4,
+      "name": "InPurchasesManagerReview",
+      "size": 12,
+      "type": "SelectorEntry",
+      "label": "In Purchases Manager Review",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "EnumerationValue",
+          "value": "InPurchasesManagerReview"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    },
+    {
+      "row": 5,
+      "name": "InFinancialManagerReview",
+      "size": 12,
+      "type": "SelectorEntry",
+      "label": "In Financial Manager Review",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "EnumerationValue",
+          "value": "InFinancialManagerReview"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [
+    {
+      "key": "Enumeration",
+      "value": "PurchaseOrderStateMachineStates"
+    }
+  ],
+  "behaviours": [],
+  "description": null
+}

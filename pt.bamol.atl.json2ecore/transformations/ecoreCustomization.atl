@@ -1,0 +1,223 @@
+-- @atlcompiler emftvm
+-- @nsURI ECORE=http://www.eclipse.org/emf/2002/Ecore
+-- @path VMODELM=/pt.bamol.vmodel/model/vmodel.ecore
+
+module ecoreCustomization;
+--create OUT : ECORE refining IN : ECORE;
+create OUT : ECORE refining INPUT: ECORE, VMODEL: ECORE;
+
+helper def: package : ECORE!EPackage = OclUndefined;
+helper def: entityEClass : ECORE!EClass = OclUndefined;
+helper def: elementEClass : ECORE!EClass = OclUndefined;
+
+rule EPackage2EPackage {
+	from 
+		t1 : ECORE!EPackage in INPUT
+	to
+		t2 : ECORE!EPackage (
+			name <- 'bamolm2',
+            nsURI <- 'http://bamol.pt/bamolM2',
+            nsPrefix <- 'bamolM2'
+	)
+}
+
+rule EClass2EClass1 {
+	from 
+		t1 : ECORE!EClass in INPUT (t1.name = 'ModelsAgents' or t1.name = 'ModelsResources')
+	to
+		t2 : ECORE!EClass (
+			-- name <- t1.name -- t1.name.toUpper()	
+			eSuperTypes <- Set{ thisModule.entityEClass }
+	)
+}
+
+rule EClass2EClass2 {
+	from 
+		t1 : ECORE!EClass in INPUT (not (t1.name = 'ModelsAgents' or t1.name = 'ModelsResources') and not (t1.name = 'Element'))
+	to
+		t2 : ECORE!EClass (
+			-- name <- t1.name -- t1.name.toUpper()	
+			eSuperTypes <- Set{ thisModule.elementEClass }
+	)
+}
+
+
+-- Para já vamos desactivar esta transformacao pois as referencias nao são necessarias para o artigo da SPLC
+--rule EAttribute2EReference {
+--	from 
+--		a1 : ECORE!EAttribute in INPUT (a1.name = 'type' and a1.eContainingClass.name='ModelsCommitmentsAttributes')
+--	to
+--		ref: ECORE!EReference (
+--			name <- a1.name
+--			, eType <- thisModule.entityEClass
+--            , containment <- false
+--            , lowerBound <- 0
+--            , upperBound <- -1 
+--		)	
+--	do {
+--		('EAttribute2EReference').debug();
+--	}
+--}
+
+-- entrypoint rule
+entrypoint rule initTransformation() {
+	do {
+		'Init Transformations Rule'.debug();
+		
+		thisModule.package <- ECORE!EPackage.allInstances()->select(p| p.name='bamolM').first();
+		
+		thisModule.package.name.debug();
+		
+		thisModule.elementEClass <- thisModule.newAbstractElementEClass('Element');
+		
+		'After elementEClass'.debug();
+		
+		-- thisModule.entityEClass <- thisModule.newAbstractEClass('Entity');
+		thisModule.entityEClass <- thisModule.newAbstractEClassWithSuperType('Entity', thisModule.elementEClass);
+
+		'After entiryEClass'.debug();
+		
+		-- thisModule.newEClass('Ola');	
+	}
+}
+
+-- endpoint rule
+endpoint rule endTransformation() {
+	do {
+		'End Transformations Rule'.debug();	
+	}
+}
+
+rule newAbstractElementEClass(name: String) {
+	to 
+		c1: ECORE!EClass (
+			name <- name
+			, abstract <- true
+			, eStructuralFeatures <- Set{ ref }
+		)
+		, ref: ECORE!EReference (
+			name <- 'inc'
+			, eType <- ECORE!EClass.allInstances()->select(p| p.name='Feature').first() -- VMODEL!Feature
+            , containment <- false
+            , lowerBound <- 0
+            , upperBound <- -1 
+		)
+	do {
+		ECORE!EClass.allInstances()->select(p| p.name='Feature').first().name.debug();
+		
+		thisModule.package.eClassifiers<-thisModule.package.eClassifiers->including(c1);
+		c1;
+	}
+}
+
+rule newAbstractEClassWithSuperType(name: String, superType: ECORE!EClass) {
+	to 
+		c1: ECORE!EClass (
+			name <- name
+			, abstract <- true
+			, eSuperTypes <- Set{ superType }
+		)
+	do {
+		
+		thisModule.package.eClassifiers<-thisModule.package.eClassifiers->including(c1);
+		c1;
+	}
+}
+
+-- Verificar se isto e' possivel. Se sim, as 'customizacoes' podem ser feitas todas ao nivel do ATL,
+-- sem necessitar de alterar nada na gramatica do Xtext
+rule newEAttributeEReference(name: String) {
+	to
+		ref: ECORE!EReference (
+			name <- name
+			, eType <- VMODEL!Feature
+            , containment <- false
+            , lowerBound <- 0
+            , upperBound <- -1 
+		)	
+	do {
+		('newEAttribute2EReference').debug();
+	}
+}
+
+-- ###############################
+-- O processo automatico deve usar diversas fontes/exemplos json para identificar 
+-- mais corretamente os tipos de dados
+-- Erros encontrados no processo:
+-- 'WARNING: Undetermined type for isSensitiveData at ModelsResourcesAttributesIsSensitiveData. Setting type to String.'
+rule EAttributeRefactoring1 {
+	from 
+		a1 : ECORE!EAttribute in INPUT (a1.name = 'isSensitiveData' and a1.eContainingClass.name='ModelsResourcesAttributes')
+	to
+		ref: ECORE!EAttribute (
+			eType <- ECORE!EBoolean
+		)	
+	do {
+		('EAttributeRefactoring1').debug();
+	}
+}
+
+-- 'WARNING: Undetermined type for isSensitiveData at ModelsCommitmentsAttributesIsSensitiveData. Setting type to String.'
+rule EAttributeRefactoring2 {
+	from 
+		a1 : ECORE!EAttribute in INPUT (a1.name = 'isSensitiveData' and a1.eContainingClass.name='ModelsCommitmentsAttributes')
+	to
+		ref: ECORE!EAttribute (
+			eType <- ECORE!EBoolean
+		)	
+	do {
+		('EAttributeRefactoring2').debug();
+	}
+}
+
+-- 'WARNING: Undetermined type for isSensitiveData at ModelsSeriesAttributesIsSensitiveData. Setting type to String.'
+rule EAttributeRefactoring3 {
+	from 
+		a1 : ECORE!EAttribute in INPUT (a1.name = 'isSensitiveData' and a1.eContainingClass.name='ModelsSeriesAttributes')
+	to
+		ref: ECORE!EAttribute (
+			eType <- ECORE!EBoolean
+		)	
+	do {
+		('EAttributeRefactoring3').debug();
+	}
+}
+
+-- 'WARNING: Undetermined type for isSensitiveData at ModelsDocumentsAttributesIsSensitiveData. Setting type to String.'
+rule EAttributeRefactoring4 {
+	from 
+		a1 : ECORE!EAttribute in INPUT (a1.name = 'isSensitiveData' and a1.eContainingClass.name='ModelsDocumentsAttributes')
+	to
+		ref: ECORE!EAttribute (
+			eType <- ECORE!EBoolean
+		)	
+	do {
+		('EAttributeRefactoring4').debug();
+	}
+}
+
+-- 'WARNING: Undetermined type for isSensitiveData at ModelsAgentsAttributesIsSensitiveData. Setting type to String.'
+rule EAttributeRefactoring5 {
+	from 
+		a1 : ECORE!EAttribute in INPUT (a1.name = 'isSensitiveData' and a1.eContainingClass.name='ModelsAgentsAttributes')
+	to
+		ref: ECORE!EAttribute (
+			eType <- ECORE!EBoolean
+		)	
+	do {
+		('EAttributeRefactoring5').debug();
+	}
+}
+
+-- 'WARNING: Undetermined type for isSensitiveData at ModelsGenericentitysAttributesIsSensitiveData. Setting type to String.'
+rule EAttributeRefactoring6 {
+	from 
+		a1 : ECORE!EAttribute in INPUT (a1.name = 'isSensitiveData' and a1.eContainingClass.name='ModelsGenericentitysAttributes')
+	to
+		ref: ECORE!EAttribute (
+			eType <- ECORE!EBoolean
+		)	
+	do {
+		('EAttributeRefactoring5').debug();
+	}
+}

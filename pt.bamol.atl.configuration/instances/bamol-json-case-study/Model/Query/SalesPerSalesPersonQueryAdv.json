@@ -1,0 +1,14 @@
+{
+  "name": "SalesPerSalesPersonQueryAdv",
+  "joins": [],
+  "table": {
+    "alias": null,
+    "filter": null,
+    "definition": "SaleOrder",
+    "properties": [],
+    "orderedProperties": []
+  },
+  "dataSource": "System",
+  "expression": "SELECT SUM(om.totalWithVat) AS ammount, om.salesPerson, sp._name\nFROM vw_SaleOrder om\nINNER JOIN vw_SalesPerson sp ON sp._code=om.salesPerson\nGROUP BY om.salesPerson, sp._name\nORDER BY ammount DESC",
+  "description": ""
+}

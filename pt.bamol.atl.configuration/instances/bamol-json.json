@@ -1,0 +1,7320 @@
+{
+	"models": [
+		{
+			"datasources": [
+				{
+					"name": "System",
+					"attributes": [
+						{
+							"name": "_code",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None"
+						},
+						{
+							"name": "_name",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None"
+						},
+						{
+							"name": "_description",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None"
+						},
+						{
+							"name": "_inactive",
+							"type": "Boolean",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None"
+						}
+					],
+					"description": "Default DataSource",
+					"dataBehaviours": [],
+					"behaviourRuntime": "Internal",
+					"entityBehaviours": [],
+					"dataAccessRuntime": "Internal",
+					"behaviourNamespaces": [],
+					"executesInConnector": false,
+					"behaviourDependencies": []
+				}
+			],
+			"selectors": [
+				{
+					"name": "PurchaseOrderStateMachineStatesSelector",
+					"type": "Selector",
+					"label": "Purchase Order State Machine States",
+					"elements": [
+						{
+							"row": 1,
+							"name": "Initial",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Initial",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Initial"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "Completed",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Completed",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Completed"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 3,
+							"name": "InPurchTeamManagerReview",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "In Purchases Team Manager Review",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "InPurchTeamManagerReview"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 4,
+							"name": "InPurchasesManagerReview",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "In Purchases Manager Review",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "InPurchasesManagerReview"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 5,
+							"name": "InFinancialManagerReview",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "In Financial Manager Review",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "InFinancialManagerReview"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "Enumeration",
+							"value": "PurchaseOrderStateMachineStates"
+						}
+					],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "PurchaseOrderStateMachineInPurchTeamManagerReviewDecisionsSelector",
+					"type": "Selector",
+					"label": "Purchase Order State Machine In Purchases Team Manager Review Decisions",
+					"elements": [
+						{
+							"row": 1,
+							"name": "Approve",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Approve",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Approve"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "Reject",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Reject",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Reject"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "Enumeration",
+							"value": "PurchaseOrderStateMachineInPurchTeamManagerReviewDecisions"
+						}
+					],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "SaleOrderStateMachineStatesSelector",
+					"type": "Selector",
+					"label": "Sale Order State Machine States",
+					"elements": [
+						{
+							"row": 1,
+							"name": "Initial",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Initial",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Initial"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "Completed",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Completed",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Completed"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 3,
+							"name": "InSalesTeamManagerReview",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "In Sales Team Manager Review",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "InSalesTeamManagerReview"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 4,
+							"name": "InSalesManagerReview",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "In Sales Manager Review",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "InSalesManagerReview"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 5,
+							"name": "InFinancialManagerReview",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "In Financial Manager Review",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "InFinancialManagerReview"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "Enumeration",
+							"value": "SaleOrderStateMachineStates"
+						}
+					],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "SaleOrderStateMachineInSalesManagerReviewDecisionsSelector",
+					"type": "Selector",
+					"label": "Sale Order State Machine In Sales Manager Review Decisions",
+					"elements": [
+						{
+							"row": 1,
+							"name": "Approve",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Approve",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Approve"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "Reject",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Reject",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Reject"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "Enumeration",
+							"value": "SaleOrderStateMachineInSalesManagerReviewDecisions"
+						}
+					],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "PurchaseOrderStateMachineInFinancialManagerReviewDecisionsSelector",
+					"type": "Selector",
+					"label": "Purchase Order State Machine In Financial Manager Review Decisions",
+					"elements": [
+						{
+							"row": 1,
+							"name": "Approve",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Approve",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Approve"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "Reject",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Reject",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Reject"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "Enumeration",
+							"value": "PurchaseOrderStateMachineInFinancialManagerReviewDecisions"
+						}
+					],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "SaleOrderStateMachineInSalesTeamManagerReviewDecisionsSelector",
+					"type": "Selector",
+					"label": "Sale Order State Machine In Sales Team Manager Review Decisions",
+					"elements": [
+						{
+							"row": 1,
+							"name": "Approve",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Approve",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Approve"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "Reject",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Reject",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Reject"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "Enumeration",
+							"value": "SaleOrderStateMachineInSalesTeamManagerReviewDecisions"
+						}
+					],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "SaleOrderStateMachineInFinancialManagerReviewDecisionsSelector",
+					"type": "Selector",
+					"label": "Sale Order State Machine In Financial Manager Review Decisions",
+					"elements": [
+						{
+							"row": 1,
+							"name": "Approve",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Approve",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Approve"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "Reject",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Reject",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Reject"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "Enumeration",
+							"value": "SaleOrderStateMachineInFinancialManagerReviewDecisions"
+						}
+					],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "PurchaseOrderStateMachineInPurchasesManagerReviewDecisionsSelector",
+					"type": "Selector",
+					"label": "Purchase Order State Machine In Purchases Manager Review Decisions",
+					"elements": [
+						{
+							"row": 1,
+							"name": "Approve",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Approve",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Approve"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "Reject",
+							"size": 12,
+							"type": "SelectorEntry",
+							"label": "Reject",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "EnumerationValue",
+									"value": "Reject"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "Enumeration",
+							"value": "PurchaseOrderStateMachineInPurchasesManagerReviewDecisions"
+						}
+					],
+					"behaviours": [],
+					"description": null
+				}
+			],
+			"forms": [
+				{
+					"name": "ClientForm",
+					"type": "Form",
+					"label": "Client",
+					"entity": "Client",
+					"elements": [
+						{
+							"row": 1,
+							"name": "_code",
+							"size": 6,
+							"type": "Input",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 1,
+							"name": "_name",
+							"size": 6,
+							"type": "Input",
+							"label": "Name",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_description",
+							"size": 6,
+							"type": "Input",
+							"label": "Description",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_inactive",
+							"size": 6,
+							"type": "Input",
+							"label": "Inactive",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Boolean"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "VatTaxForm",
+					"type": "Form",
+					"label": "Vat Tax",
+					"entity": "VatTax",
+					"elements": [
+						{
+							"row": 1,
+							"name": "_code",
+							"size": 6,
+							"type": "Input",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 1,
+							"name": "_name",
+							"size": 6,
+							"type": "Input",
+							"label": "Name",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_description",
+							"size": 6,
+							"type": "Input",
+							"label": "Description",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_inactive",
+							"size": 6,
+							"type": "Input",
+							"label": "Inactive",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Boolean"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 4,
+							"name": "Multiplier",
+							"size": 6,
+							"type": "Input",
+							"label": "Multiplier",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Decimal"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "PurchaseOrderForm",
+					"type": "Form",
+					"label": "PurchaseOrder",
+					"entity": "PurchaseOrder",
+					"elements": [
+						{
+							"row": 1,
+							"name": "_code",
+							"size": 6,
+							"type": "Input",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": true,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 1,
+							"name": "_serie",
+							"size": 6,
+							"type": "ReferenceSelector",
+							"label": "Serie",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": true,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "Shared"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "definition",
+									"value": "PurchaseOrderSerie"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_number",
+							"size": 6,
+							"type": "Input",
+							"label": "Number",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": true,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "true"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Integer"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 1,
+							"name": "_date",
+							"size": 6,
+							"type": "Input",
+							"label": "Date",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Date"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 4,
+							"name": "Supplier",
+							"size": 6,
+							"type": "ReferenceSelector",
+							"label": "Supplier",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "Shared"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "definition",
+									"value": "Supplier"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 5,
+							"name": "Lines",
+							"size": 12,
+							"type": "List",
+							"label": "Lines",
+							"column": 1,
+							"elements": [
+								{
+									"row": 1,
+									"name": "_code",
+									"size": 1,
+									"type": "Input",
+									"label": "Code",
+									"column": 1,
+									"elements": [],
+									"helpText": null,
+									"isHidden": true,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Text"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "_name",
+									"size": 1,
+									"type": "Input",
+									"label": "Name",
+									"column": 2,
+									"elements": [],
+									"helpText": null,
+									"isHidden": true,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Text"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "_description",
+									"size": 1,
+									"type": "Input",
+									"label": "Description",
+									"column": 3,
+									"elements": [],
+									"helpText": null,
+									"isHidden": true,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "0"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Text"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "_inactive",
+									"size": 1,
+									"type": "Input",
+									"label": "Inactive",
+									"column": 4,
+									"elements": [],
+									"helpText": null,
+									"isHidden": true,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Boolean"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "Product",
+									"size": 1,
+									"type": "ReferenceSelector",
+									"label": "Product",
+									"column": 5,
+									"elements": [],
+									"helpText": null,
+									"isHidden": false,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "Shared"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "definition",
+											"value": "Product"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "UnitPrice",
+									"size": 1,
+									"type": "Input",
+									"label": "Unit Price",
+									"column": 6,
+									"elements": [],
+									"helpText": null,
+									"isHidden": false,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Decimal"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "Quantity",
+									"size": 1,
+									"type": "Input",
+									"label": "Quantity",
+									"column": 7,
+									"elements": [],
+									"helpText": null,
+									"isHidden": false,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Integer"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "Value",
+									"size": 1,
+									"type": "Input",
+									"label": "Value",
+									"column": 8,
+									"elements": [],
+									"helpText": null,
+									"isHidden": false,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "true"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Decimal"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "VatTax",
+									"size": 1,
+									"type": "ReferenceSelector",
+									"label": "Vat Tax",
+									"column": 5,
+									"elements": [],
+									"helpText": null,
+									"isHidden": false,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "Shared"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "definition",
+											"value": "VatTax"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 0,
+									"name": "TotalWithVat",
+									"size": 1,
+									"type": "Input",
+									"label": "TotalWithVat",
+									"column": 10,
+									"elements": [],
+									"helpText": "",
+									"isHidden": true,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "true"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Decimal"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": "Mobile"
+								}
+							],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "Composite"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "100"
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "definition",
+									"value": "PurchaseOrderLine"
+								},
+								{
+									"key": "isEditable",
+									"value": "true"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 8,
+							"name": "TotalWithVat",
+							"size": 6,
+							"type": "Input",
+							"label": "Total With Vat",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "true"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Decimal"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 6,
+							"name": "TotalWithoutVat",
+							"size": 6,
+							"type": "Input",
+							"label": "Total Without Vat",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "true"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Decimal"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 7,
+							"name": "VatTotal",
+							"size": 6,
+							"type": "Input",
+							"label": "Vat Total",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "true"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Decimal"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "ProductForm",
+					"type": "Form",
+					"label": "Product",
+					"entity": "Product",
+					"elements": [
+						{
+							"row": 1,
+							"name": "_code",
+							"size": 6,
+							"type": "Input",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 1,
+							"name": "_name",
+							"size": 6,
+							"type": "Input",
+							"label": "Name",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_description",
+							"size": 6,
+							"type": "Input",
+							"label": "Description",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_inactive",
+							"size": 6,
+							"type": "Input",
+							"label": "Inactive",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Boolean"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 4,
+							"name": "DefaultVatTax",
+							"size": 6,
+							"type": "ReferenceSelector",
+							"label": "Default Vat Tax",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "Shared"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "definition",
+									"value": "VatTax"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 5,
+							"name": "PurchasePrice",
+							"size": 6,
+							"type": "Input",
+							"label": "Purchase Price",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Decimal"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 6,
+							"name": "SalePrice",
+							"size": 6,
+							"type": "Input",
+							"label": "Sale Price",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Decimal"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "SaleOrderForm",
+					"type": "Form",
+					"label": "SaleOrder",
+					"entity": "SaleOrder",
+					"elements": [
+						{
+							"row": 1,
+							"name": "_code",
+							"size": 6,
+							"type": "Input",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": true,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 1,
+							"name": "_serie",
+							"size": 6,
+							"type": "ReferenceSelector",
+							"label": "Serie",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": true,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "Shared"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "definition",
+									"value": "SaleOrderSerie"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_number",
+							"size": 6,
+							"type": "Input",
+							"label": "Number",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": true,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "true"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Integer"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 1,
+							"name": "_date",
+							"size": 6,
+							"type": "Input",
+							"label": "Date",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Date"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 4,
+							"name": "Client",
+							"size": 6,
+							"type": "ReferenceSelector",
+							"label": "Client",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "Shared"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "definition",
+									"value": "Client"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 4,
+							"name": "SalesPerson",
+							"size": 6,
+							"type": "ReferenceSelector",
+							"label": "Sales Person",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "Shared"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "definition",
+									"value": "SalesPerson"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 5,
+							"name": "Lines",
+							"size": 12,
+							"type": "List",
+							"label": "Lines",
+							"column": 1,
+							"elements": [
+								{
+									"row": 1,
+									"name": "_code",
+									"size": 1,
+									"type": "Input",
+									"label": "Code",
+									"column": 1,
+									"elements": [],
+									"helpText": null,
+									"isHidden": true,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Text"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "_name",
+									"size": 1,
+									"type": "Input",
+									"label": "Name",
+									"column": 2,
+									"elements": [],
+									"helpText": null,
+									"isHidden": true,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Text"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "_description",
+									"size": 1,
+									"type": "Input",
+									"label": "Description",
+									"column": 3,
+									"elements": [],
+									"helpText": null,
+									"isHidden": true,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "0"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Text"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "_inactive",
+									"size": 1,
+									"type": "Input",
+									"label": "Inactive",
+									"column": 4,
+									"elements": [],
+									"helpText": null,
+									"isHidden": true,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Boolean"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "Product",
+									"size": 1,
+									"type": "ReferenceSelector",
+									"label": "Product",
+									"column": 5,
+									"elements": [],
+									"helpText": null,
+									"isHidden": false,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "Shared"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "definition",
+											"value": "Product"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "UnitPrice",
+									"size": 1,
+									"type": "Input",
+									"label": "Unit Price",
+									"column": 6,
+									"elements": [],
+									"helpText": null,
+									"isHidden": false,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Decimal"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "Quantity",
+									"size": 1,
+									"type": "Input",
+									"label": "Quantity",
+									"column": 7,
+									"elements": [],
+									"helpText": null,
+									"isHidden": false,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Integer"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "Value",
+									"size": 1,
+									"type": "Input",
+									"label": "Value",
+									"column": 8,
+									"elements": [],
+									"helpText": null,
+									"isHidden": false,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "true"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Decimal"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 1,
+									"name": "VatTax",
+									"size": 1,
+									"type": "ReferenceSelector",
+									"label": "Vat Tax",
+									"column": 5,
+									"elements": [],
+									"helpText": null,
+									"isHidden": false,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "Shared"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "false"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "definition",
+											"value": "VatTax"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": null
+								},
+								{
+									"row": 0,
+									"name": "TotalWithVat",
+									"size": 1,
+									"type": "Input",
+									"label": "TotalWithVat",
+									"column": 10,
+									"elements": [],
+									"helpText": "",
+									"isHidden": true,
+									"attributes": [
+										{
+											"key": "aggregationKind",
+											"value": "None"
+										},
+										{
+											"key": "isReadOnly",
+											"value": "true"
+										},
+										{
+											"key": "max",
+											"value": "1"
+										},
+										{
+											"key": "min",
+											"value": "1"
+										},
+										{
+											"key": "isSensitiveData",
+											"value": "false"
+										},
+										{
+											"key": "formattingType",
+											"value": "Decimal"
+										}
+									],
+									"behaviours": [],
+									"description": null,
+									"visibleFrom": "Mobile"
+								}
+							],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "Composite"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "100"
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "definition",
+									"value": "SaleOrderLine"
+								},
+								{
+									"key": "isEditable",
+									"value": "true"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 8,
+							"name": "TotalWithVat",
+							"size": 6,
+							"type": "Input",
+							"label": "Total With Vat",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "true"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Decimal"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 6,
+							"name": "TotalWithoutVat",
+							"size": 6,
+							"type": "Input",
+							"label": "Total Without Vat",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "true"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Decimal"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 7,
+							"name": "VatTotal",
+							"size": 6,
+							"type": "Input",
+							"label": "Vat Total",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "true"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Decimal"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "PurchaseOrderSerieForm",
+					"type": "Form",
+					"label": "PurchaseOrder Serie",
+					"entity": "PurchaseOrderSerie",
+					"elements": [
+						{
+							"row": 1,
+							"name": "_code",
+							"size": 6,
+							"type": "Input",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 1,
+							"name": "_name",
+							"size": 6,
+							"type": "Input",
+							"label": "Name",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_description",
+							"size": 6,
+							"type": "Input",
+							"label": "Description",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_inactive",
+							"size": 6,
+							"type": "Input",
+							"label": "Inactive",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Boolean"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 3,
+							"name": "_startingNumber",
+							"size": 6,
+							"type": "Input",
+							"label": "Starting Number",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Integer"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "SupplierForm",
+					"type": "Form",
+					"label": "Supplier",
+					"entity": "Supplier",
+					"elements": [
+						{
+							"row": 1,
+							"name": "_code",
+							"size": 6,
+							"type": "Input",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 1,
+							"name": "_name",
+							"size": 6,
+							"type": "Input",
+							"label": "Name",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_description",
+							"size": 6,
+							"type": "Input",
+							"label": "Description",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_inactive",
+							"size": 6,
+							"type": "Input",
+							"label": "Inactive",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Boolean"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "SalesPersonForm",
+					"type": "Form",
+					"label": "Sales Person",
+					"entity": "SalesPerson",
+					"elements": [
+						{
+							"row": 1,
+							"name": "_code",
+							"size": 6,
+							"type": "Input",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 1,
+							"name": "_name",
+							"size": 6,
+							"type": "Input",
+							"label": "Name",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_description",
+							"size": 6,
+							"type": "Input",
+							"label": "Description",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_inactive",
+							"size": 6,
+							"type": "Input",
+							"label": "Inactive",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Boolean"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "SaleOrderSerieForm",
+					"type": "Form",
+					"label": "SaleOrder Serie",
+					"entity": "SaleOrderSerie",
+					"elements": [
+						{
+							"row": 1,
+							"name": "_code",
+							"size": 6,
+							"type": "Input",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 1,
+							"name": "_name",
+							"size": 6,
+							"type": "Input",
+							"label": "Name",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_description",
+							"size": 6,
+							"type": "Input",
+							"label": "Description",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "0"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 2,
+							"name": "_inactive",
+							"size": 6,
+							"type": "Input",
+							"label": "Inactive",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Boolean"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 3,
+							"name": "_startingNumber",
+							"size": 6,
+							"type": "Input",
+							"label": "Starting Number",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "aggregationKind",
+									"value": "None"
+								},
+								{
+									"key": "isReadOnly",
+									"value": "false"
+								},
+								{
+									"key": "max",
+									"value": "1"
+								},
+								{
+									"key": "min",
+									"value": "1"
+								},
+								{
+									"key": "isSensitiveData",
+									"value": "false"
+								},
+								{
+									"key": "formattingType",
+									"value": "Integer"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				}
+			],
+			"statemachines": [
+				{
+					"name": "PurchaseOrderStateMachine",
+					"states": [
+						{
+							"name": "Initial",
+							"decisions": [],
+							"isInitial": true,
+							"behaviours": [],
+							"description": null,
+							"transitions": [
+								{
+									"to": "InPurchTeamManagerReview",
+									"name": "toPurchasesTeamManagerReview",
+									"type": "Auto",
+									"order": 1,
+									"decision": "",
+									"expression": "return true;",
+									"description": ""
+								}
+							],
+							"disableAttributes": false,
+							"disableOperations": false,
+							"enabledAttributes": [],
+							"enabledOperations": [],
+							"assignToExpression": null
+						},
+						{
+							"name": "Completed",
+							"decisions": [],
+							"isInitial": false,
+							"behaviours": [],
+							"description": null,
+							"transitions": [],
+							"disableAttributes": true,
+							"disableOperations": true,
+							"enabledAttributes": [],
+							"enabledOperations": [],
+							"assignToExpression": null
+						},
+						{
+							"name": "InPurchTeamManagerReview",
+							"decisions": [
+								{
+									"name": "Approve",
+									"order": 1,
+									"commentType": "None",
+									"description": ""
+								},
+								{
+									"name": "Reject",
+									"order": 2,
+									"commentType": "Required",
+									"description": ""
+								}
+							],
+							"isInitial": false,
+							"behaviours": [],
+							"description": "",
+							"transitions": [
+								{
+									"to": "Initial",
+									"name": "ToInitial",
+									"type": "Decision",
+									"order": 1,
+									"decision": "Reject",
+									"expression": "",
+									"description": ""
+								},
+								{
+									"to": "InPurchasesManagerReview",
+									"name": "ToPurchasesManagerReview",
+									"type": "Decision",
+									"order": 2,
+									"decision": "Approve",
+									"expression": "return this.TotalWithVat \u003e\u003d 1000;",
+									"description": ""
+								},
+								{
+									"to": "InFinancialManagerReview",
+									"name": "ToFinancialManagerReview",
+									"type": "Decision",
+									"order": 3,
+									"decision": "Approve",
+									"expression": "return this.TotalWithVat \u003c 1000;",
+									"description": ""
+								}
+							],
+							"disableAttributes": false,
+							"disableOperations": false,
+							"enabledAttributes": [],
+							"enabledOperations": [],
+							"assignToExpression": "return \"PurchasesTeamManager\";"
+						},
+						{
+							"name": "InPurchasesManagerReview",
+							"decisions": [
+								{
+									"name": "Reject",
+									"order": 2,
+									"commentType": "Required",
+									"description": ""
+								},
+								{
+									"name": "Approve",
+									"order": 1,
+									"commentType": "None",
+									"description": ""
+								}
+							],
+							"isInitial": false,
+							"behaviours": [],
+							"description": "",
+							"transitions": [
+								{
+									"to": "Initial",
+									"name": "ToInitial",
+									"type": "Decision",
+									"order": 1,
+									"decision": "Reject",
+									"expression": "",
+									"description": ""
+								},
+								{
+									"to": "InFinancialManagerReview",
+									"name": "ToFinancialManagerReview",
+									"type": "Decision",
+									"order": 2,
+									"decision": "Approve",
+									"expression": "",
+									"description": ""
+								}
+							],
+							"disableAttributes": true,
+							"disableOperations": false,
+							"enabledAttributes": [],
+							"enabledOperations": [],
+							"assignToExpression": "return \"PurchasesManager\";"
+						},
+						{
+							"name": "InFinancialManagerReview",
+							"decisions": [
+								{
+									"name": "Approve",
+									"order": 1,
+									"commentType": "None",
+									"description": ""
+								},
+								{
+									"name": "Reject",
+									"order": 2,
+									"commentType": "Required",
+									"description": ""
+								}
+							],
+							"isInitial": false,
+							"behaviours": [],
+							"description": "",
+							"transitions": [
+								{
+									"to": "Initial",
+									"name": "ToInitial",
+									"type": "Decision",
+									"order": 1,
+									"decision": "Reject",
+									"expression": "",
+									"description": ""
+								},
+								{
+									"to": "Completed",
+									"name": "ToCompleted",
+									"type": "Decision",
+									"order": 2,
+									"decision": "Approve",
+									"expression": "",
+									"description": ""
+								}
+							],
+							"disableAttributes": true,
+							"disableOperations": false,
+							"enabledAttributes": [],
+							"enabledOperations": [],
+							"assignToExpression": "return \"FinancialManager\";"
+						}
+					],
+					"definition": "PurchaseOrder",
+					"description": ""
+				},
+				{
+					"name": "SaleOrderStateMachine",
+					"states": [
+						{
+							"name": "Initial",
+							"decisions": [],
+							"isInitial": true,
+							"behaviours": [],
+							"description": null,
+							"transitions": [
+								{
+									"to": "InSalesTeamManagerReview",
+									"name": "toSalesTeamManagerReview",
+									"type": "Auto",
+									"order": 1,
+									"decision": "",
+									"expression": "return true;",
+									"description": ""
+								}
+							],
+							"disableAttributes": false,
+							"disableOperations": false,
+							"enabledAttributes": [],
+							"enabledOperations": [],
+							"assignToExpression": null
+						},
+						{
+							"name": "Completed",
+							"decisions": [],
+							"isInitial": false,
+							"behaviours": [],
+							"description": null,
+							"transitions": [],
+							"disableAttributes": true,
+							"disableOperations": true,
+							"enabledAttributes": [],
+							"enabledOperations": [],
+							"assignToExpression": null
+						},
+						{
+							"name": "InSalesTeamManagerReview",
+							"decisions": [
+								{
+									"name": "Approve",
+									"order": 1,
+									"commentType": "None",
+									"description": ""
+								},
+								{
+									"name": "Reject",
+									"order": 2,
+									"commentType": "Required",
+									"description": ""
+								}
+							],
+							"isInitial": false,
+							"behaviours": [],
+							"description": "",
+							"transitions": [
+								{
+									"to": "Initial",
+									"name": "ToInitial",
+									"type": "Decision",
+									"order": 1,
+									"decision": "Reject",
+									"expression": "",
+									"description": ""
+								},
+								{
+									"to": "InSalesManagerReview",
+									"name": "ToSalesManagerReview",
+									"type": "Decision",
+									"order": 2,
+									"decision": "Approve",
+									"expression": "return this.TotalWithVat \u003e\u003d 1000;",
+									"description": ""
+								},
+								{
+									"to": "InFinancialManagerReview",
+									"name": "ToFinancialManagerReview",
+									"type": "Decision",
+									"order": 3,
+									"decision": "Approve",
+									"expression": "return this.TotalWithVat \u003c 1000;",
+									"description": ""
+								}
+							],
+							"disableAttributes": false,
+							"disableOperations": false,
+							"enabledAttributes": [],
+							"enabledOperations": [],
+							"assignToExpression": "return \"SalesTeamManager\";"
+						},
+						{
+							"name": "InSalesManagerReview",
+							"decisions": [
+								{
+									"name": "Reject",
+									"order": 2,
+									"commentType": "Required",
+									"description": ""
+								},
+								{
+									"name": "Approve",
+									"order": 1,
+									"commentType": "None",
+									"description": ""
+								}
+							],
+							"isInitial": false,
+							"behaviours": [],
+							"description": "",
+							"transitions": [
+								{
+									"to": "Initial",
+									"name": "ToInitial",
+									"type": "Decision",
+									"order": 1,
+									"decision": "Reject",
+									"expression": "",
+									"description": ""
+								},
+								{
+									"to": "InFinancialManagerReview",
+									"name": "ToFinancialManagerReview",
+									"type": "Decision",
+									"order": 2,
+									"decision": "Approve",
+									"expression": "",
+									"description": ""
+								}
+							],
+							"disableAttributes": true,
+							"disableOperations": false,
+							"enabledAttributes": [],
+							"enabledOperations": [],
+							"assignToExpression": "return \"SalesManager\";"
+						},
+						{
+							"name": "InFinancialManagerReview",
+							"decisions": [
+								{
+									"name": "Approve",
+									"order": 1,
+									"commentType": "None",
+									"description": ""
+								},
+								{
+									"name": "Reject",
+									"order": 2,
+									"commentType": "Required",
+									"description": ""
+								}
+							],
+							"isInitial": false,
+							"behaviours": [],
+							"description": "",
+							"transitions": [
+								{
+									"to": "Initial",
+									"name": "ToInitial",
+									"type": "Decision",
+									"order": 1,
+									"decision": "Reject",
+									"expression": "",
+									"description": ""
+								},
+								{
+									"to": "Completed",
+									"name": "ToCompleted",
+									"type": "Decision",
+									"order": 2,
+									"decision": "Approve",
+									"expression": "",
+									"description": ""
+								}
+							],
+							"disableAttributes": true,
+							"disableOperations": false,
+							"enabledAttributes": [],
+							"enabledOperations": [],
+							"assignToExpression": "return \"FinancialManager\";"
+						}
+					],
+					"definition": "SaleOrder",
+					"description": ""
+				}
+			],
+			"enumerations": [
+				{
+					"name": "PurchaseOrderStateMachineInPurchTeamManagerReviewDecisions",
+					"values": [
+						{
+							"name": "Approve",
+							"order": 1,
+							"description": null
+						},
+						{
+							"name": "Reject",
+							"order": 2,
+							"description": null
+						}
+					],
+					"description": null
+				},
+				{
+					"name": "SaleOrderStateMachineInSalesManagerReviewDecisions",
+					"values": [
+						{
+							"name": "Approve",
+							"order": 1,
+							"description": null
+						},
+						{
+							"name": "Reject",
+							"order": 2,
+							"description": null
+						}
+					],
+					"description": null
+				},
+				{
+					"name": "SaleOrderStateMachineInSalesTeamManagerReviewDecisions",
+					"values": [
+						{
+							"name": "Approve",
+							"order": 1,
+							"description": null
+						},
+						{
+							"name": "Reject",
+							"order": 2,
+							"description": null
+						}
+					],
+					"description": null
+				},
+				{
+					"name": "PurchaseOrderStateMachineInPurchasesManagerReviewDecisions",
+					"values": [
+						{
+							"name": "Approve",
+							"order": 1,
+							"description": null
+						},
+						{
+							"name": "Reject",
+							"order": 2,
+							"description": null
+						}
+					],
+					"description": null
+				},
+				{
+					"name": "SaleOrderStateMachineInFinancialManagerReviewDecisions",
+					"values": [
+						{
+							"name": "Approve",
+							"order": 1,
+							"description": null
+						},
+						{
+							"name": "Reject",
+							"order": 2,
+							"description": null
+						}
+					],
+					"description": null
+				},
+				{
+					"name": "SaleOrderStateMachineStates",
+					"values": [
+						{
+							"name": "Initial",
+							"order": 1,
+							"description": null
+						},
+						{
+							"name": "Completed",
+							"order": 2,
+							"description": null
+						},
+						{
+							"name": "InSalesTeamManagerReview",
+							"order": 3,
+							"description": null
+						},
+						{
+							"name": "InSalesManagerReview",
+							"order": 4,
+							"description": null
+						},
+						{
+							"name": "InFinancialManagerReview",
+							"order": 5,
+							"description": null
+						}
+					],
+					"description": null
+				},
+				{
+					"name": "PurchaseOrderStateMachineInFinancialManagerReviewDecisions",
+					"values": [
+						{
+							"name": "Approve",
+							"order": 1,
+							"description": null
+						},
+						{
+							"name": "Reject",
+							"order": 2,
+							"description": null
+						}
+					],
+					"description": null
+				},
+				{
+					"name": "PurchaseOrderStateMachineStates",
+					"values": [
+						{
+							"name": "Initial",
+							"order": 1,
+							"description": null
+						},
+						{
+							"name": "Completed",
+							"order": 2,
+							"description": null
+						},
+						{
+							"name": "InPurchTeamManagerReview",
+							"order": 3,
+							"description": null
+						},
+						{
+							"name": "InPurchasesManagerReview",
+							"order": 4,
+							"description": null
+						},
+						{
+							"name": "InFinancialManagerReview",
+							"order": 5,
+							"description": null
+						}
+					],
+					"description": null
+				}
+			],
+			"agents": [
+				{
+					"name": "SalesPerson",
+					"attributes": [
+						{
+							"name": "_code",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_name",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_description",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_inactive",
+							"type": "Boolean",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						}
+					],
+					"dataSource": "System",
+					"description": "",
+					"dataBehaviours": [],
+					"entityBehaviours": [],
+					"behaviourNamespaces": []
+				},
+				{
+					"name": "Supplier",
+					"attributes": [
+						{
+							"name": "_code",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_name",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_description",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_inactive",
+							"type": "Boolean",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						}
+					],
+					"dataSource": "System",
+					"description": "",
+					"dataBehaviours": [],
+					"entityBehaviours": [],
+					"behaviourNamespaces": []
+				},
+				{
+					"name": "Client",
+					"attributes": [
+						{
+							"name": "_code",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_name",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_description",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_inactive",
+							"type": "Boolean",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						}
+					],
+					"dataSource": "System",
+					"description": "",
+					"dataBehaviours": [],
+					"entityBehaviours": [],
+					"behaviourNamespaces": []
+				}
+			],
+			"documents": [
+				{
+					"name": "SaleOrder",
+					"attributes": [
+						{
+							"name": "_code",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_serie",
+							"type": "SaleOrderSerie",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "Shared",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_number",
+							"type": "Integer",
+							"isSystem": true,
+							"isReadOnly": true,
+							"description": null,
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_date",
+							"type": "Date",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "Client",
+							"type": "Client",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "Shared",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "SalesPerson",
+							"type": "SalesPerson",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "Shared",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "Lines",
+							"type": "SaleOrderLine",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 0,
+								"upper": 100
+							},
+							"aggregationKind": "Composite",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "TotalWithVat",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": true,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "TotalWithoutVat",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": true,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "VatTotal",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": true,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "_state",
+							"type": "SaleOrderStateMachineStates",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_assigned",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						}
+					],
+					"dataSource": "System",
+					"description": "",
+					"dataBehaviours": [],
+					"entityBehaviours": [
+						{
+							"name": "Defaults",
+							"type": "Initialize",
+							"attribute": null,
+							"expression": "if(!_Context.Operation.IsNew) return; \nthis._code \u003d Guid.NewGuid().ToString(\"N\");\nthis._date \u003d DateTime.Today;\n\nvar httpClient \u003d _Context.CreateApplicationHttpClient();\nvar serieRequest \u003d httpClient.PostAsJsonAsync($\"Queries/{this.GetType().Name}SerieQuery/Default?PageSize\u003d1\",\n        new { Filter \u003d new { Property \u003d \"_inactive\", Value \u003d false } })\n    .GetAwaiter().GetResult();\n\nif (serieRequest.IsSuccessStatusCode)\n{\n    var serieRequestData \u003d serieRequest.Content.ReadAsAsync\u003cList\u003cDictionary\u003cstring, object\u003e\u003e\u003e()\n                            .GetAwaiter().GetResult();\n\n    if(serieRequestData.Any())\n        this._serie \u003d serieRequestData.First()[\"_code\"].ToString();\n}\n",
+							"description": null
+						},
+						{
+							"name": "VatTotal_Formula",
+							"type": "Formula",
+							"attribute": "VatTotal",
+							"expression": "return this.TotalWithVat - this.TotalWithoutVat;",
+							"description": ""
+						},
+						{
+							"name": "TotalWithVat_Formula",
+							"type": "Formula",
+							"attribute": "TotalWithVat",
+							"expression": "double tot \u003d 0.0;\nforeach (var line in this.Lines)\n{\n    tot +\u003d (double)line.TotalWithVat;\n}\nreturn (decimal)tot;",
+							"description": ""
+						},
+						{
+							"name": "TotalWithoutVat_Formula",
+							"type": "Formula",
+							"attribute": "TotalWithoutVat",
+							"expression": "double tot \u003d 0.0;\nforeach (var line in this.Lines)\n{\n    tot +\u003d (double)line.Value;\n}\nreturn (decimal)tot;",
+							"description": ""
+						}
+					],
+					"behaviourNamespaces": []
+				},
+				{
+					"name": "PurchaseOrder",
+					"attributes": [
+						{
+							"name": "_code",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_serie",
+							"type": "PurchaseOrderSerie",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "Shared",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_number",
+							"type": "Integer",
+							"isSystem": true,
+							"isReadOnly": true,
+							"description": null,
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_date",
+							"type": "Date",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "Supplier",
+							"type": "Supplier",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "Shared",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "Lines",
+							"type": "PurchaseOrderLine",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 0,
+								"upper": 100
+							},
+							"aggregationKind": "Composite",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "TotalWithVat",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": true,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "TotalWithoutVat",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": true,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "VatTotal",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": true,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "_state",
+							"type": "PurchaseOrderStateMachineStates",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_assigned",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						}
+					],
+					"dataSource": "System",
+					"description": "",
+					"dataBehaviours": [],
+					"entityBehaviours": [
+						{
+							"name": "Defaults",
+							"type": "Initialize",
+							"attribute": null,
+							"expression": "if(!_Context.Operation.IsNew) return; \nthis._code \u003d Guid.NewGuid().ToString(\"N\");\nthis._date \u003d DateTime.Today;\n\nvar httpClient \u003d _Context.CreateApplicationHttpClient();\nvar serieRequest \u003d httpClient.PostAsJsonAsync($\"Queries/{this.GetType().Name}SerieQuery/Default?PageSize\u003d1\",\n        new { Filter \u003d new { Property \u003d \"_inactive\", Value \u003d false } })\n    .GetAwaiter().GetResult();\n\nif (serieRequest.IsSuccessStatusCode)\n{\n    var serieRequestData \u003d serieRequest.Content.ReadAsAsync\u003cList\u003cDictionary\u003cstring, object\u003e\u003e\u003e()\n                            .GetAwaiter().GetResult();\n\n    if(serieRequestData.Any())\n        this._serie \u003d serieRequestData.First()[\"_code\"].ToString();\n}\n",
+							"description": null
+						},
+						{
+							"name": "VatTotal_Formula",
+							"type": "Formula",
+							"attribute": "VatTotal",
+							"expression": "return this.TotalWithVat - this.TotalWithoutVat;",
+							"description": ""
+						},
+						{
+							"name": "TotalWithVat_Formula",
+							"type": "Formula",
+							"attribute": "TotalWithVat",
+							"expression": "double tot \u003d 0.0;\nforeach (var line in this.Lines)\n{\n    tot +\u003d (double)line.TotalWithVat;\n}\nreturn (decimal)tot;",
+							"description": ""
+						},
+						{
+							"name": "TotalWithoutVat_Formula",
+							"type": "Formula",
+							"attribute": "TotalWithoutVat",
+							"expression": "double tot \u003d 0.0;\nforeach (var line in this.Lines)\n{\n    tot +\u003d (double)line.Value;\n}\nreturn (decimal)tot;",
+							"description": ""
+						}
+					],
+					"behaviourNamespaces": []
+				}
+			],
+			"series": [
+				{
+					"name": "SaleOrderSerie",
+					"attributes": [
+						{
+							"name": "_code",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_name",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_description",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_inactive",
+							"type": "Boolean",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_startingNumber",
+							"type": "Integer",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						}
+					],
+					"dataSource": "System",
+					"description": null,
+					"dataBehaviours": [],
+					"entityBehaviours": [
+						{
+							"name": "Defaults",
+							"type": "Initialize",
+							"attribute": null,
+							"expression": "if(!_Context.Operation.IsNew) return; \nthis._startingNumber \u003d 1;",
+							"description": null
+						}
+					],
+					"behaviourNamespaces": []
+				},
+				{
+					"name": "PurchaseOrderSerie",
+					"attributes": [
+						{
+							"name": "_code",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_name",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_description",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_inactive",
+							"type": "Boolean",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_startingNumber",
+							"type": "Integer",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						}
+					],
+					"dataSource": "System",
+					"description": null,
+					"dataBehaviours": [],
+					"entityBehaviours": [
+						{
+							"name": "Defaults",
+							"type": "Initialize",
+							"attribute": null,
+							"expression": "if(!_Context.Operation.IsNew) return; \nthis._startingNumber \u003d 1;",
+							"description": null
+						}
+					],
+					"behaviourNamespaces": []
+				}
+			],
+			"dashboards": [
+				{
+					"name": "ProductDashboard",
+					"type": "Dashboard",
+					"label": "Product",
+					"elements": [
+						{
+							"row": 1,
+							"name": "ProductList",
+							"size": 12,
+							"type": "List",
+							"label": "Product",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "listCode",
+									"value": "ProductList"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "VatTaxDashboard",
+					"type": "Dashboard",
+					"label": "Vat Tax",
+					"elements": [
+						{
+							"row": 1,
+							"name": "VatTaxList",
+							"size": 12,
+							"type": "List",
+							"label": "Vat Tax",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "listCode",
+									"value": "VatTaxList"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "SupplierDashboard",
+					"type": "Dashboard",
+					"label": "Supplier",
+					"elements": [
+						{
+							"row": 1,
+							"name": "SupplierList",
+							"size": 12,
+							"type": "List",
+							"label": "Supplier",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "listCode",
+									"value": "SupplierList"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "PurchaseOrderDashboard",
+					"type": "Dashboard",
+					"label": "PurchaseOrder",
+					"elements": [
+						{
+							"row": 1,
+							"name": "PurchaseOrderList",
+							"size": 12,
+							"type": "List",
+							"label": "PurchaseOrder",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "listCode",
+									"value": "PurchaseOrderList"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "SaleOrderSerieDashboard",
+					"type": "Dashboard",
+					"label": "SaleOrder Serie",
+					"elements": [
+						{
+							"row": 1,
+							"name": "SaleOrderSerieList",
+							"size": 12,
+							"type": "List",
+							"label": "SaleOrder Serie",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "listCode",
+									"value": "SaleOrderSerieList"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "ResetTenantDashboard",
+					"type": "Dashboard",
+					"label": "RESET TENANT",
+					"elements": [],
+					"helpText": "",
+					"attributes": [],
+					"behaviours": [
+						{
+							"name": "Initialize",
+							"type": "Initialize",
+							"expression": "if (confirm(\"This operation will erase ALL Tenant MODEL entities. Are you sure you want to continue?\") \u003d\u003d true) {\n\n// Code generated by an accelerator (you can change it if you need)\n// The following code calls an Application Behaviour\n\nconst apiClient \u003d this._context.createApiHttpClient();\nconst dataSource \u003d \"Default\";\n\nvar args \u003d {};\n// Example of how to add an argument\n// args.myArgumentName \u003d \"myArgumentValue\";\n\napiClient.doPost(`/api/v1/${this._context.tenant.code}/${this._context.tenant.environmentCode}/application/behaviours/${dataSource}/ResetTenant`, args)\n    .then(response \u003d\u003e {\n        alert(\"Reset Tenant process started. This might take a couple minutes.\");\n    });\n}",
+							"description": ""
+						}
+					],
+					"description": ""
+				},
+				{
+					"name": "SaleOrderDashboard",
+					"type": "Dashboard",
+					"label": "SaleOrder",
+					"elements": [
+						{
+							"row": 1,
+							"name": "SaleOrderList",
+							"size": 12,
+							"type": "List",
+							"label": "SaleOrder",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "listCode",
+									"value": "SaleOrderList"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "ClientDashboard",
+					"type": "Dashboard",
+					"label": "Client",
+					"elements": [
+						{
+							"row": 1,
+							"name": "ClientList",
+							"size": 12,
+							"type": "List",
+							"label": "Client",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "listCode",
+									"value": "ClientList"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "PurchaseOrderSerieDashboard",
+					"type": "Dashboard",
+					"label": "PurchaseOrder Serie",
+					"elements": [
+						{
+							"row": 1,
+							"name": "PurchaseOrderSerieList",
+							"size": 12,
+							"type": "List",
+							"label": "PurchaseOrder Serie",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "listCode",
+									"value": "PurchaseOrderSerieList"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"description": null
+				},
+				{
+					"name": "SalesPersonDashboard",
+					"type": "Dashboard",
+					"label": "Sales Person",
+					"elements": [
+						{
+							"row": 1,
+							"name": "SalesPersonList",
+							"size": 12,
+							"type": "List",
+							"label": "Sales Person",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "listCode",
+									"value": "SalesPersonList"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [],
+					"behaviours": [],
+					"description": null
+				}
+			],
+			"lists": [
+				{
+					"name": "PurchaseOrderList",
+					"type": "List",
+					"label": "PurchaseOrder",
+					"query": "PurchaseOrderQuery",
+					"elements": [
+						{
+							"row": 0,
+							"name": "_code",
+							"size": 1,
+							"type": "ListColumn",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_serie",
+							"size": 1,
+							"type": "ListColumn",
+							"label": "Serie",
+							"column": 4,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_number",
+							"size": 1,
+							"type": "ListColumn",
+							"label": "Number",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Integer"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_date",
+							"size": 1,
+							"type": "ListColumn",
+							"label": "Date",
+							"column": 10,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Date"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "totalWithVat",
+							"size": 1,
+							"type": "ListColumn",
+							"label": "Total",
+							"column": 10,
+							"elements": [],
+							"helpText": "",
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Decimal"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": "Mobile"
+						},
+						{
+							"row": 0,
+							"name": "_state",
+							"size": 2,
+							"type": "ListColumn",
+							"label": "State",
+							"column": 11,
+							"elements": [],
+							"helpText": "",
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": "Mobile"
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "queryTableDefinition",
+							"value": "PurchaseOrder"
+						}
+					],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "ProductList",
+					"type": "List",
+					"label": "Product",
+					"query": "ProductQuery",
+					"elements": [
+						{
+							"row": 0,
+							"name": "_code",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_name",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Name",
+							"column": 4,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_description",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Description",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_inactive",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Inactive",
+							"column": 10,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Boolean"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "DefaultVatTax",
+							"size": 1,
+							"type": "ListColumn",
+							"label": "DefaultVatTax",
+							"column": 1,
+							"elements": [],
+							"helpText": "",
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": "Mobile"
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "queryTableDefinition",
+							"value": "Product"
+						}
+					],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "SaleOrderList",
+					"type": "List",
+					"label": "SaleOrder",
+					"query": "SaleOrderQuery",
+					"elements": [
+						{
+							"row": 0,
+							"name": "_code",
+							"size": 1,
+							"type": "ListColumn",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_serie",
+							"size": 1,
+							"type": "ListColumn",
+							"label": "Serie",
+							"column": 4,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_number",
+							"size": 1,
+							"type": "ListColumn",
+							"label": "Number",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Integer"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_date",
+							"size": 1,
+							"type": "ListColumn",
+							"label": "Date",
+							"column": 10,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Date"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "totalWithVat",
+							"size": 1,
+							"type": "ListColumn",
+							"label": "Total",
+							"column": 10,
+							"elements": [],
+							"helpText": "",
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Decimal"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": "Mobile"
+						},
+						{
+							"row": 0,
+							"name": "_state",
+							"size": 2,
+							"type": "ListColumn",
+							"label": "State",
+							"column": 11,
+							"elements": [],
+							"helpText": "",
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": "Mobile"
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "queryTableDefinition",
+							"value": "SaleOrder"
+						}
+					],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "SupplierList",
+					"type": "List",
+					"label": "Supplier",
+					"query": "SupplierQuery",
+					"elements": [
+						{
+							"row": 0,
+							"name": "_code",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_name",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Name",
+							"column": 4,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_description",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Description",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_inactive",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Inactive",
+							"column": 10,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Boolean"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "queryTableDefinition",
+							"value": "Supplier"
+						}
+					],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "PurchaseOrderSerieList",
+					"type": "List",
+					"label": "PurchaseOrder Serie",
+					"query": "PurchaseOrderSerieQuery",
+					"elements": [
+						{
+							"row": 0,
+							"name": "_code",
+							"size": 2,
+							"type": "ListColumn",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_name",
+							"size": 2,
+							"type": "ListColumn",
+							"label": "Name",
+							"column": 3,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_description",
+							"size": 2,
+							"type": "ListColumn",
+							"label": "Description",
+							"column": 5,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_inactive",
+							"size": 2,
+							"type": "ListColumn",
+							"label": "Inactive",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Boolean"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_startingNumber",
+							"size": 2,
+							"type": "ListColumn",
+							"label": "Starting Number",
+							"column": 9,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Integer"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "queryTableDefinition",
+							"value": "PurchaseOrderSerie"
+						}
+					],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "VatTaxList",
+					"type": "List",
+					"label": "Vat Tax",
+					"query": "VatTaxQuery",
+					"elements": [
+						{
+							"row": 0,
+							"name": "_code",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_name",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Name",
+							"column": 4,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_description",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Description",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_inactive",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Inactive",
+							"column": 10,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Boolean"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "queryTableDefinition",
+							"value": "VatTax"
+						}
+					],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "ClientList",
+					"type": "List",
+					"label": "Client",
+					"query": "ClientQuery",
+					"elements": [
+						{
+							"row": 0,
+							"name": "_code",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_name",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Name",
+							"column": 4,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_description",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Description",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_inactive",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Inactive",
+							"column": 10,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Boolean"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "queryTableDefinition",
+							"value": "Client"
+						}
+					],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "SaleOrderSerieList",
+					"type": "List",
+					"label": "SaleOrder Serie",
+					"query": "SaleOrderSerieQuery",
+					"elements": [
+						{
+							"row": 0,
+							"name": "_code",
+							"size": 2,
+							"type": "ListColumn",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_name",
+							"size": 2,
+							"type": "ListColumn",
+							"label": "Name",
+							"column": 3,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_description",
+							"size": 2,
+							"type": "ListColumn",
+							"label": "Description",
+							"column": 5,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_inactive",
+							"size": 2,
+							"type": "ListColumn",
+							"label": "Inactive",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Boolean"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_startingNumber",
+							"size": 2,
+							"type": "ListColumn",
+							"label": "Starting Number",
+							"column": 9,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Integer"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "queryTableDefinition",
+							"value": "SaleOrderSerie"
+						}
+					],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				},
+				{
+					"name": "SalesPersonList",
+					"type": "List",
+					"label": "Sales Person",
+					"query": "SalesPersonQuery",
+					"elements": [
+						{
+							"row": 0,
+							"name": "_code",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Code",
+							"column": 1,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_name",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Name",
+							"column": 4,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_description",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Description",
+							"column": 7,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Text"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						},
+						{
+							"row": 0,
+							"name": "_inactive",
+							"size": 3,
+							"type": "ListColumn",
+							"label": "Inactive",
+							"column": 10,
+							"elements": [],
+							"helpText": null,
+							"isHidden": false,
+							"attributes": [
+								{
+									"key": "formattingType",
+									"value": "Boolean"
+								}
+							],
+							"behaviours": [],
+							"description": null,
+							"visibleFrom": null
+						}
+					],
+					"helpText": null,
+					"attributes": [
+						{
+							"key": "queryTableDefinition",
+							"value": "SalesPerson"
+						}
+					],
+					"behaviours": [],
+					"dataSource": "System",
+					"description": null
+				}
+			],
+			"genericentitys": [
+				{
+					"name": "SaleOrderLine",
+					"isRoot": false,
+					"attributes": [
+						{
+							"name": "_code",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_name",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_description",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_inactive",
+							"type": "Boolean",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "Product",
+							"type": "Product",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "Shared",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "UnitPrice",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "Quantity",
+							"type": "Integer",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "Value",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": true,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "VatTax",
+							"type": "VatTax",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "Shared",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "VatValue",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": true,
+							"description": "The tax multiplier",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "TotalWithVat",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": true,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						}
+					],
+					"dataSource": "System",
+					"description": "",
+					"dataBehaviours": [],
+					"entityBehaviours": [
+						{
+							"name": "Defaults",
+							"type": "Initialize",
+							"attribute": null,
+							"expression": "if(this._code !\u003d null \u0026\u0026 this._code !\u003d String.Empty) return; \nthis._code \u003d Guid.NewGuid().ToString(\"N\");\n\nthis._name \u003d this._code;",
+							"description": null
+						},
+						{
+							"name": "ValueFormula",
+							"type": "Formula",
+							"attribute": "Value",
+							"expression": "return this.UnitPrice * this.Quantity;",
+							"description": ""
+						},
+						{
+							"name": "OnChange_Product",
+							"type": "Action",
+							"attribute": "Product",
+							"expression": "\nvar httpClient \u003d _Context.CreateApplicationHttpClient();\nvar productRequest \u003d httpClient.PostAsJsonAsync($\"Queries/ProductQuery/Default?PageSize\u003d1\",\n        new { Filter \u003d new { Property \u003d \"_code\", Value \u003d newValue } })\n    .GetAwaiter().GetResult();\n\nif (productRequest.IsSuccessStatusCode)\n{\n    var requestData \u003d productRequest.Content.ReadAsAsync\u003cList\u003cDictionary\u003cstring, object\u003e\u003e\u003e()\n                            .GetAwaiter().GetResult();\n\n    if(requestData.Any()){\n        this.VatTax \u003d requestData.First()[\"defaultvattax\"]?.ToString();\n        \n        var d \u003d requestData.First()[\"saleprice\"];\n        if (d is null)return;\n        double doubleVal \u003d (double)d;\n        string doubleAsString \u003d doubleVal.ToString(\"R\");\n        this.UnitPrice \u003d decimal.Parse(doubleAsString);\n    }\n}\n",
+							"description": ""
+						},
+						{
+							"name": "OnChange_VatTax",
+							"type": "Action",
+							"attribute": "VatTax",
+							"expression": "\nvar httpClient \u003d _Context.CreateApplicationHttpClient();\nvar productRequest \u003d httpClient.PostAsJsonAsync($\"Queries/VatTaxQuery/Default?PageSize\u003d1\",\n        new { Filter \u003d new { Property \u003d \"_code\", Value \u003d newValue } })\n    .GetAwaiter().GetResult();\n\nif (productRequest.IsSuccessStatusCode)\n{\n    var requestData \u003d productRequest.Content.ReadAsAsync\u003cList\u003cDictionary\u003cstring, object\u003e\u003e\u003e()\n                            .GetAwaiter().GetResult();\n\n    if(requestData.Any()){\n        \n        var d \u003d requestData.First()[\"multiplier\"];\n        if (d is null)return;\n        double doubleVal \u003d (double)d;\n        string doubleAsString \u003d doubleVal.ToString(\"R\");\n        this.VatValue \u003d decimal.Parse(doubleAsString);\n        \n    }\n}\n",
+							"description": ""
+						},
+						{
+							"name": "TotalWithVat_Formula",
+							"type": "Formula",
+							"attribute": "TotalWithVat",
+							"expression": "return this.Value + this.Value * this.VatValue;",
+							"description": ""
+						}
+					],
+					"behaviourNamespaces": []
+				},
+				{
+					"name": "PurchaseOrderLine",
+					"isRoot": false,
+					"attributes": [
+						{
+							"name": "_code",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_name",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_description",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_inactive",
+							"type": "Boolean",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "Product",
+							"type": "Product",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "Shared",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "UnitPrice",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "Quantity",
+							"type": "Integer",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "Value",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": true,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "VatTax",
+							"type": "VatTax",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "Shared",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "VatValue",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": true,
+							"description": "The tax multiplier",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "TotalWithVat",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": true,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						}
+					],
+					"dataSource": "System",
+					"description": "",
+					"dataBehaviours": [],
+					"entityBehaviours": [
+						{
+							"name": "Defaults",
+							"type": "Initialize",
+							"attribute": null,
+							"expression": "if(this._code !\u003d null \u0026\u0026 this._code !\u003d String.Empty) return; \nthis._code \u003d Guid.NewGuid().ToString(\"N\");\n\nthis._name \u003d this._code;",
+							"description": null
+						},
+						{
+							"name": "ValueFormula",
+							"type": "Formula",
+							"attribute": "Value",
+							"expression": "return this.UnitPrice * this.Quantity;",
+							"description": ""
+						},
+						{
+							"name": "OnChange_Product",
+							"type": "Action",
+							"attribute": "Product",
+							"expression": "\nvar httpClient \u003d _Context.CreateApplicationHttpClient();\nvar productRequest \u003d httpClient.PostAsJsonAsync($\"Queries/ProductQuery/Default?PageSize\u003d1\",\n        new { Filter \u003d new { Property \u003d \"_code\", Value \u003d newValue } })\n    .GetAwaiter().GetResult();\n\nif (productRequest.IsSuccessStatusCode)\n{\n    var requestData \u003d productRequest.Content.ReadAsAsync\u003cList\u003cDictionary\u003cstring, object\u003e\u003e\u003e()\n                            .GetAwaiter().GetResult();\n\n    if(requestData.Any()){\n        this.VatTax \u003d requestData.First()[\"defaultvattax\"]?.ToString();\n        \n        var d \u003d requestData.First()[\"purchaseprice\"];\n        if (d is null)return;\n        double doubleVal \u003d (double)d;\n        string doubleAsString \u003d doubleVal.ToString(\"R\");\n        this.UnitPrice \u003d decimal.Parse(doubleAsString);\n    }\n}\n",
+							"description": ""
+						},
+						{
+							"name": "OnChange_VatTax",
+							"type": "Action",
+							"attribute": "VatTax",
+							"expression": "\nvar httpClient \u003d _Context.CreateApplicationHttpClient();\nvar productRequest \u003d httpClient.PostAsJsonAsync($\"Queries/VatTaxQuery/Default?PageSize\u003d1\",\n        new { Filter \u003d new { Property \u003d \"_code\", Value \u003d newValue } })\n    .GetAwaiter().GetResult();\n\nif (productRequest.IsSuccessStatusCode)\n{\n    var requestData \u003d productRequest.Content.ReadAsAsync\u003cList\u003cDictionary\u003cstring, object\u003e\u003e\u003e()\n                            .GetAwaiter().GetResult();\n\n    if(requestData.Any()){\n        \n        var d \u003d requestData.First()[\"multiplier\"];\n        if (d is null)return;\n        double doubleVal \u003d (double)d;\n        string doubleAsString \u003d doubleVal.ToString(\"R\");\n        this.VatValue \u003d decimal.Parse(doubleAsString);\n        \n    }\n}\n",
+							"description": ""
+						},
+						{
+							"name": "TotalWithVat_Formula",
+							"type": "Formula",
+							"attribute": "TotalWithVat",
+							"expression": "return this.Value + this.Value * this.VatValue;",
+							"description": ""
+						}
+					],
+					"behaviourNamespaces": []
+				},
+				{
+					"name": "VatTax",
+					"isRoot": true,
+					"attributes": [
+						{
+							"name": "_code",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_name",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_description",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_inactive",
+							"type": "Boolean",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "Multiplier",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						}
+					],
+					"dataSource": "System",
+					"description": "",
+					"dataBehaviours": [],
+					"entityBehaviours": [],
+					"behaviourNamespaces": []
+				}
+			],
+			"resources": [
+				{
+					"name": "Product",
+					"attributes": [
+						{
+							"name": "_code",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_name",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_description",
+							"type": "Text",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "_inactive",
+							"type": "Boolean",
+							"isSystem": true,
+							"isReadOnly": false,
+							"description": null,
+							"multiplicity": {
+								"lower": 1,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": null
+						},
+						{
+							"name": "DefaultVatTax",
+							"type": "VatTax",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "Shared",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "PurchasePrice",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						},
+						{
+							"name": "SalePrice",
+							"type": "Decimal",
+							"isSystem": false,
+							"isReadOnly": false,
+							"description": "",
+							"multiplicity": {
+								"lower": 0,
+								"upper": 1
+							},
+							"aggregationKind": "None",
+							"isSensitiveData": false,
+							"dependsOnAttribute": ""
+						}
+					],
+					"dataSource": "System",
+					"description": "",
+					"dataBehaviours": [],
+					"entityBehaviours": [],
+					"behaviourNamespaces": []
+				}
+			],
+			"querys": [
+				{
+					"name": "ProductQuery",
+					"joins": [],
+					"table": {
+						"alias": null,
+						"filter": null,
+						"definition": "Product",
+						"properties": [
+							{
+								"path": "_code",
+								"alias": "_code",
+								"function": "None"
+							},
+							{
+								"path": "_name",
+								"alias": "_name",
+								"function": "None"
+							},
+							{
+								"path": "_description",
+								"alias": "_description",
+								"function": "None"
+							},
+							{
+								"path": "_inactive",
+								"alias": "_inactive",
+								"function": "None"
+							},
+							{
+								"path": "defaultVatTax",
+								"alias": "DefaultVatTax",
+								"function": "None"
+							},
+							{
+								"path": "salePrice",
+								"alias": "SalePrice",
+								"function": "None"
+							},
+							{
+								"path": "purchasePrice",
+								"alias": "PurchasePrice",
+								"function": "None"
+							}
+						],
+						"orderedProperties": []
+					},
+					"dataSource": "System",
+					"expression": null,
+					"description": null
+				},
+				{
+					"name": "ClientQuery",
+					"joins": [],
+					"table": {
+						"alias": null,
+						"filter": null,
+						"definition": "Client",
+						"properties": [
+							{
+								"path": "_code",
+								"alias": "_code",
+								"function": "None"
+							},
+							{
+								"path": "_name",
+								"alias": "_name",
+								"function": "None"
+							},
+							{
+								"path": "_description",
+								"alias": "_description",
+								"function": "None"
+							},
+							{
+								"path": "_inactive",
+								"alias": "_inactive",
+								"function": "None"
+							}
+						],
+						"orderedProperties": []
+					},
+					"dataSource": "System",
+					"expression": null,
+					"description": null
+				},
+				{
+					"name": "SalesPerProductQueryAdv",
+					"joins": [],
+					"table": {
+						"alias": null,
+						"filter": null,
+						"definition": "SaleOrder",
+						"properties": [],
+						"orderedProperties": []
+					},
+					"dataSource": "System",
+					"expression": "SELECT SUM(ol.totalWithVat) AS ammount, ol.product, p._name\nFROM vw_SaleOrder_Lines ol\nINNER JOIN vw_Product p ON p._code\u003dol.product\nGROUP BY ol.product, p._name\nORDER BY ammount DESC",
+					"description": ""
+				},
+				{
+					"name": "SaleOrderSerieQuery",
+					"joins": [],
+					"table": {
+						"alias": null,
+						"filter": null,
+						"definition": "SaleOrderSerie",
+						"properties": [
+							{
+								"path": "_code",
+								"alias": "_code",
+								"function": "None"
+							},
+							{
+								"path": "_name",
+								"alias": "_name",
+								"function": "None"
+							},
+							{
+								"path": "_description",
+								"alias": "_description",
+								"function": "None"
+							},
+							{
+								"path": "_inactive",
+								"alias": "_inactive",
+								"function": "None"
+							},
+							{
+								"path": "_startingNumber",
+								"alias": "_startingNumber",
+								"function": "None"
+							}
+						],
+						"orderedProperties": []
+					},
+					"dataSource": "System",
+					"expression": null,
+					"description": null
+				},
+				{
+					"name": "QuarterSalesQueryAdv",
+					"joins": [],
+					"table": {
+						"alias": null,
+						"filter": null,
+						"definition": "SaleOrder",
+						"properties": [],
+						"orderedProperties": []
+					},
+					"dataSource": "System",
+					"expression": "SELECT DATE_PART(\u0027quarter\u0027, om._date) AS quarter, SUM(om.totalWithVat) AS ammount\nFROM vw_SaleOrder om\nWHERE DATE_PART(\u0027year\u0027, om._date) \u003d cast(@year as double precision)\nGROUP BY DATE_PART(\u0027quarter\u0027, om._date)\nORDER BY DATE_PART(\u0027quarter\u0027, om._date)",
+					"description": ""
+				},
+				{
+					"name": "SalesPersonQuery",
+					"joins": [],
+					"table": {
+						"alias": null,
+						"filter": null,
+						"definition": "SalesPerson",
+						"properties": [
+							{
+								"path": "_code",
+								"alias": "_code",
+								"function": "None"
+							},
+							{
+								"path": "_name",
+								"alias": "_name",
+								"function": "None"
+							},
+							{
+								"path": "_description",
+								"alias": "_description",
+								"function": "None"
+							},
+							{
+								"path": "_inactive",
+								"alias": "_inactive",
+								"function": "None"
+							}
+						],
+						"orderedProperties": []
+					},
+					"dataSource": "System",
+					"expression": null,
+					"description": null
+				},
+				{
+					"name": "MonthlySalesQueryAdv",
+					"joins": [],
+					"table": {
+						"alias": null,
+						"filter": null,
+						"definition": "SaleOrder",
+						"properties": [],
+						"orderedProperties": []
+					},
+					"dataSource": "System",
+					"expression": "SELECT DATE_PART(\u0027month\u0027, om._date) AS month, SUM(om.totalWithVat) AS ammount\nFROM vw_SaleOrder om\nWHERE DATE_PART(\u0027year\u0027, om._date) \u003d cast(@year as double precision)\nGROUP BY DATE_PART(\u0027month\u0027, om._date)\nORDER BY DATE_PART(\u0027month\u0027, om._date)",
+					"description": ""
+				},
+				{
+					"name": "SalesPerSalesPersonQueryAdv",
+					"joins": [],
+					"table": {
+						"alias": null,
+						"filter": null,
+						"definition": "SaleOrder",
+						"properties": [],
+						"orderedProperties": []
+					},
+					"dataSource": "System",
+					"expression": "SELECT SUM(om.totalWithVat) AS ammount, om.salesPerson, sp._name\nFROM vw_SaleOrder om\nINNER JOIN vw_SalesPerson sp ON sp._code\u003dom.salesPerson\nGROUP BY om.salesPerson, sp._name\nORDER BY ammount DESC",
+					"description": ""
+				},
+				{
+					"name": "PurchaseOrderQuery",
+					"joins": [],
+					"table": {
+						"alias": null,
+						"filter": null,
+						"definition": "PurchaseOrder",
+						"properties": [
+							{
+								"path": "_code",
+								"alias": "_code",
+								"function": "None"
+							},
+							{
+								"path": "_serie",
+								"alias": "_serie",
+								"function": "None"
+							},
+							{
+								"path": "_number",
+								"alias": "_number",
+								"function": "None"
+							},
+							{
+								"path": "_date",
+								"alias": "_date",
+								"function": "None"
+							},
+							{
+								"path": "totalWithVat",
+								"alias": "totalWithVat",
+								"function": "None"
+							},
+							{
+								"path": "_state",
+								"alias": "_state",
+								"function": "None"
+							}
+						],
+						"orderedProperties": []
+					},
+					"dataSource": "System",
+					"expression": null,
+					"description": null
+				},
+				{
+					"name": "VatTaxQuery",
+					"joins": [],
+					"table": {
+						"alias": null,
+						"filter": null,
+						"definition": "VatTax",
+						"properties": [
+							{
+								"path": "_code",
+								"alias": "_code",
+								"function": "None"
+							},
+							{
+								"path": "_name",
+								"alias": "_name",
+								"function": "None"
+							},
+							{
+								"path": "_description",
+								"alias": "_description",
+								"function": "None"
+							},
+							{
+								"path": "_inactive",
+								"alias": "_inactive",
+								"function": "None"
+							},
+							{
+								"path": "multiplier",
+								"alias": "multiplier",
+								"function": "None"
+							}
+						],
+						"orderedProperties": []
+					},
+					"dataSource": "System",
+					"expression": null,
+					"description": null
+				},
+				{
+					"name": "PurchaseOrderSerieQuery",
+					"joins": [],
+					"table": {
+						"alias": null,
+						"filter": null,
+						"definition": "PurchaseOrderSerie",
+						"properties": [
+							{
+								"path": "_code",
+								"alias": "_code",
+								"function": "None"
+							},
+							{
+								"path": "_name",
+								"alias": "_name",
+								"function": "None"
+							},
+							{
+								"path": "_description",
+								"alias": "_description",
+								"function": "None"
+							},
+							{
+								"path": "_inactive",
+								"alias": "_inactive",
+								"function": "None"
+							},
+							{
+								"path": "_startingNumber",
+								"alias": "_startingNumber",
+								"function": "None"
+							}
+						],
+						"orderedProperties": []
+					},
+					"dataSource": "System",
+					"expression": null,
+					"description": null
+				},
+				{
+					"name": "SaleOrderQuery",
+					"joins": [],
+					"table": {
+						"alias": null,
+						"filter": null,
+						"definition": "SaleOrder",
+						"properties": [
+							{
+								"path": "_code",
+								"alias": "_code",
+								"function": "None"
+							},
+							{
+								"path": "_serie",
+								"alias": "_serie",
+								"function": "None"
+							},
+							{
+								"path": "_number",
+								"alias": "_number",
+								"function": "None"
+							},
+							{
+								"path": "_date",
+								"alias": "_date",
+								"function": "None"
+							},
+							{
+								"path": "totalWithVat",
+								"alias": "totalWithVat",
+								"function": "None"
+							},
+							{
+								"path": "_state",
+								"alias": "_state",
+								"function": "None"
+							}
+						],
+						"orderedProperties": []
+					},
+					"dataSource": "System",
+					"expression": null,
+					"description": null
+				},
+				{
+					"name": "SupplierQuery",
+					"joins": [],
+					"table": {
+						"alias": null,
+						"filter": null,
+						"definition": "Supplier",
+						"properties": [
+							{
+								"path": "_code",
+								"alias": "_code",
+								"function": "None"
+							},
+							{
+								"path": "_name",
+								"alias": "_name",
+								"function": "None"
+							},
+							{
+								"path": "_description",
+								"alias": "_description",
+								"function": "None"
+							},
+							{
+								"path": "_inactive",
+								"alias": "_inactive",
+								"function": "None"
+							}
+						],
+						"orderedProperties": []
+					},
+					"dataSource": "System",
+					"expression": null,
+					"description": null
+				},
+				{
+					"name": "SalesPerClientQueryAdv",
+					"joins": [],
+					"table": {
+						"alias": null,
+						"filter": null,
+						"definition": "SaleOrder",
+						"properties": [],
+						"orderedProperties": []
+					},
+					"dataSource": "System",
+					"expression": "SELECT SUM(om.totalWithVat) AS ammount, om.client, c._name\nFROM vw_SaleOrder om\nINNER JOIN vw_Client c ON c._code\u003dom.client\nGROUP BY om.client, c._name\nORDER BY ammount DESC",
+					"description": ""
+				}
+			],
+			"applicationbehaviours": [
+				{
+					"name": "ResetTenant",
+					"dataSource": "System",
+					"expression": "\nTask.Run(async () \u003d\u003e {\n    \n    \n    var httpclient \u003d context.CreateModelHttpClient();\n\n    await httpclient.DeleteAsync(\"Agent/Client\");\n    await httpclient.DeleteAsync(\"Agent/SalesPerson\");\n    await httpclient.DeleteAsync(\"Agent/Supplier\");\n    \n    await httpclient.DeleteAsync(\"Document/PurchaseOrder\");\n    await httpclient.DeleteAsync(\"Document/SaleOrder\");\n    \n    await httpclient.DeleteAsync(\"GenericEntity/PurchaseOrderLine\");\n    await httpclient.DeleteAsync(\"GenericEntity/SaleOrderLine\");\n    await httpclient.DeleteAsync(\"GenericEntity/VatTax\");\n    \n    await httpclient.DeleteAsync(\"Resource/Product\");\n    \n    await httpclient.DeleteAsync(\"Query/SalesPerClientQueryAdv\");\n    await httpclient.DeleteAsync(\"Query/SalesPerSalesPersonQueryAdv\");\n    await httpclient.DeleteAsync(\"Query/QuarterSalesQueryAdv\");\n    await httpclient.DeleteAsync(\"Query/SalesPerProductQueryAdv\");\n    await httpclient.DeleteAsync(\"Query/MonthlySalesQueryAdv\");\n    \n} );\n\n\n\nreturn new Dictionary \u003c string, object \u003e ();",
+					"description": "",
+					"executionLocation": "Internal",
+					"behaviourNamespaces": []
+				}
+			]
+		}
+	]
+}

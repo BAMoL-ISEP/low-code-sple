@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/pt.bamol.vmodel/src-gen" creationIcons="false"
+    editDirectory="/pt.bamol.vmodel.edit/src-gen" editorDirectory="/pt.bamol.vmodel.editor/src-gen"
+    modelPluginID="pt.bamol.vmodel" modelName="Vmodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>vmodel.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Vmodel" basePackage="pt.bamol" disposableProviderFactory="true"
+      ecorePackage="vmodel.ecore#/">
+    <genClasses ecoreClass="vmodel.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vmodel.ecore#//Model/orders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vmodel.ecore#//Model/purchaseApproval"/>
+    </genClasses>
+    <genClasses ecoreClass="vmodel.ecore#//Feature"/>
+    <genClasses ecoreClass="vmodel.ecore#//Order"/>
+    <genClasses ecoreClass="vmodel.ecore#//Sale"/>
+    <genClasses ecoreClass="vmodel.ecore#//Purchase"/>
+    <genClasses ecoreClass="vmodel.ecore#//PurchaseApproval">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vmodel.ecore#//PurchaseApproval/teamManagerLimit"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="vmodel.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vmodel.ecore#//NamedElement/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,23 @@
+-- @atlcompiler emftvm
+-- @path JSON=/pt.bamol.json/model/generated/Json.ecore
+
+module json2ecore;
+create OUT : JSON refining IN : JSON;
+ 
+rule Object2Object {
+	from 
+		t1 : JSON!Object
+	to
+		t2 : JSON!Object (
+		--	name <- t1.name.toUpper()	
+	)
+}
+
+rule Member2Member {
+	from 
+		e1 : JSON!Member
+	to 
+		e2 : JSON!Member (
+			key <- e1.key.toUpper()	
+		)
+}

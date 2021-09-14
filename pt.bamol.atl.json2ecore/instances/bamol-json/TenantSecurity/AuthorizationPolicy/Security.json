@@ -1,0 +1,28 @@
+{
+  "name": "Security",
+  "policies": [],
+  "description": "Security authorization policy.",
+  "permissions": [
+    {
+      "name": "User",
+      "roles": [
+        "Administration"
+      ],
+      "description": "User management access"
+    },
+    {
+      "name": "Privileges",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Privelege management access"
+    },
+    {
+      "name": "Roles",
+      "roles": [
+        "Administration"
+      ],
+      "description": "Roles management access"
+    }
+  ]
+}

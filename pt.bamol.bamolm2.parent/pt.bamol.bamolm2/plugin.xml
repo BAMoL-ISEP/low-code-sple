@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri = "http://www.bamol.pt/bamolm2/BamolM2"
+			class = "pt.bamol.bamolm2.bamolm2.Bamolm2Package"
+			genModel = "model/generated/BamolM2.genmodel" />
+	</extension>
+</plugin>

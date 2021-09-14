@@ -1,0 +1,21 @@
+{
+  "name": "PurchaseOrderStateMachineStates",
+  "values": [
+    {
+      "name": "Initial",
+      "order": 1,
+      "description": null
+    },
+    {
+      "name": "Completed",
+      "order": 2,
+      "description": null
+    },
+    {
+      "name": "WaitingForSupplier",
+      "order": 3,
+      "description": null
+    }
+  ],
+  "description": null
+}

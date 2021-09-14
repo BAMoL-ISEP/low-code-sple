@@ -1,0 +1,45 @@
+{
+  "name": "SaleOrderQuery",
+  "joins": [],
+  "table": {
+    "alias": null,
+    "filter": null,
+    "definition": "SaleOrder",
+    "properties": [
+      {
+        "path": "_code",
+        "alias": "_code",
+        "function": "None"
+      },
+      {
+        "path": "_serie",
+        "alias": "_serie",
+        "function": "None"
+      },
+      {
+        "path": "_number",
+        "alias": "_number",
+        "function": "None"
+      },
+      {
+        "path": "_date",
+        "alias": "_date",
+        "function": "None"
+      },
+      {
+        "path": "totalWithVat",
+        "alias": "totalWithVat",
+        "function": "None"
+      },
+      {
+        "path": "_state",
+        "alias": "_state",
+        "function": "None"
+      }
+    ],
+    "orderedProperties": []
+  },
+  "dataSource": "System",
+  "expression": null,
+  "description": null
+}

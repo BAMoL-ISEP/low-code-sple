@@ -1,0 +1,14 @@
+{
+  "name": "QuarterSalesQueryAdv",
+  "joins": [],
+  "table": {
+    "alias": null,
+    "filter": null,
+    "definition": "SaleOrder",
+    "properties": [],
+    "orderedProperties": []
+  },
+  "dataSource": "System",
+  "expression": "SELECT DATE_PART('quarter', om._date) AS quarter, SUM(om.totalWithVat) AS ammount\nFROM vw_SaleOrder om\nWHERE DATE_PART('year', om._date) = cast(@year as double precision)\nGROUP BY DATE_PART('quarter', om._date)\nORDER BY DATE_PART('quarter', om._date)",
+  "description": ""
+}

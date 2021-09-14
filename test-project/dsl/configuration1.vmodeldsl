@@ -1,0 +1,6 @@
+Model m1 {
+	orders {
+		//Sale sale1, 
+		Purchase purch1 
+	} 
+}

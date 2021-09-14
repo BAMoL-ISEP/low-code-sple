@@ -1,0 +1,3394 @@
+{
+
+"TENANTSECURITYS" : [ 
+ {
+
+ "AUTHORIZATIONPOLICYS" : [ 
+
+{
+  "NAME": "Model",
+  "POLICIES": [],
+  "DESCRIPTION": "Modeling authorization policy.",
+  "PERMISSIONS": [
+    {
+      "NAME": "ALL",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Modeling access"
+    }
+  ]
+},
+{
+  "NAME": "Security",
+  "POLICIES": [],
+  "DESCRIPTION": "Security authorization policy.",
+  "PERMISSIONS": [
+    {
+      "NAME": "User",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "User management access"
+    },
+    {
+      "NAME": "Privileges",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Privelege management access"
+    },
+    {
+      "NAME": "Roles",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Roles management access"
+    }
+  ]
+},
+{
+  "NAME": "Application",
+  "POLICIES": [],
+  "DESCRIPTION": "Application authorization policy.",
+  "PERMISSIONS": [
+    {
+      "NAME": "PurchaseOrderDashboard_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for PurchaseOrderDashboard."
+    },
+    {
+      "NAME": "PurchaseOrderQuery_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for PurchaseOrderQuery."
+    },
+    {
+      "NAME": "PurchaseOrderForm_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for PurchaseOrderForm."
+    },
+    {
+      "NAME": "PurchaseOrder_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for PurchaseOrder."
+    },
+    {
+      "NAME": "PurchaseOrder_write",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Write permission for PurchaseOrder."
+    },
+    {
+      "NAME": "PurchaseOrder_delete",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Delete permission for PurchaseOrder."
+    },
+    {
+      "NAME": "PurchaseOrder_destroy",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Destroy Sensitive Data permission for PurchaseOrder."
+    },
+    {
+      "NAME": "PurchaseOrderSerieDashboard_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for PurchaseOrderSerieDashboard."
+    },
+    {
+      "NAME": "PurchaseOrderSerieQuery_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for PurchaseOrderSerieQuery."
+    },
+    {
+      "NAME": "PurchaseOrderSerieForm_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for PurchaseOrderSerieForm."
+    },
+    {
+      "NAME": "PurchaseOrderSerie_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for PurchaseOrderSerie."
+    },
+    {
+      "NAME": "PurchaseOrderSerie_write",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Write permission for PurchaseOrderSerie."
+    },
+    {
+      "NAME": "PurchaseOrderSerie_delete",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Delete permission for PurchaseOrderSerie."
+    },
+    {
+      "NAME": "PurchaseOrderSerie_destroy",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Destroy Sensitive Data permission for PurchaseOrderSerie."
+    },
+    {
+      "NAME": "GoodsPurchaseRequest_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for GoodsPurchaseRequest."
+    },
+    {
+      "NAME": "GoodsPurchaseRequest_write",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Write permission for GoodsPurchaseRequest."
+    },
+    {
+      "NAME": "GoodsPurchaseRequest_delete",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Delete permission for GoodsPurchaseRequest."
+    },
+    {
+      "NAME": "GoodsPurchaseRequest_destroy",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Destroy Sensitive Data permission for GoodsPurchaseRequest."
+    },
+    {
+      "NAME": "ProductDashboard_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for ProductDashboard."
+    },
+    {
+      "NAME": "ProductQuery_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for ProductQuery."
+    },
+    {
+      "NAME": "ProductForm_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for ProductForm."
+    },
+    {
+      "NAME": "Product_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for Product."
+    },
+    {
+      "NAME": "Product_write",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Write permission for Product."
+    },
+    {
+      "NAME": "Product_delete",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Delete permission for Product."
+    },
+    {
+      "NAME": "Product_destroy",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Destroy Sensitive Data permission for Product."
+    },
+    {
+      "NAME": "CompanyDashboard_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for CompanyDashboard."
+    },
+    {
+      "NAME": "CompanyQuery_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for CompanyQuery."
+    },
+    {
+      "NAME": "CompanyForm_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for CompanyForm."
+    },
+    {
+      "NAME": "Company_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for Company."
+    },
+    {
+      "NAME": "Company_write",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Write permission for Company."
+    },
+    {
+      "NAME": "Company_delete",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Delete permission for Company."
+    },
+    {
+      "NAME": "Company_destroy",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Destroy Sensitive Data permission for Company."
+    },
+    {
+      "NAME": "SupplierDashboard_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for SupplierDashboard."
+    },
+    {
+      "NAME": "SupplierQuery_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for SupplierQuery."
+    },
+    {
+      "NAME": "SupplierForm_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for SupplierForm."
+    },
+    {
+      "NAME": "Supplier_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for Supplier."
+    },
+    {
+      "NAME": "Supplier_write",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Write permission for Supplier."
+    },
+    {
+      "NAME": "Supplier_delete",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Delete permission for Supplier."
+    },
+    {
+      "NAME": "Supplier_destroy",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Destroy Sensitive Data permission for Supplier."
+    },
+    {
+      "NAME": "System_read",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Read permission for System."
+    },
+    {
+      "NAME": "System_write",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Write permission for System."
+    },
+    {
+      "NAME": "System_delete",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Delete permission for System."
+    },
+    {
+      "NAME": "System_destroy",
+      "ROLES": [
+        "Administration"
+      ],
+      "DESCRIPTION": "Destroy Sensitive Data permission for System."
+    }
+  ]
+}  ] 
+,
+ "AUTHORIZATIONROLES" : [ 
+
+{
+  "NAME": "Administration",
+  "SUBJECTS": [
+    {
+      "ID": "fd46676c-a13f-4c1e-8acc-454ed0aec56b",
+      "USERNAME": "support@numbersbelieve.com"
+    },
+    {
+      "ID": "d42fc57e-0649-44eb-895b-c04568f9462e",
+      "USERNAME": "atb@isep.ipp.pt"
+    }
+  ],
+  "DESCRIPTION": "Administrators"
+}  ] 
+ }
+ ] 
+,
+"MODELS" : [ 
+ {
+
+ "DATASOURCES" : [ 
+
+{
+  "NAME": "System",
+  "ATTRIBUTES": [
+    {
+      "NAME": "_code",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None"
+    },
+    {
+      "NAME": "_name",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None"
+    },
+    {
+      "NAME": "_description",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 0,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None"
+    },
+    {
+      "NAME": "_inactive",
+      "TYPE": "Boolean",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None"
+    }
+  ],
+  "DESCRIPTION": "Default DataSource",
+  "DATABEHAVIOURS": [],
+  "BEHAVIOURRUNTIME": "Internal",
+  "ENTITYBEHAVIOURS": [],
+  "DATAACCESSRUNTIME": "Internal",
+  "BEHAVIOURNAMESPACES": [],
+  "EXECUTESINCONNECTOR": false,
+  "BEHAVIOURDEPENDENCIES": []
+}  ] 
+,
+ "SELECTORS" : [ 
+
+{
+  "NAME": "PurchaseOrderStateMachineInitialDecisionsSelector",
+  "TYPE": "Selector",
+  "LABEL": "Purchase Order State Machine Initial Decisions",
+  "ELEMENTS": [
+    {
+      "ROW": 1,
+      "NAME": "Submit",
+      "SIZE": 12,
+      "TYPE": "SelectorEntry",
+      "LABEL": "Submit",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "EnumerationValue",
+          "VALUE": "Submit"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [
+    {
+      "KEY": "Enumeration",
+      "VALUE": "PurchaseOrderStateMachineInitialDecisions"
+    }
+  ],
+  "BEHAVIOURS": [],
+  "DESCRIPTION": null
+},
+{
+  "NAME": "PurchaseOrderStateMachineStatesSelector",
+  "TYPE": "Selector",
+  "LABEL": "Purchase Order State Machine States",
+  "ELEMENTS": [
+    {
+      "ROW": 1,
+      "NAME": "Initial",
+      "SIZE": 12,
+      "TYPE": "SelectorEntry",
+      "LABEL": "Initial",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "EnumerationValue",
+          "VALUE": "Initial"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 2,
+      "NAME": "Completed",
+      "SIZE": 12,
+      "TYPE": "SelectorEntry",
+      "LABEL": "Completed",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "EnumerationValue",
+          "VALUE": "Completed"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 3,
+      "NAME": "WaitingForSupplier",
+      "SIZE": 12,
+      "TYPE": "SelectorEntry",
+      "LABEL": "Waiting For Supplier",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "EnumerationValue",
+          "VALUE": "WaitingForSupplier"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [
+    {
+      "KEY": "Enumeration",
+      "VALUE": "PurchaseOrderStateMachineStates"
+    }
+  ],
+  "BEHAVIOURS": [],
+  "DESCRIPTION": null
+},
+{
+  "NAME": "PurchaseOrderStateMachineWaitingForSupplierDecisionsSelector",
+  "TYPE": "Selector",
+  "LABEL": "Purchase Order State Machine Waiting For Supplier Decisions",
+  "ELEMENTS": [
+    {
+      "ROW": 1,
+      "NAME": "Fechar",
+      "SIZE": 12,
+      "TYPE": "SelectorEntry",
+      "LABEL": "Fechar",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "EnumerationValue",
+          "VALUE": "Fechar"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [
+    {
+      "KEY": "Enumeration",
+      "VALUE": "PurchaseOrderStateMachineWaitingForSupplierDecisions"
+    }
+  ],
+  "BEHAVIOURS": [],
+  "DESCRIPTION": null
+}  ] 
+,
+ "FORMS" : [ 
+
+{
+  "NAME": "CompanyForm",
+  "TYPE": "Form",
+  "LABEL": "Company",
+  "ENTITY": "Company",
+  "ELEMENTS": [
+    {
+      "ROW": 1,
+      "NAME": "_code",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Code",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 1,
+      "NAME": "_name",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Name",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 2,
+      "NAME": "_description",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Description",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "0"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 2,
+      "NAME": "_inactive",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Inactive",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Boolean"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [],
+  "BEHAVIOURS": [],
+  "DATASOURCE": "System",
+  "DESCRIPTION": null
+},
+{
+  "NAME": "PurchaseOrderForm",
+  "TYPE": "Form",
+  "LABEL": "Purchase Order",
+  "ENTITY": "PurchaseOrder",
+  "ELEMENTS": [
+    {
+      "ROW": 1,
+      "NAME": "_code",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Code",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 1,
+      "NAME": "_serie",
+      "SIZE": 6,
+      "TYPE": "ReferenceSelector",
+      "LABEL": "Serie",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "Shared"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "definition",
+          "VALUE": "PurchaseOrderSerie"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 2,
+      "NAME": "_number",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Number",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "true"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "0"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Integer"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 2,
+      "NAME": "_date",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Date",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Date"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 4,
+      "NAME": "Lines",
+      "SIZE": 12,
+      "TYPE": "List",
+      "LABEL": "Lines",
+      "COLUMN": 1,
+      "ELEMENTS": [
+        {
+          "ROW": 1,
+          "NAME": "_resource",
+          "SIZE": 1,
+          "TYPE": "ReferenceSelector",
+          "LABEL": "Resource",
+          "COLUMN": 1,
+          "ELEMENTS": [],
+          "HELPTEXT": null,
+          "ISHIDDEN": false,
+          "ATTRIBUTES": [
+            {
+              "KEY": "aggregationKind",
+              "VALUE": "Shared"
+            },
+            {
+              "KEY": "isReadOnly",
+              "VALUE": "false"
+            },
+            {
+              "KEY": "max",
+              "VALUE": "1"
+            },
+            {
+              "KEY": "min",
+              "VALUE": "1"
+            },
+            {
+              "KEY": "definition",
+              "VALUE": "Product"
+            }
+          ],
+          "BEHAVIOURS": [],
+          "DESCRIPTION": null,
+          "VISIBLEFROM": null
+        },
+        {
+          "ROW": 1,
+          "NAME": "_provider",
+          "SIZE": 1,
+          "TYPE": "ReferenceSelector",
+          "LABEL": "Provider",
+          "COLUMN": 2,
+          "ELEMENTS": [],
+          "HELPTEXT": null,
+          "ISHIDDEN": false,
+          "ATTRIBUTES": [
+            {
+              "KEY": "aggregationKind",
+              "VALUE": "Shared"
+            },
+            {
+              "KEY": "isReadOnly",
+              "VALUE": "false"
+            },
+            {
+              "KEY": "max",
+              "VALUE": "1"
+            },
+            {
+              "KEY": "min",
+              "VALUE": "1"
+            },
+            {
+              "KEY": "definition",
+              "VALUE": "Supplier"
+            }
+          ],
+          "BEHAVIOURS": [],
+          "DESCRIPTION": null,
+          "VISIBLEFROM": null
+        },
+        {
+          "ROW": 1,
+          "NAME": "_receiver",
+          "SIZE": 1,
+          "TYPE": "ReferenceSelector",
+          "LABEL": "Receiver",
+          "COLUMN": 3,
+          "ELEMENTS": [],
+          "HELPTEXT": null,
+          "ISHIDDEN": false,
+          "ATTRIBUTES": [
+            {
+              "KEY": "aggregationKind",
+              "VALUE": "Shared"
+            },
+            {
+              "KEY": "isReadOnly",
+              "VALUE": "false"
+            },
+            {
+              "KEY": "max",
+              "VALUE": "1"
+            },
+            {
+              "KEY": "min",
+              "VALUE": "1"
+            },
+            {
+              "KEY": "definition",
+              "VALUE": "Company"
+            }
+          ],
+          "BEHAVIOURS": [],
+          "DESCRIPTION": null,
+          "VISIBLEFROM": null
+        },
+        {
+          "ROW": 1,
+          "NAME": "_code",
+          "SIZE": 1,
+          "TYPE": "Input",
+          "LABEL": "Code",
+          "COLUMN": 4,
+          "ELEMENTS": [],
+          "HELPTEXT": null,
+          "ISHIDDEN": false,
+          "ATTRIBUTES": [
+            {
+              "KEY": "aggregationKind",
+              "VALUE": "None"
+            },
+            {
+              "KEY": "isReadOnly",
+              "VALUE": "false"
+            },
+            {
+              "KEY": "max",
+              "VALUE": "1"
+            },
+            {
+              "KEY": "min",
+              "VALUE": "1"
+            },
+            {
+              "KEY": "isSensitiveData",
+              "VALUE": "false"
+            },
+            {
+              "KEY": "formattingType",
+              "VALUE": "Text"
+            }
+          ],
+          "BEHAVIOURS": [],
+          "DESCRIPTION": null,
+          "VISIBLEFROM": null
+        },
+        {
+          "ROW": 1,
+          "NAME": "_quantity",
+          "SIZE": 1,
+          "TYPE": "Input",
+          "LABEL": "Quantity",
+          "COLUMN": 5,
+          "ELEMENTS": [],
+          "HELPTEXT": null,
+          "ISHIDDEN": false,
+          "ATTRIBUTES": [
+            {
+              "KEY": "aggregationKind",
+              "VALUE": "None"
+            },
+            {
+              "KEY": "isReadOnly",
+              "VALUE": "false"
+            },
+            {
+              "KEY": "max",
+              "VALUE": "1"
+            },
+            {
+              "KEY": "min",
+              "VALUE": "1"
+            },
+            {
+              "KEY": "isSensitiveData",
+              "VALUE": "false"
+            },
+            {
+              "KEY": "formattingType",
+              "VALUE": "Decimal"
+            }
+          ],
+          "BEHAVIOURS": [],
+          "DESCRIPTION": null,
+          "VISIBLEFROM": null
+        },
+        {
+          "ROW": 1,
+          "NAME": "_amount",
+          "SIZE": 1,
+          "TYPE": "Input",
+          "LABEL": "Amount",
+          "COLUMN": 6,
+          "ELEMENTS": [],
+          "HELPTEXT": null,
+          "ISHIDDEN": false,
+          "ATTRIBUTES": [
+            {
+              "KEY": "aggregationKind",
+              "VALUE": "None"
+            },
+            {
+              "KEY": "isReadOnly",
+              "VALUE": "false"
+            },
+            {
+              "KEY": "max",
+              "VALUE": "1"
+            },
+            {
+              "KEY": "min",
+              "VALUE": "1"
+            },
+            {
+              "KEY": "isSensitiveData",
+              "VALUE": "false"
+            },
+            {
+              "KEY": "formattingType",
+              "VALUE": "Decimal"
+            }
+          ],
+          "BEHAVIOURS": [],
+          "DESCRIPTION": null,
+          "VISIBLEFROM": null
+        },
+        {
+          "ROW": 1,
+          "NAME": "UnitPrice",
+          "SIZE": 1,
+          "TYPE": "Input",
+          "LABEL": "Unit Price",
+          "COLUMN": 7,
+          "ELEMENTS": [],
+          "HELPTEXT": null,
+          "ISHIDDEN": false,
+          "ATTRIBUTES": [
+            {
+              "KEY": "aggregationKind",
+              "VALUE": "None"
+            },
+            {
+              "KEY": "isReadOnly",
+              "VALUE": "false"
+            },
+            {
+              "KEY": "max",
+              "VALUE": "1"
+            },
+            {
+              "KEY": "min",
+              "VALUE": "0"
+            },
+            {
+              "KEY": "isSensitiveData",
+              "VALUE": "false"
+            },
+            {
+              "KEY": "formattingType",
+              "VALUE": "Decimal"
+            }
+          ],
+          "BEHAVIOURS": [],
+          "DESCRIPTION": null,
+          "VISIBLEFROM": null
+        }
+      ],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "Composite"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "100"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "0"
+        },
+        {
+          "KEY": "definition",
+          "VALUE": "GoodsPurchaseRequest"
+        },
+        {
+          "KEY": "isEditable",
+          "VALUE": "true"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [],
+  "BEHAVIOURS": [],
+  "DATASOURCE": "System",
+  "DESCRIPTION": null
+},
+{
+  "NAME": "ProductForm",
+  "TYPE": "Form",
+  "LABEL": "Product",
+  "ENTITY": "Product",
+  "ELEMENTS": [
+    {
+      "ROW": 1,
+      "NAME": "_code",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Code",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 1,
+      "NAME": "_name",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Name",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 2,
+      "NAME": "_description",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Description",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "0"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 2,
+      "NAME": "_inactive",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Inactive",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Boolean"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 3,
+      "NAME": "UnitPrice",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Unit Price",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Decimal"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [],
+  "BEHAVIOURS": [],
+  "DATASOURCE": "System",
+  "DESCRIPTION": null
+},
+{
+  "NAME": "PurchaseOrderSerieForm",
+  "TYPE": "Form",
+  "LABEL": "Purchase Order Serie",
+  "ENTITY": "PurchaseOrderSerie",
+  "ELEMENTS": [
+    {
+      "ROW": 1,
+      "NAME": "_code",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Code",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 1,
+      "NAME": "_name",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Name",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 2,
+      "NAME": "_description",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Description",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "0"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 2,
+      "NAME": "_inactive",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Inactive",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Boolean"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 3,
+      "NAME": "_startingNumber",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Starting Number",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Integer"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [],
+  "BEHAVIOURS": [],
+  "DATASOURCE": "System",
+  "DESCRIPTION": null
+},
+{
+  "NAME": "SupplierForm",
+  "TYPE": "Form",
+  "LABEL": "Supplier",
+  "ENTITY": "Supplier",
+  "ELEMENTS": [
+    {
+      "ROW": 1,
+      "NAME": "_code",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Code",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 1,
+      "NAME": "_name",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Name",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 2,
+      "NAME": "_description",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Description",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "0"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 2,
+      "NAME": "_inactive",
+      "SIZE": 6,
+      "TYPE": "Input",
+      "LABEL": "Inactive",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "aggregationKind",
+          "VALUE": "None"
+        },
+        {
+          "KEY": "isReadOnly",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "max",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "min",
+          "VALUE": "1"
+        },
+        {
+          "KEY": "isSensitiveData",
+          "VALUE": "false"
+        },
+        {
+          "KEY": "formattingType",
+          "VALUE": "Boolean"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [],
+  "BEHAVIOURS": [],
+  "DATASOURCE": "System",
+  "DESCRIPTION": null
+}  ] 
+,
+ "STATEMACHINES" : [ 
+
+{
+  "NAME": "PurchaseOrderStateMachine",
+  "STATES": [
+    {
+      "NAME": "Initial",
+      "DECISIONS": [
+        {
+          "NAME": "Submit",
+          "ORDER": 1,
+          "COMMENTTYPE": "None",
+          "DESCRIPTION": ""
+        }
+      ],
+      "ISINITIAL": true,
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "TRANSITIONS": [
+        {
+          "TO": "WaitingForSupplier",
+          "NAME": "MoveToSupplier",
+          "TYPE": "Decision",
+          "ORDER": 1,
+          "DECISION": "Submit",
+          "EXPRESSION": "",
+          "DESCRIPTION": ""
+        }
+      ],
+      "DISABLEATTRIBUTES": false,
+      "DISABLEOPERATIONS": false,
+      "ENABLEDATTRIBUTES": [],
+      "ENABLEDOPERATIONS": [],
+      "ASSIGNTOEXPRESSION": null
+    },
+    {
+      "NAME": "Completed",
+      "DECISIONS": [],
+      "ISINITIAL": false,
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "TRANSITIONS": [],
+      "DISABLEATTRIBUTES": true,
+      "DISABLEOPERATIONS": true,
+      "ENABLEDATTRIBUTES": [],
+      "ENABLEDOPERATIONS": [],
+      "ASSIGNTOEXPRESSION": null
+    },
+    {
+      "NAME": "WaitingForSupplier",
+      "DECISIONS": [
+        {
+          "NAME": "Fechar",
+          "ORDER": 1,
+          "COMMENTTYPE": "None",
+          "DESCRIPTION": ""
+        }
+      ],
+      "ISINITIAL": false,
+      "BEHAVIOURS": [],
+      "DESCRIPTION": "",
+      "TRANSITIONS": [
+        {
+          "TO": "Completed",
+          "NAME": "Close",
+          "TYPE": "Decision",
+          "ORDER": 1,
+          "DECISION": "Fechar",
+          "EXPRESSION": "",
+          "DESCRIPTION": ""
+        }
+      ],
+      "DISABLEATTRIBUTES": false,
+      "DISABLEOPERATIONS": false,
+      "ENABLEDATTRIBUTES": [],
+      "ENABLEDOPERATIONS": [],
+      "ASSIGNTOEXPRESSION": ""
+    }
+  ],
+  "DEFINITION": "PurchaseOrder",
+  "DESCRIPTION": ""
+}  ] 
+,
+ "ENUMERATIONS" : [ 
+
+{
+  "NAME": "PurchaseOrderStateMachineInitialDecisions",
+  "VALUES": [
+    {
+      "NAME": "Submit",
+      "ORDER": 1,
+      "DESCRIPTION": null
+    }
+  ],
+  "DESCRIPTION": null
+},
+{
+  "NAME": "PurchaseOrderStateMachineWaitingForSupplierDecisions",
+  "VALUES": [
+    {
+      "NAME": "Fechar",
+      "ORDER": 1,
+      "DESCRIPTION": null
+    }
+  ],
+  "DESCRIPTION": null
+},
+{
+  "NAME": "PurchaseOrderStateMachineStates",
+  "VALUES": [
+    {
+      "NAME": "Initial",
+      "ORDER": 1,
+      "DESCRIPTION": null
+    },
+    {
+      "NAME": "Completed",
+      "ORDER": 2,
+      "DESCRIPTION": null
+    },
+    {
+      "NAME": "WaitingForSupplier",
+      "ORDER": 3,
+      "DESCRIPTION": null
+    }
+  ],
+  "DESCRIPTION": null
+}  ] 
+,
+ "AGENTS" : [ 
+
+{
+  "NAME": "Company",
+  "ATTRIBUTES": [
+    {
+      "NAME": "_code",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_name",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_description",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 0,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_inactive",
+      "TYPE": "Boolean",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    }
+  ],
+  "DATASOURCE": "System",
+  "DESCRIPTION": "",
+  "DATABEHAVIOURS": [],
+  "ENTITYBEHAVIOURS": [],
+  "BEHAVIOURNAMESPACES": []
+},
+{
+  "NAME": "Supplier",
+  "ATTRIBUTES": [
+    {
+      "NAME": "_code",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_name",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_description",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 0,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_inactive",
+      "TYPE": "Boolean",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    }
+  ],
+  "DATASOURCE": "System",
+  "DESCRIPTION": "",
+  "DATABEHAVIOURS": [],
+  "ENTITYBEHAVIOURS": [],
+  "BEHAVIOURNAMESPACES": []
+}  ] 
+,
+ "DOCUMENTS" : [ 
+
+{
+  "NAME": "PurchaseOrder",
+  "ATTRIBUTES": [
+    {
+      "NAME": "_code",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_serie",
+      "TYPE": "PurchaseOrderSerie",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "Shared",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_number",
+      "TYPE": "Integer",
+      "ISSYSTEM": true,
+      "ISREADONLY": true,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 0,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_date",
+      "TYPE": "Date",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "Lines",
+      "TYPE": "GoodsPurchaseRequest",
+      "ISSYSTEM": false,
+      "ISREADONLY": false,
+      "DESCRIPTION": "",
+      "MULTIPLICITY": {
+        "LOWER": 0,
+        "UPPER": 100
+      },
+      "AGGREGATIONKIND": "Composite",
+      "ISSENSITIVEDATA": false,
+      "DEPENDSONATTRIBUTE": ""
+    },
+    {
+      "NAME": "_state",
+      "TYPE": "PurchaseOrderStateMachineStates",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_assigned",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 0,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    }
+  ],
+  "DATASOURCE": "System",
+  "DESCRIPTION": "",
+  "DATABEHAVIOURS": [],
+  "ENTITYBEHAVIOURS": [
+    {
+      "NAME": "Defaults",
+      "TYPE": "Initialize",
+      "ATTRIBUTE": null,
+      "EXPRESSION": "if(!_Context.Operation.IsNew) return; \r\nthis._code = Guid.NewGuid().ToString(\"N\"); \r\nthis._date = DateTime.Today;\r\n\r\nvar httpClient = _Context.CreateApplicationHttpClient();\r\nvar serieRequest = httpClient.PostAsJsonAsync($\"Queries/{this.GetType().Name}SerieQuery/Default?PageSize=1\",\r\n        new { Filter = new { Property = \"_inactive\", Value = false } })\r\n    .GetAwaiter().GetResult();\r\n\r\nif (serieRequest.IsSuccessStatusCode)\r\n{\r\n    var serieRequestData = serieRequest.Content.ReadAsAsync<List<Dictionary<string, object>>>()\r\n                            .GetAwaiter().GetResult();\r\n\r\n    if(serieRequestData.Any())\r\n        this._serie = serieRequestData.First()[\"_code\"].ToString();\r\n}\r\n",
+      "DESCRIPTION": null
+    }
+  ],
+  "BEHAVIOURNAMESPACES": []
+}  ] 
+,
+ "SERIES" : [ 
+
+{
+  "NAME": "PurchaseOrderSerie",
+  "ATTRIBUTES": [
+    {
+      "NAME": "_code",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_name",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_description",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 0,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_inactive",
+      "TYPE": "Boolean",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_startingNumber",
+      "TYPE": "Integer",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    }
+  ],
+  "DATASOURCE": "System",
+  "DESCRIPTION": null,
+  "DATABEHAVIOURS": [],
+  "ENTITYBEHAVIOURS": [
+    {
+      "NAME": "Defaults",
+      "TYPE": "Initialize",
+      "ATTRIBUTE": null,
+      "EXPRESSION": "if(!_Context.Operation.IsNew) return; \r\nthis._startingNumber = 1;",
+      "DESCRIPTION": null
+    }
+  ],
+  "BEHAVIOURNAMESPACES": []
+}  ] 
+,
+ "COMMITMENTS" : [ 
+
+{
+  "NAME": "GoodsPurchaseRequest",
+  "ATTRIBUTES": [
+    {
+      "NAME": "_resource",
+      "TYPE": "Product",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "Shared",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_provider",
+      "TYPE": "Supplier",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "Shared",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_receiver",
+      "TYPE": "Company",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "Shared",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_code",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_quantity",
+      "TYPE": "Decimal",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_amount",
+      "TYPE": "Decimal",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "UnitPrice",
+      "TYPE": "Decimal",
+      "ISSYSTEM": false,
+      "ISREADONLY": false,
+      "DESCRIPTION": "",
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": false,
+      "DEPENDSONATTRIBUTE": ""
+    }
+  ],
+  "DATASOURCE": "System",
+  "DESCRIPTION": "",
+  "DATABEHAVIOURS": [],
+  "ENTITYBEHAVIOURS": [
+    {
+      "NAME": "Defaults",
+      "TYPE": "Initialize",
+      "ATTRIBUTE": null,
+      "EXPRESSION": "if(this._code != null && this._code != String.Empty) return; \r\nthis._code = Guid.NewGuid().ToString(\"N\");",
+      "DESCRIPTION": null
+    },
+    {
+      "NAME": "Total",
+      "TYPE": "Formula",
+      "ATTRIBUTE": "_amount",
+      "EXPRESSION": "return UnitPrice * _quantity;",
+      "DESCRIPTION": ""
+    },
+    {
+      "NAME": "OnProductChange",
+      "TYPE": "Action",
+      "ATTRIBUTE": "_resource",
+      "EXPRESSION": "\n\n// Code generated by an accelerator (you can change it if you need)\n// The following code invokes the API to retrieve the data of an entity and set the values in the current entity\nif(string.IsNullOrEmpty(this._resource?.ToString()))\n    return;\n\n// In order to prevent to invoke the API if the values were sent by the user\nif(\n    this._Dto.HasPropertyChanged(nameof(this.UnitPrice))  \n)\n    return;\n\nvar httpClient = this._Context.CreateApplicationHttpClient();\nvar dataSource = \"Default\";\nvar requestResult = httpClient.GetAsync($\"Product/{dataSource}/{this._resource}\").GetAwaiter().GetResult();\n\nif (!requestResult.IsSuccessStatusCode)\n    throw new Exception($\"Can't retrieve the entity '{this._resource}'\");\n\nvar entity = requestResult.Content.ReadAsAsync<ProductDto>().GetAwaiter().GetResult();\n\nthis.UnitPrice = entity.UnitPrice.Value; \n",
+      "DESCRIPTION": ""
+    }
+  ],
+  "BEHAVIOURNAMESPACES": []
+}  ] 
+,
+ "DASHBOARDS" : [ 
+
+{
+  "NAME": "ProductDashboard",
+  "TYPE": "Dashboard",
+  "LABEL": "Product",
+  "ELEMENTS": [
+    {
+      "ROW": 1,
+      "NAME": "ProductList",
+      "SIZE": 12,
+      "TYPE": "List",
+      "LABEL": "Product",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "listCode",
+          "VALUE": "ProductList"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [],
+  "BEHAVIOURS": [],
+  "DESCRIPTION": null
+},
+{
+  "NAME": "SupplierDashboard",
+  "TYPE": "Dashboard",
+  "LABEL": "Supplier",
+  "ELEMENTS": [
+    {
+      "ROW": 1,
+      "NAME": "SupplierList",
+      "SIZE": 12,
+      "TYPE": "List",
+      "LABEL": "Supplier",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "listCode",
+          "VALUE": "SupplierList"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [],
+  "BEHAVIOURS": [],
+  "DESCRIPTION": null
+},
+{
+  "NAME": "PurchaseOrderDashboard",
+  "TYPE": "Dashboard",
+  "LABEL": "Purchase Order",
+  "ELEMENTS": [
+    {
+      "ROW": 1,
+      "NAME": "PurchaseOrderList",
+      "SIZE": 12,
+      "TYPE": "List",
+      "LABEL": "Purchase Order",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "listCode",
+          "VALUE": "PurchaseOrderList"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [],
+  "BEHAVIOURS": [],
+  "DESCRIPTION": null
+},
+{
+  "NAME": "CompanyDashboard",
+  "TYPE": "Dashboard",
+  "LABEL": "Company",
+  "ELEMENTS": [
+    {
+      "ROW": 1,
+      "NAME": "CompanyList",
+      "SIZE": 12,
+      "TYPE": "List",
+      "LABEL": "Company",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "listCode",
+          "VALUE": "CompanyList"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [],
+  "BEHAVIOURS": [],
+  "DESCRIPTION": null
+},
+{
+  "NAME": "PurchaseOrderSerieDashboard",
+  "TYPE": "Dashboard",
+  "LABEL": "Purchase Order Serie",
+  "ELEMENTS": [
+    {
+      "ROW": 1,
+      "NAME": "PurchaseOrderSerieList",
+      "SIZE": 12,
+      "TYPE": "List",
+      "LABEL": "Purchase Order Serie",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "listCode",
+          "VALUE": "PurchaseOrderSerieList"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [],
+  "BEHAVIOURS": [],
+  "DESCRIPTION": null
+}  ] 
+,
+ "LISTS" : [ 
+
+{
+  "NAME": "PurchaseOrderList",
+  "TYPE": "List",
+  "LABEL": "Purchase Order",
+  "QUERY": "PurchaseOrderQuery",
+  "ELEMENTS": [
+    {
+      "ROW": 0,
+      "NAME": "_code",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Code",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_serie",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Serie",
+      "COLUMN": 4,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_number",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Number",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Integer"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_date",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Date",
+      "COLUMN": 10,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Date"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [
+    {
+      "KEY": "queryTableDefinition",
+      "VALUE": "PurchaseOrder"
+    }
+  ],
+  "BEHAVIOURS": [],
+  "DATASOURCE": "System",
+  "DESCRIPTION": null
+},
+{
+  "NAME": "ProductList",
+  "TYPE": "List",
+  "LABEL": "Product",
+  "QUERY": "ProductQuery",
+  "ELEMENTS": [
+    {
+      "ROW": 0,
+      "NAME": "_code",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Code",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_name",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Name",
+      "COLUMN": 4,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_description",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Description",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_inactive",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Inactive",
+      "COLUMN": 10,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Boolean"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [
+    {
+      "KEY": "queryTableDefinition",
+      "VALUE": "Product"
+    }
+  ],
+  "BEHAVIOURS": [],
+  "DATASOURCE": "System",
+  "DESCRIPTION": null
+},
+{
+  "NAME": "SupplierList",
+  "TYPE": "List",
+  "LABEL": "Supplier",
+  "QUERY": "SupplierQuery",
+  "ELEMENTS": [
+    {
+      "ROW": 0,
+      "NAME": "_code",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Code",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_name",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Name",
+      "COLUMN": 4,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_description",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Description",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_inactive",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Inactive",
+      "COLUMN": 10,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Boolean"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [
+    {
+      "KEY": "queryTableDefinition",
+      "VALUE": "Supplier"
+    }
+  ],
+  "BEHAVIOURS": [],
+  "DATASOURCE": "System",
+  "DESCRIPTION": null
+},
+{
+  "NAME": "PurchaseOrderSerieList",
+  "TYPE": "List",
+  "LABEL": "Purchase Order Serie",
+  "QUERY": "PurchaseOrderSerieQuery",
+  "ELEMENTS": [
+    {
+      "ROW": 0,
+      "NAME": "_code",
+      "SIZE": 2,
+      "TYPE": "ListColumn",
+      "LABEL": "Code",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_name",
+      "SIZE": 2,
+      "TYPE": "ListColumn",
+      "LABEL": "Name",
+      "COLUMN": 3,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_description",
+      "SIZE": 2,
+      "TYPE": "ListColumn",
+      "LABEL": "Description",
+      "COLUMN": 5,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_inactive",
+      "SIZE": 2,
+      "TYPE": "ListColumn",
+      "LABEL": "Inactive",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Boolean"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_startingNumber",
+      "SIZE": 2,
+      "TYPE": "ListColumn",
+      "LABEL": "Starting Number",
+      "COLUMN": 9,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Integer"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [
+    {
+      "KEY": "queryTableDefinition",
+      "VALUE": "PurchaseOrderSerie"
+    }
+  ],
+  "BEHAVIOURS": [],
+  "DATASOURCE": "System",
+  "DESCRIPTION": null
+},
+{
+  "NAME": "CompanyList",
+  "TYPE": "List",
+  "LABEL": "Company",
+  "QUERY": "CompanyQuery",
+  "ELEMENTS": [
+    {
+      "ROW": 0,
+      "NAME": "_code",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Code",
+      "COLUMN": 1,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_name",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Name",
+      "COLUMN": 4,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_description",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Description",
+      "COLUMN": 7,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Text"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    },
+    {
+      "ROW": 0,
+      "NAME": "_inactive",
+      "SIZE": 3,
+      "TYPE": "ListColumn",
+      "LABEL": "Inactive",
+      "COLUMN": 10,
+      "ELEMENTS": [],
+      "HELPTEXT": null,
+      "ISHIDDEN": false,
+      "ATTRIBUTES": [
+        {
+          "KEY": "formattingType",
+          "VALUE": "Boolean"
+        }
+      ],
+      "BEHAVIOURS": [],
+      "DESCRIPTION": null,
+      "VISIBLEFROM": null
+    }
+  ],
+  "HELPTEXT": null,
+  "ATTRIBUTES": [
+    {
+      "KEY": "queryTableDefinition",
+      "VALUE": "Company"
+    }
+  ],
+  "BEHAVIOURS": [],
+  "DATASOURCE": "System",
+  "DESCRIPTION": null
+}  ] 
+,
+ "RESOURCES" : [ 
+
+{
+  "NAME": "Product",
+  "ATTRIBUTES": [
+    {
+      "NAME": "_code",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_name",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_description",
+      "TYPE": "Text",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 0,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "_inactive",
+      "TYPE": "Boolean",
+      "ISSYSTEM": true,
+      "ISREADONLY": false,
+      "DESCRIPTION": null,
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": null,
+      "DEPENDSONATTRIBUTE": null
+    },
+    {
+      "NAME": "UnitPrice",
+      "TYPE": "Decimal",
+      "ISSYSTEM": false,
+      "ISREADONLY": false,
+      "DESCRIPTION": "",
+      "MULTIPLICITY": {
+        "LOWER": 1,
+        "UPPER": 1
+      },
+      "AGGREGATIONKIND": "None",
+      "ISSENSITIVEDATA": false,
+      "DEPENDSONATTRIBUTE": ""
+    }
+  ],
+  "DATASOURCE": "System",
+  "DESCRIPTION": "",
+  "DATABEHAVIOURS": [],
+  "ENTITYBEHAVIOURS": [],
+  "BEHAVIOURNAMESPACES": []
+}  ] 
+,
+ "QUERYS" : [ 
+
+{
+  "NAME": "ProductQuery",
+  "JOINS": [],
+  "TABLE": {
+    "ALIAS": null,
+    "FILTER": null,
+    "DEFINITION": "Product",
+    "PROPERTIES": [
+      {
+        "PATH": "_code",
+        "ALIAS": "_code",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_name",
+        "ALIAS": "_name",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_description",
+        "ALIAS": "_description",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_inactive",
+        "ALIAS": "_inactive",
+        "FUNCTION": "None"
+      }
+    ],
+    "ORDEREDPROPERTIES": []
+  },
+  "DATASOURCE": "System",
+  "EXPRESSION": null,
+  "DESCRIPTION": null
+},
+{
+  "NAME": "PurchaseOrderQuery",
+  "JOINS": [],
+  "TABLE": {
+    "ALIAS": null,
+    "FILTER": null,
+    "DEFINITION": "PurchaseOrder",
+    "PROPERTIES": [
+      {
+        "PATH": "_code",
+        "ALIAS": "_code",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_serie",
+        "ALIAS": "_serie",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_number",
+        "ALIAS": "_number",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_date",
+        "ALIAS": "_date",
+        "FUNCTION": "None"
+      }
+    ],
+    "ORDEREDPROPERTIES": []
+  },
+  "DATASOURCE": "System",
+  "EXPRESSION": null,
+  "DESCRIPTION": null
+},
+{
+  "NAME": "PurchaseOrderSerieQuery",
+  "JOINS": [],
+  "TABLE": {
+    "ALIAS": null,
+    "FILTER": null,
+    "DEFINITION": "PurchaseOrderSerie",
+    "PROPERTIES": [
+      {
+        "PATH": "_code",
+        "ALIAS": "_code",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_name",
+        "ALIAS": "_name",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_description",
+        "ALIAS": "_description",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_inactive",
+        "ALIAS": "_inactive",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_startingNumber",
+        "ALIAS": "_startingNumber",
+        "FUNCTION": "None"
+      }
+    ],
+    "ORDEREDPROPERTIES": []
+  },
+  "DATASOURCE": "System",
+  "EXPRESSION": null,
+  "DESCRIPTION": null
+},
+{
+  "NAME": "CompanyQuery",
+  "JOINS": [],
+  "TABLE": {
+    "ALIAS": null,
+    "FILTER": null,
+    "DEFINITION": "Company",
+    "PROPERTIES": [
+      {
+        "PATH": "_code",
+        "ALIAS": "_code",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_name",
+        "ALIAS": "_name",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_description",
+        "ALIAS": "_description",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_inactive",
+        "ALIAS": "_inactive",
+        "FUNCTION": "None"
+      }
+    ],
+    "ORDEREDPROPERTIES": []
+  },
+  "DATASOURCE": "System",
+  "EXPRESSION": null,
+  "DESCRIPTION": null
+},
+{
+  "NAME": "SupplierQuery",
+  "JOINS": [],
+  "TABLE": {
+    "ALIAS": null,
+    "FILTER": null,
+    "DEFINITION": "Supplier",
+    "PROPERTIES": [
+      {
+        "PATH": "_code",
+        "ALIAS": "_code",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_name",
+        "ALIAS": "_name",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_description",
+        "ALIAS": "_description",
+        "FUNCTION": "None"
+      },
+      {
+        "PATH": "_inactive",
+        "ALIAS": "_inactive",
+        "FUNCTION": "None"
+      }
+    ],
+    "ORDEREDPROPERTIES": []
+  },
+  "DATASOURCE": "System",
+  "EXPRESSION": null,
+  "DESCRIPTION": null
+}  ] 
+ }
+ ] 
+}

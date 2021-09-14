@@ -1,0 +1,281 @@
+Root { 
+	tenantsecuritys { 
+		Tenantsecuritys { 
+			authorizationpolicys { 
+				TenantsecuritysAuthorizationpolicys Model { 
+					description "Modeling authorization policy." 
+					permissions { 
+						TenantsecuritysAuthorizationpolicysPermissions ALL { 
+							description "Modeling access" 
+						} 
+					} 
+				} 
+			} 
+			authorizationroles { 
+				TenantsecuritysAuthorizationroles Administration { 
+					description Administrators 
+					subjects { 
+						TenantsecuritysAuthorizationrolesSubjects { 
+							id "fd46676c-a13f-4c1e-8acc-454ed0aec56b" 
+							username "support@numbersbelieve.com" 
+						} 
+					} 
+				} 
+			} 
+		} 
+	} 
+	models { 
+		Models { 
+			datasources { 
+				ModelsDatasources System { 
+					description "Default DataSource" 
+					behaviourRuntime Internal 
+					dataAccessRuntime Internal 
+					attributes { 
+						ModelsDatasourcesAttributes "_code" { 
+							type Text 
+							aggregationKind None 
+							multiplicity { 
+								ModelsDatasourcesAttributesMultiplicity {
+								} 
+							} 
+						} 
+					}
+				} 
+			} 
+			selectors { 
+				ModelsSelectors PurchaseOrderStateMachineInitialDecisionsSelector {
+					type Selector 
+					label "Purchase Order State Machine Initial Decisions" 
+					elements { 
+						ModelsSelectorsElements Submit { 
+							type SelectorEntry 
+							label Submit 
+							attributes { 
+								ModelsSelectorsElementsAttributes { 
+									key EnumerationValue 
+									value Submit 
+								} 
+							} 
+						} 
+					} 
+					attributes { 
+						ModelsSelectorsAttributes { 
+							key Enumeration 
+							value PurchaseOrderStateMachineInitialDecisions 
+						} 
+					} 
+				} 
+			} 
+			forms { 
+				ModelsForms CompanyForm { 
+					type Form 
+					label Company 
+					entity Company 
+					dataSource System 
+					elements { 
+						ModelsFormsElements "_code" { 
+							type Input 
+							label Code 
+							attributes { 
+								ModelsFormsElementsAttributes { 
+									key ^aggregationKind 
+									value None 
+								} 
+							} 
+						} 
+					} 
+				} 
+			} 
+			statemachines { 
+				ModelsStatemachines PurchaseOrderStateMachine { 
+					definition PurchaseOrder 
+					description "" 
+					states { 
+						ModelsStatemachinesStates Initial { 
+							decisions { 
+								ModelsStatemachinesStatesDecisions Submit { 
+									commentType None 
+									description "" 
+								} 
+							} 
+							transitions { 
+								ModelsStatemachinesStatesTransitions MoveToSupplier { 
+									to WaitingForSupplier 
+									type Decision 
+									decision Submit 
+									expression "" 
+									description "" 
+								} 
+							} 
+						} 
+					} 
+				} 
+			} 
+			enumerations { 
+				ModelsEnumerations PurchaseOrderStateMachineInitialDecisions { 
+					values { 
+						ModelsEnumerationsValues Submit { 
+						} 
+					} 
+				} 
+			} 
+			agents { 
+				ModelsAgents Company { 
+					dataSource System 
+					description "" 
+					attributes { 
+						ModelsAgentsAttributes "_code" { 
+							type Text 
+							aggregationKind None
+							multiplicity { 
+								ModelsAgentsAttributesMultiplicity { 
+								} 
+							} 
+						} 
+					} 
+				} 
+			}
+			documents { 
+				ModelsDocuments PurchaseOrder { 
+					dataSource System 
+					description "" 
+					attributes { 
+						ModelsDocumentsAttributes "_code" { 
+							type Text 
+							aggregationKind None 
+							multiplicity { 
+								ModelsDocumentsAttributesMultiplicity { 
+								} 
+							} 
+						} 
+					} 
+					entityBehaviours { 
+						ModelsDocumentsEntityBehaviours Defaults { 
+							type Initialize 
+							expression "if(!_Context.Operation.IsNew) return; \r\nthis._code = Guid.NewGuid().ToString(\"N\"); \r\nthis._date = DateTime.Today;\r\n\r\nvar httpClient = _Context.CreateApplicationHttpClient();\r\nvar serieRequest = httpClient.PostAsJsonAsync($\"Queries/{this.GetType().Name}SerieQuery/Default?PageSize=1\",\r\n        new { Filter = new { Property = \"_inactive\", Value = false } })\r\n    .GetAwaiter().GetResult();\r\n\r\nif (serieRequest.IsSuccessStatusCode)\r\n{\r\n    var serieRequestData = serieRequest.Content.ReadAsAsync<List<Dictionary<string, object>>>()\r\n                            .GetAwaiter().GetResult();\r\n\r\n    if(serieRequestData.Any())\r\n        this._serie = serieRequestData.First()[\"_code\"].ToString();\r\n}\r\n" 
+						} 
+					} 
+				} 
+			} 
+			series { 
+				ModelsSeries PurchaseOrderSerie {
+					dataSource System 
+					attributes { 
+						ModelsSeriesAttributes "_code" { 
+							type Text 
+							aggregationKind None 
+							multiplicity { 
+								ModelsSeriesAttributesMultiplicity {
+								} 
+							} 
+						} 
+					} 
+					entityBehaviours { 
+						ModelsSeriesEntityBehaviours Defaults { 
+							type Initialize 
+							expression "if(!_Context.Operation.IsNew) return; \r\nthis._startingNumber = 1;" 
+						} 
+					} 
+				} 
+			} 
+			commitments { 
+				ModelsCommitments GoodsPurchaseRequest { 
+					dataSource System 
+					description "" attributes { 
+						ModelsCommitmentsAttributes "_resource" { 
+							aggregationKind Shared 
+							multiplicity { 
+								ModelsCommitmentsAttributesMultiplicity { 
+								} 
+							} 
+						} 
+					} 
+					entityBehaviours { 
+						ModelsCommitmentsEntityBehaviours Defaults { 
+							type Initialize 
+							expression "if(this._code != null && this._code != String.Empty) return; \r\nthis._code = Guid.NewGuid().ToString(\"N\");" 
+						} 
+					} 
+				} 
+			} 
+			dashboards { 
+				ModelsDashboards ProductDashboard { 
+					type Dashboard 
+					label Product 
+					elements { 
+						ModelsDashboardsElements ProductList { 
+							type List 
+							label Product 
+							attributes { 
+								ModelsDashboardsElementsAttributes { 
+									key listCode 
+									value ProductList 
+								} 
+							}
+						} 
+					} 
+				} 
+			} 
+			lists { 
+				ModelsLists PurchaseOrderList { 
+					type List 
+					label "Purchase Order" 
+					query PurchaseOrderQuery 
+					dataSource System 
+					elements { 
+						ModelsListsElements "_code" { 
+							type ListColumn 
+							label Code 
+							attributes { 
+								ModelsListsElementsAttributes { 
+									key formattingType 
+									value Text 
+								} 
+							} 
+						} 
+					} 
+					attributes { 
+						ModelsListsAttributes { 
+							key queryTableDefinition 
+							value PurchaseOrder 
+						} 
+					} 
+				} 
+			} 
+			resources { 
+				ModelsResources Product { 
+					dataSource System 
+					description "" 
+					attributes { 
+						ModelsResourcesAttributes "_code" { 
+							type Text 
+							aggregationKind None 
+							multiplicity { 
+								ModelsResourcesAttributesMultiplicity { 
+								} 
+							} 
+						} 
+					} 
+				} 
+			} 
+			querys { 
+				ModelsQuerys ProductQuery { 
+					dataSource System 
+					table { 
+						ModelsQuerysTable { 
+							definition Product 
+							properties { 
+								ModelsQuerysTableProperties { 
+									path "_code" 
+									alias "_code" 
+									function None 
+								} 
+							} 
+						} 
+					} 
+				} 
+			} 
+		} 
+	} 
+}

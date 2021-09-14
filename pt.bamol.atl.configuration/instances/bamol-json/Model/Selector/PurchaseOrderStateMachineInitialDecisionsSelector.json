@@ -1,0 +1,36 @@
+{
+  "name": "PurchaseOrderStateMachineInitialDecisionsSelector",
+  "type": "Selector",
+  "label": "Purchase Order State Machine Initial Decisions",
+  "elements": [
+    {
+      "row": 1,
+      "name": "Submit",
+      "size": 12,
+      "type": "SelectorEntry",
+      "label": "Submit",
+      "column": 1,
+      "elements": [],
+      "helpText": null,
+      "isHidden": false,
+      "attributes": [
+        {
+          "key": "EnumerationValue",
+          "value": "Submit"
+        }
+      ],
+      "behaviours": [],
+      "description": null,
+      "visibleFrom": null
+    }
+  ],
+  "helpText": null,
+  "attributes": [
+    {
+      "key": "Enumeration",
+      "value": "PurchaseOrderStateMachineInitialDecisions"
+    }
+  ],
+  "behaviours": [],
+  "description": null
+}
