@@ -9,32 +9,7 @@
   <genPackages prefix="BamolM2" basePackage="pt.bamol" disposableProviderFactory="true"
       ecorePackage="bamol-ecore-customization.ecore#/">
     <genClasses ecoreClass="bamol-ecore-customization.ecore#//Root">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Root/tenantsecuritys"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Root/models"/>
-    </genClasses>
-    <genClasses ecoreClass="bamol-ecore-customization.ecore#//Tenantsecuritys">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Tenantsecuritys/authorizationpolicys"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Tenantsecuritys/authorizationroles"/>
-    </genClasses>
-    <genClasses ecoreClass="bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationpolicys">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationpolicys/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationpolicys/policies"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationpolicys/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationpolicys/permissions"/>
-    </genClasses>
-    <genClasses ecoreClass="bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationpolicysPermissions">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationpolicysPermissions/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationpolicysPermissions/roles"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationpolicysPermissions/description"/>
-    </genClasses>
-    <genClasses ecoreClass="bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationroles">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationroles/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationroles/subjects"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationroles/description"/>
-    </genClasses>
-    <genClasses ecoreClass="bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationrolesSubjects">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationrolesSubjects/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//TenantsecuritysAuthorizationrolesSubjects/username"/>
     </genClasses>
     <genClasses ecoreClass="bamol-ecore-customization.ecore#//Models">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Models/datasources"/>
@@ -45,11 +20,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Models/agents"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Models/documents"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Models/series"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Models/commitments"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Models/dashboards"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Models/lists"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Models/genericentitys"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Models/resources"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Models/querys"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Models/applicationbehaviours"/>
     </genClasses>
     <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsDatasources">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsDatasources/name"/>
@@ -178,12 +154,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStates/enabledOperations"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStates/assignToExpression"/>
     </genClasses>
-    <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsStatemachinesStatesDecisions">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStatesDecisions/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStatesDecisions/order"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStatesDecisions/commentType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStatesDecisions/description"/>
-    </genClasses>
     <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsStatemachinesStatesTransitions">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStatesTransitions/to"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStatesTransitions/name"/>
@@ -192,6 +162,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStatesTransitions/decision"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStatesTransitions/expression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStatesTransitions/description"/>
+    </genClasses>
+    <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsStatemachinesStatesDecisions">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStatesDecisions/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStatesDecisions/order"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStatesDecisions/commentType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsStatemachinesStatesDecisions/description"/>
     </genClasses>
     <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsEnumerations">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsEnumerations/name"/>
@@ -289,37 +265,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsSeriesEntityBehaviours/expression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsSeriesEntityBehaviours/description"/>
     </genClasses>
-    <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsCommitments">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitments/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//ModelsCommitments/attributes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitments/dataSource"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitments/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitments/dataBehaviours"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//ModelsCommitments/entityBehaviours"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitments/behaviourNamespaces"/>
-    </genClasses>
-    <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsCommitmentsAttributes">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsAttributes/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsAttributes/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsAttributes/isSystem"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsAttributes/isReadOnly"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsAttributes/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//ModelsCommitmentsAttributes/multiplicity"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsAttributes/aggregationKind"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsAttributes/isSensitiveData"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsAttributes/dependsOnAttribute"/>
-    </genClasses>
-    <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsCommitmentsAttributesMultiplicity">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsAttributesMultiplicity/lower"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsAttributesMultiplicity/upper"/>
-    </genClasses>
-    <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsCommitmentsEntityBehaviours">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsEntityBehaviours/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsEntityBehaviours/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsEntityBehaviours/attribute"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsEntityBehaviours/expression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsCommitmentsEntityBehaviours/description"/>
-    </genClasses>
     <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsDashboards">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsDashboards/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsDashboards/type"/>
@@ -327,7 +272,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//ModelsDashboards/elements"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsDashboards/helpText"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsDashboards/attributes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsDashboards/behaviours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//ModelsDashboards/behaviours"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsDashboards/description"/>
     </genClasses>
     <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsDashboardsElements">
@@ -348,6 +293,12 @@
     <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsDashboardsElementsAttributes">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsDashboardsElementsAttributes/key"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsDashboardsElementsAttributes/value"/>
+    </genClasses>
+    <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsDashboardsBehaviours">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsDashboardsBehaviours/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsDashboardsBehaviours/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsDashboardsBehaviours/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsDashboardsBehaviours/description"/>
     </genClasses>
     <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsLists">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsLists/name"/>
@@ -383,6 +334,38 @@
     <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsListsAttributes">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsListsAttributes/key"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsListsAttributes/value"/>
+    </genClasses>
+    <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsGenericentitys">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitys/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitys/isRoot"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//ModelsGenericentitys/attributes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitys/dataSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitys/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitys/dataBehaviours"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//ModelsGenericentitys/entityBehaviours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitys/behaviourNamespaces"/>
+    </genClasses>
+    <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsGenericentitysAttributes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysAttributes/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysAttributes/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysAttributes/isSystem"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysAttributes/isReadOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysAttributes/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//ModelsGenericentitysAttributes/multiplicity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysAttributes/aggregationKind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysAttributes/isSensitiveData"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysAttributes/dependsOnAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsGenericentitysAttributesMultiplicity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysAttributesMultiplicity/lower"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysAttributesMultiplicity/upper"/>
+    </genClasses>
+    <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsGenericentitysEntityBehaviours">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysEntityBehaviours/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysEntityBehaviours/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysEntityBehaviours/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysEntityBehaviours/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsGenericentitysEntityBehaviours/description"/>
     </genClasses>
     <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsResources">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsResources/name"/>
@@ -427,6 +410,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsQuerysTableProperties/path"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsQuerysTableProperties/alias"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsQuerysTableProperties/function"/>
+    </genClasses>
+    <genClasses ecoreClass="bamol-ecore-customization.ecore#//ModelsApplicationbehaviours">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsApplicationbehaviours/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsApplicationbehaviours/dataSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsApplicationbehaviours/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsApplicationbehaviours/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsApplicationbehaviours/executionLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bamol-ecore-customization.ecore#//ModelsApplicationbehaviours/behaviourNamespaces"/>
     </genClasses>
     <genClasses image="false" ecoreClass="bamol-ecore-customization.ecore#//Element">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bamol-ecore-customization.ecore#//Element/inc"/>

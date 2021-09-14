@@ -152,7 +152,7 @@
 							<executable>java</executable>
 							<mainClass>pt.bamol.atl.json2ecore.Json2Ecore</mainClass>
 							<arguments>
-					            <argument>${project.basedir}/instances/bamol-json</argument>
+					            <argument>${project.basedir}/instances/bamol-json-case-study</argument>
 					            <argument>${project.basedir}/instances/bamol-json.json</argument>
 					            <argument>${project.basedir}/instances/bamol-ecore.ecore</argument>
 							</arguments>

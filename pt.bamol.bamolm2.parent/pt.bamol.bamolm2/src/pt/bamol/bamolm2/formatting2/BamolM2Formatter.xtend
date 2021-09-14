@@ -4,13 +4,10 @@
 package pt.bamol.bamolm2.formatting2
 
 import pt.bamol.bamolm2.Root
-import pt.bamol.bamolm2.Tenantsecuritys
 import com.google.inject.Inject
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
 import pt.bamol.bamolm2.services.BamolM2GrammarAccess
-import pt.bamol.bamolm2.TenantsecuritysAuthorizationpolicys
-import pt.bamol.bamolm2.TenantsecuritysAuthorizationpolicysPermissions
 import pt.bamol.bamolm2.Models
 import pt.bamol.bamolm2.ModelsDatasources
 import pt.bamol.bamolm2.ModelsSelectors

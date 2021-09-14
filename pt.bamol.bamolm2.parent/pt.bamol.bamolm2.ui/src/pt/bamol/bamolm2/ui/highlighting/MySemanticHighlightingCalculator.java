@@ -9,7 +9,6 @@ import org.eclipse.xtext.ide.editor.syntaxcoloring.DefaultSemanticHighlightingCa
 import org.eclipse.xtext.ide.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.impl.KeywordImpl;
 
-import pt.bamol.bamolm2.ModelsCommitmentsAttributes;
 import pt.bamol.bamolm2.Root;
 import pt.bamol.vmodel.Feature;
 

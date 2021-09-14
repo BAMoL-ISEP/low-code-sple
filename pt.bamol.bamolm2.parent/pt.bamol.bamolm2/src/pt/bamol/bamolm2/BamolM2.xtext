@@ -12,21 +12,11 @@ Root returns Root:
 	'Root'
 	'{'
 		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
-		('tenantsecuritys' '{' tenantsecuritys+=Tenantsecuritys ( "," tenantsecuritys+=Tenantsecuritys)* '}' )?
 		('models' '{' models+=Models ( "," models+=Models)* '}' )?
 	'}';
 
 Feature returns vmodel::Feature:
 	Sale | Purchase | PurchaseApproval;
-
-Tenantsecuritys returns Tenantsecuritys:
-	{Tenantsecuritys}
-	'Tenantsecuritys'
-	'{'
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
-		('authorizationpolicys' '{' authorizationpolicys+=TenantsecuritysAuthorizationpolicys ( "," authorizationpolicys+=TenantsecuritysAuthorizationpolicys)* '}' )?
-		('authorizationroles' '{' authorizationroles+=TenantsecuritysAuthorizationroles ( "," authorizationroles+=TenantsecuritysAuthorizationroles)* '}' )?
-	'}';
 
 Models returns Models:
 	{Models}
@@ -41,11 +31,12 @@ Models returns Models:
 		('agents' '{' agents+=ModelsAgents ( "," agents+=ModelsAgents)* '}' )?
 		('documents' '{' documents+=ModelsDocuments ( "," documents+=ModelsDocuments)* '}' )?
 		('series' '{' series+=ModelsSeries ( "," series+=ModelsSeries)* '}' )?
-		('commitments' '{' commitments+=ModelsCommitments ( "," commitments+=ModelsCommitments)* '}' )?
 		('dashboards' '{' dashboards+=ModelsDashboards ( "," dashboards+=ModelsDashboards)* '}' )?
 		('lists' '{' lists+=ModelsLists ( "," lists+=ModelsLists)* '}' )?
+		('genericentitys' '{' genericentitys+=ModelsGenericentitys ( "," genericentitys+=ModelsGenericentitys)* '}' )?
 		('resources' '{' resources+=ModelsResources ( "," resources+=ModelsResources)* '}' )?
 		('querys' '{' querys+=ModelsQuerys ( "," querys+=ModelsQuerys)* '}' )?
+		('applicationbehaviours' '{' applicationbehaviours+=ModelsApplicationbehaviours ( "," applicationbehaviours+=ModelsApplicationbehaviours)* '}' )?
 	'}';
 
 EString returns ecore::EString:
@@ -71,46 +62,6 @@ PurchaseApproval returns vmodel::PurchaseApproval:
 
 EDouble returns ecore::EDouble:
 	'-'? INT? '.' INT (('E'|'e') '-'? INT)?;
-
-TenantsecuritysAuthorizationpolicys returns TenantsecuritysAuthorizationpolicys:
-	{TenantsecuritysAuthorizationpolicys}
-	'TenantsecuritysAuthorizationpolicys'
-	name=EString
-	'{'
-		('policies' '{' policies+=EString ( "," policies+=EString)* '}' )?
-		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
-		('permissions' '{' permissions+=TenantsecuritysAuthorizationpolicysPermissions ( "," permissions+=TenantsecuritysAuthorizationpolicysPermissions)* '}' )?
-	'}';
-
-TenantsecuritysAuthorizationroles returns TenantsecuritysAuthorizationroles:
-	{TenantsecuritysAuthorizationroles}
-	'TenantsecuritysAuthorizationroles'
-	name=EString
-	'{'
-		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
-		('subjects' '{' subjects+=TenantsecuritysAuthorizationrolesSubjects ( "," subjects+=TenantsecuritysAuthorizationrolesSubjects)* '}' )?
-	'}';
-
-TenantsecuritysAuthorizationpolicysPermissions returns TenantsecuritysAuthorizationpolicysPermissions:
-	{TenantsecuritysAuthorizationpolicysPermissions}
-	'TenantsecuritysAuthorizationpolicysPermissions'
-	name=EString
-	'{'
-		('roles' '{' roles+=EString ( "," roles+=EString)* '}' )?
-		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
-	'}';
-
-TenantsecuritysAuthorizationrolesSubjects returns TenantsecuritysAuthorizationrolesSubjects:
-	{TenantsecuritysAuthorizationrolesSubjects}
-	'TenantsecuritysAuthorizationrolesSubjects'
-	'{'
-		('id' id=EString)?
-		('username' username=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
-	'}';
 
 ModelsDatasources returns ModelsDatasources:
 	{ModelsDatasources}
@@ -224,20 +175,6 @@ ModelsSeries returns ModelsSeries:
 		('entityBehaviours' '{' entityBehaviours+=ModelsSeriesEntityBehaviours ( "," entityBehaviours+=ModelsSeriesEntityBehaviours)* '}' )?
 	'}';
 
-ModelsCommitments returns ModelsCommitments:
-	{ModelsCommitments}
-	'ModelsCommitments'
-	name=EString
-	'{'
-		('dataSource' dataSource=EString)?
-		('description' description=EString)?
-		('dataBehaviours' '{' dataBehaviours+=EString ( "," dataBehaviours+=EString)* '}' )?
-		('behaviourNamespaces' '{' behaviourNamespaces+=EString ( "," behaviourNamespaces+=EString)* '}' )?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
-		('attributes' '{' attributes+=ModelsCommitmentsAttributes ( "," attributes+=ModelsCommitmentsAttributes)* '}' )?
-		('entityBehaviours' '{' entityBehaviours+=ModelsCommitmentsEntityBehaviours ( "," entityBehaviours+=ModelsCommitmentsEntityBehaviours)* '}' )?
-	'}';
-
 ModelsDashboards returns ModelsDashboards:
 	{ModelsDashboards}
 	'ModelsDashboards'
@@ -247,10 +184,10 @@ ModelsDashboards returns ModelsDashboards:
 		('label' label=EString)?
 		('helpText' helpText=EString)?
 		('attributes' '{' attributes+=EString ( "," attributes+=EString)* '}' )?
-		('behaviours' '{' behaviours+=EString ( "," behaviours+=EString)* '}' )?
 		('description' description=EString)?
 		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('elements' '{' elements+=ModelsDashboardsElements ( "," elements+=ModelsDashboardsElements)* '}' )?
+		('behaviours' '{' behaviours+=ModelsDashboardsBehaviours ( "," behaviours+=ModelsDashboardsBehaviours)* '}' )?
 	'}';
 
 ModelsLists returns ModelsLists:
@@ -268,6 +205,21 @@ ModelsLists returns ModelsLists:
 		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('elements' '{' elements+=ModelsListsElements ( "," elements+=ModelsListsElements)* '}' )?
 		('attributes' '{' attributes+=ModelsListsAttributes ( "," attributes+=ModelsListsAttributes)* '}' )?
+	'}';
+
+ModelsGenericentitys returns ModelsGenericentitys:
+	{ModelsGenericentitys}
+	(isRoot?='isRoot')?
+	'ModelsGenericentitys'
+	name=EString
+	'{'
+		('dataSource' dataSource=EString)?
+		('description' description=EString)?
+		('dataBehaviours' '{' dataBehaviours+=EString ( "," dataBehaviours+=EString)* '}' )?
+		('behaviourNamespaces' '{' behaviourNamespaces+=EString ( "," behaviourNamespaces+=EString)* '}' )?
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
+		('attributes' '{' attributes+=ModelsGenericentitysAttributes ( "," attributes+=ModelsGenericentitysAttributes)* '}' )?
+		('entityBehaviours' '{' entityBehaviours+=ModelsGenericentitysEntityBehaviours ( "," entityBehaviours+=ModelsGenericentitysEntityBehaviours)* '}' )?
 	'}';
 
 ModelsResources returns ModelsResources:
@@ -295,6 +247,19 @@ ModelsQuerys returns ModelsQuerys:
 		('description' description=EString)?
 		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('table' table=ModelsQuerysTable)?
+	'}';
+
+ModelsApplicationbehaviours returns ModelsApplicationbehaviours:
+	{ModelsApplicationbehaviours}
+	'ModelsApplicationbehaviours'
+	name=EString
+	'{'
+		('dataSource' dataSource=EString)?
+		('expression' expression=EString)?
+		('description' description=EString)?
+		('executionLocation' executionLocation=EString)?
+		('behaviourNamespaces' '{' behaviourNamespaces+=EString ( "," behaviourNamespaces+=EString)* '}' )?
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsDatasourcesAttributes returns ModelsDatasourcesAttributes:
@@ -574,43 +539,6 @@ ModelsSeriesAttributesMultiplicity returns ModelsSeriesAttributesMultiplicity:
 		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
-ModelsCommitmentsAttributes returns ModelsCommitmentsAttributes:
-	{ModelsCommitmentsAttributes}
-	(isSystem?='isSystem')?
-	(isReadOnly?='isReadOnly')?
-	(isSensitiveData?='isSensitiveData')?
-	'ModelsCommitmentsAttributes'
-	name=EString
-	'{'
-		('type' type=EString)?
-		('description' description=EString)?
-		('aggregationKind' aggregationKind=EString)?
-		('dependsOnAttribute' dependsOnAttribute=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
-		('multiplicity' multiplicity=ModelsCommitmentsAttributesMultiplicity)?
-	'}';
-
-ModelsCommitmentsEntityBehaviours returns ModelsCommitmentsEntityBehaviours:
-	{ModelsCommitmentsEntityBehaviours}
-	'ModelsCommitmentsEntityBehaviours'
-	name=EString
-	'{'
-		('type' type=EString)?
-		('attribute' attribute=EString)?
-		('expression' expression=EString)?
-		('description' description=EString)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
-	'}';
-
-ModelsCommitmentsAttributesMultiplicity returns ModelsCommitmentsAttributesMultiplicity:
-	{ModelsCommitmentsAttributesMultiplicity}
-	'ModelsCommitmentsAttributesMultiplicity'
-	'{'
-		('lower' lower=EBigDecimal)?
-		('upper' upper=EBigDecimal)?
-		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
-	'}';
-
 ModelsDashboardsElements returns ModelsDashboardsElements:
 	{ModelsDashboardsElements}
 	(isHidden?='isHidden')?
@@ -629,6 +557,17 @@ ModelsDashboardsElements returns ModelsDashboardsElements:
 		('visibleFrom' visibleFrom=EString)?
 		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 		('attributes' '{' attributes+=ModelsDashboardsElementsAttributes ( "," attributes+=ModelsDashboardsElementsAttributes)* '}' )?
+	'}';
+
+ModelsDashboardsBehaviours returns ModelsDashboardsBehaviours:
+	{ModelsDashboardsBehaviours}
+	'ModelsDashboardsBehaviours'
+	name=EString
+	'{'
+		('type' type=EString)?
+		('expression' expression=EString)?
+		('description' description=EString)?
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
 ModelsDashboardsElementsAttributes returns ModelsDashboardsElementsAttributes:
@@ -678,6 +617,43 @@ ModelsListsElementsAttributes returns ModelsListsElementsAttributes:
 		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
 
+ModelsGenericentitysAttributes returns ModelsGenericentitysAttributes:
+	{ModelsGenericentitysAttributes}
+	(isSystem?='isSystem')?
+	(isReadOnly?='isReadOnly')?
+	(isSensitiveData?='isSensitiveData')?
+	'ModelsGenericentitysAttributes'
+	name=EString
+	'{'
+		('type' type=EString)?
+		('description' description=EString)?
+		('aggregationKind' aggregationKind=EString)?
+		('dependsOnAttribute' dependsOnAttribute=EString)?
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
+		('multiplicity' multiplicity=ModelsGenericentitysAttributesMultiplicity)?
+	'}';
+
+ModelsGenericentitysEntityBehaviours returns ModelsGenericentitysEntityBehaviours:
+	{ModelsGenericentitysEntityBehaviours}
+	'ModelsGenericentitysEntityBehaviours'
+	name=EString
+	'{'
+		('type' type=EString)?
+		('attribute' attribute=EString)?
+		('expression' expression=EString)?
+		('description' description=EString)?
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
+	'}';
+
+ModelsGenericentitysAttributesMultiplicity returns ModelsGenericentitysAttributesMultiplicity:
+	{ModelsGenericentitysAttributesMultiplicity}
+	'ModelsGenericentitysAttributesMultiplicity'
+	'{'
+		('lower' lower=EBigDecimal)?
+		('upper' upper=EBigDecimal)?
+		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
+	'}';
+
 ModelsResourcesAttributes returns ModelsResourcesAttributes:
 	{ModelsResourcesAttributes}
 	(isSystem?='isSystem')?
@@ -724,4 +700,3 @@ ModelsQuerysTableProperties returns ModelsQuerysTableProperties:
 		('function' function=EString)?
 		('inc' '(' inc+=[vmodel::Feature|EString] ( "," inc+=[vmodel::Feature|EString])* ')' )?
 	'}';
-

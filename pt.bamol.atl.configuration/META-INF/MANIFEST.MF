@@ -15,7 +15,7 @@ Require-Bundle: pt.bamol.bamolm2;bundle-version="1.0.0",
  org.apache.log4j,
  org.eclipse.emf.ecore,
  pt.bamol.atl.json2ecore;bundle-version="1.0.0",
- com.google.gson;bundle-version="2.8.2",
- org.apache.commons.io;bundle-version="2.6.0"
+ com.google.gson,
+ org.apache.commons.io
 Import-Package: com.google.inject,
  pt.bamol.vmodel
