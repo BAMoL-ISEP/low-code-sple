@@ -34,7 +34,7 @@ For further information please contact:
   Eclipse (tested with version 2021-03)  
 
   An OMNIA low-code plataform account (see: https://omnialowcode.com). The repository already contains a model containning a set of applications that was exported from OMNIA (in JSON format). Therefore, this is only required if you want to import the result to OMNIA or use other models.  
-
+ 
 ## Notes
 
 - In Maven, the **-o** option is used so that maven does not always fetch info from the repositories 
