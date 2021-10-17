@@ -7,7 +7,7 @@ Root {
 				ModelsAgents Customer {
 					// If we have a feature reference (@) the inclusion element is only included 
 					// if the feature is also available in the configuration model
-					inc( "m1.sale1" )  
+					inc( "SPLOrderMan.sale" )  
 				}				
 			}
 //			commitments {

@@ -102,7 +102,7 @@ Root
 	}
 	} } , ModelsSelectors SaleOrderStateMachineStatesSelector
 	{
-		inc ("m1.sale1") 
+		inc ("SPLOrderMan.sale") 
 		type Selector label "Sale Order State Machine States" elements { ModelsSelectorsElements Initial
 		{
 			row 1 size 12 type SelectorEntry label Initial column 1 attributes { ModelsSelectorsElementsAttributes
@@ -146,7 +146,7 @@ Root
 	}
 	} } , ModelsSelectors SaleOrderStateMachineInSalesManagerReviewDecisionsSelector
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		type Selector label "Sale Order State Machine In Sales Manager Review Decisions" elements { ModelsSelectorsElements Approve
 		{
 			row 1 size 12 type SelectorEntry label Approve column 1 attributes { ModelsSelectorsElementsAttributes
@@ -191,7 +191,7 @@ Root
 	}
 	} } , ModelsSelectors SaleOrderStateMachineInSalesTeamManagerReviewDecisionsSelector
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		type Selector label "Sale Order State Machine In Sales Team Manager Review Decisions" elements { ModelsSelectorsElements Approve
 		{
 			row 1 size 12 type SelectorEntry label Approve column 1 attributes { ModelsSelectorsElementsAttributes
@@ -214,7 +214,7 @@ Root
 	}
 	} } , ModelsSelectors SaleOrderStateMachineInFinancialManagerReviewDecisionsSelector
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		type Selector label "Sale Order State Machine In Financial Manager Review Decisions" elements { ModelsSelectorsElements Approve
 		{
 			row 1 size 12 type SelectorEntry label Approve column 1 attributes { ModelsSelectorsElementsAttributes
@@ -1199,9 +1199,10 @@ Root
 		}
 		}
 	}
-	} , ModelsForms SaleOrderForm
+	} , 
+	ModelsForms SaleOrderForm
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		type Form label SaleOrder entity SaleOrder dataSource System elements { isHidden ModelsFormsElements "_code"
 		{
 			row 1 size 6 type Input label Code column 1 attributes { ModelsFormsElementsAttributes
@@ -2090,7 +2091,7 @@ Root
 	}
 	} , ModelsForms SaleOrderSerieForm
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		type Form label "SaleOrder Serie" entity SaleOrderSerie dataSource System elements { ModelsFormsElements "_code"
 		{
 			row 1 size 6 type Input label Code column 1 attributes { ModelsFormsElementsAttributes
@@ -2305,7 +2306,7 @@ Root
 	}
 	} , ModelsStatemachines SaleOrderStateMachine
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		definition SaleOrder description "" states { isInitial ModelsStatemachinesStates Initial
 		{
 			transitions { ModelsStatemachinesStatesTransitions toSalesTeamManagerReview
@@ -2392,7 +2393,7 @@ Root
 	}
 	} , ModelsEnumerations SaleOrderStateMachineInSalesManagerReviewDecisions
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		values { ModelsEnumerationsValues Approve
 		{
 			order 1
@@ -2404,7 +2405,7 @@ Root
 	}
 	} , ModelsEnumerations SaleOrderStateMachineInSalesTeamManagerReviewDecisions
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		values { ModelsEnumerationsValues Approve
 		{
 			order 1
@@ -2427,7 +2428,7 @@ Root
 	}
 	} , ModelsEnumerations SaleOrderStateMachineInFinancialManagerReviewDecisions
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		values { ModelsEnumerationsValues Approve
 		{
 			order 1
@@ -2439,7 +2440,7 @@ Root
 	}
 	} , ModelsEnumerations SaleOrderStateMachineStates
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		values { ModelsEnumerationsValues Initial
 		{
 			order 1
@@ -2590,7 +2591,7 @@ Root
 	}
 	} } documents { ModelsDocuments SaleOrder
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		dataSource System description "" attributes { isSystem ModelsDocumentsAttributes "_code"
 		{
 			type Text aggregationKind None multiplicity ModelsDocumentsAttributesMultiplicity
@@ -2790,7 +2791,7 @@ Root
 	}
 	} } } series { ModelsSeries SaleOrderSerie
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		dataSource System attributes { isSystem ModelsSeriesAttributes "_code"
 		{
 			type Text aggregationKind None multiplicity ModelsSeriesAttributesMultiplicity
@@ -2919,7 +2920,7 @@ Root
 	}
 	} , ModelsDashboards SaleOrderSerieDashboard
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		type Dashboard label "SaleOrder Serie" elements { ModelsDashboardsElements SaleOrderSerieList
 		{
 			row 1 size 12 type List label "SaleOrder Serie" column 1 attributes { ModelsDashboardsElementsAttributes
@@ -2938,7 +2939,7 @@ Root
 	}
 	} , ModelsDashboards SaleOrderDashboard
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		type Dashboard label SaleOrder elements { ModelsDashboardsElements SaleOrderList
 		{
 			row 1 size 12 type List label SaleOrder column 1 attributes { ModelsDashboardsElementsAttributes
@@ -3076,7 +3077,7 @@ Root
 	}
 	} } , ModelsLists SaleOrderList
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		type List label SaleOrder query SaleOrderQuery dataSource System elements { ModelsListsElements "_code"
 		{
 			row 0 size 1 type ListColumn label Code column 1 attributes { ModelsListsElementsAttributes
@@ -3278,7 +3279,7 @@ Root
 	}
 	} } , ModelsLists SaleOrderSerieList
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		type List label "SaleOrder Serie" query SaleOrderSerieQuery dataSource System elements { ModelsListsElements "_code"
 		{
 			row 0 size 2 type ListColumn label Code column 1 attributes { ModelsListsElementsAttributes
@@ -3358,7 +3359,7 @@ Root
 	}
 	} } } genericentitys { ModelsGenericentitys SaleOrderLine
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		dataSource System description "" attributes { isSystem ModelsGenericentitysAttributes "_code"
 		{
 			type Text aggregationKind None multiplicity ModelsGenericentitysAttributesMultiplicity
@@ -3707,7 +3708,7 @@ Root
 	}
 	, ModelsQuerys SalesPerProductQueryAdv
 	{  
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		dataSource System expression "SELECT SUM(ol.totalWithVat) AS ammount, ol.product, p._name\nFROM vw_SaleOrder_Lines ol\nINNER JOIN vw_Product p ON p._code=ol.product\nGROUP BY ol.product, p._name\nORDER BY ammount DESC" description "" table ModelsQuerysTable
 		{
 			definition SaleOrder
@@ -3715,7 +3716,7 @@ Root
 	}
 	, ModelsQuerys SaleOrderSerieQuery
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		dataSource System table ModelsQuerysTable
 		{
 			definition SaleOrderSerie properties { ModelsQuerysTableProperties
@@ -3743,7 +3744,7 @@ Root
 	}
 	, ModelsQuerys QuarterSalesQueryAdv
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		dataSource System expression "SELECT DATE_PART(\'quarter\', om._date) AS quarter, SUM(om.totalWithVat) AS ammount\nFROM vw_SaleOrder om\nWHERE DATE_PART(\'year\', om._date) = cast(@year as double precision)\nGROUP BY DATE_PART(\'quarter\', om._date)\nORDER BY DATE_PART(\'quarter\', om._date)" description "" table ModelsQuerysTable
 		{
 			definition SaleOrder
@@ -3774,7 +3775,7 @@ Root
 	}
 	, ModelsQuerys MonthlySalesQueryAdv
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		dataSource System expression "SELECT DATE_PART(\'month\', om._date) AS month, SUM(om.totalWithVat) AS ammount\nFROM vw_SaleOrder om\nWHERE DATE_PART(\'year\', om._date) = cast(@year as double precision)\nGROUP BY DATE_PART(\'month\', om._date)\nORDER BY DATE_PART(\'month\', om._date)" description "" table ModelsQuerysTable
 		{
 			definition SaleOrder
@@ -3782,7 +3783,7 @@ Root
 	}
 	, ModelsQuerys SalesPerSalesPersonQueryAdv
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		dataSource System expression "SELECT SUM(om.totalWithVat) AS ammount, om.salesPerson, sp._name\nFROM vw_SaleOrder om\nINNER JOIN vw_SalesPerson sp ON sp._code=om.salesPerson\nGROUP BY om.salesPerson, sp._name\nORDER BY ammount DESC" description "" table ModelsQuerysTable
 		{
 			definition SaleOrder
@@ -3875,7 +3876,7 @@ Root
 	}
 	, ModelsQuerys SaleOrderQuery
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		dataSource System table ModelsQuerysTable
 		{
 			definition SaleOrder properties { ModelsQuerysTableProperties
@@ -3930,7 +3931,7 @@ Root
 	}
 	, ModelsQuerys SalesPerClientQueryAdv
 	{
-		inc ("m1.sale1")
+		inc ("SPLOrderMan.sale")
 		dataSource System expression "SELECT SUM(om.totalWithVat) AS ammount, om.client, c._name\nFROM vw_SaleOrder om\nINNER JOIN vw_Client c ON c._code=om.client\nGROUP BY om.client, c._name\nORDER BY ammount DESC" description "" table ModelsQuerysTable
 		{
 			definition SaleOrder

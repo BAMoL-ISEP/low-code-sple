@@ -16,7 +16,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import pt.bamol.bamolm2.Root;
-import pt.bamol.bamolm2.tests.BamolM2InjectorProvider;
 
 @ExtendWith(InjectionExtension.class)
 @InjectWith(BamolM2InjectorProvider.class)
